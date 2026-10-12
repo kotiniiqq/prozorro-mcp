@@ -96,3 +96,15 @@ def test_sync_first_time_without_region_exits_2(tmp_path, capsys, monkeypatch):
 def test_plans_command(db, capsys):
     code, out, _ = run(["--db", db, "plans", "--query", "реактиви"], capsys)
     assert code == 0 and "250 000,00 грн" in out and "Реактиви лабораторні" in out
+
+
+def test_eval_command_prints_metrics_and_writes_results(tmp_path, capsys):
+    target = tmp_path / "RESULTS.md"
+    code, out, _ = run(["eval", "--suite", "flags", "--write", str(target)], capsys)
+    assert code == 0 and "single_bidder" in out and "precision" in out
+    text = target.read_text(encoding="utf-8")
+    assert text.startswith("# Eval results") and "single_bidder" in text
+
+
+def test_eval_unknown_suite_exits_2(capsys):
+    assert run(["eval", "--suite", "vibes"], capsys)[0] == 2

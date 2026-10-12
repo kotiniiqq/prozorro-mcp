@@ -138,6 +138,47 @@ def cmd_sync(args, store):
           f'sync them with --region "без регіону"); {report.missing} no longer in Prozorro')
 
 
+def _eval_lines(results: dict) -> list[str]:
+    lines = []
+    for name, res in results.items():
+        status = "PASS" if res["passed"] else "FAIL"
+        if name == "flags":
+            lines.append(f"## flags: {status} ({res['cases']} labelled cases)\n")
+            lines.append("| kind | precision | recall | tp | fp | fn | tn |\n|---|---|---|---|---|---|---|")
+            for kind, m in res["per_kind"].items():
+                lines.append(f"| {kind} | {m['precision']:.3f} | {m['recall']:.3f} | {m['tp']} | {m['fp']} | "
+                             f"{m['fn']} | {m['tn']} |")
+            if res["failures"]:
+                lines.append("\nmisjudged: " + "; ".join(res["failures"]))
+        elif name == "normalize":
+            lines.append(f"## normalize: {status} (accuracy {res['accuracy']:.3f} on {res['cases']} spellings)")
+            for f in res["failures"]:
+                lines.append(f"- `{f['input']}` -> {f['got']} (expected {f['expected']})")
+        else:
+            lines.append(f"## reconcile: {status} ({res['checked']} aggregates checked against a recount "
+                         f"from raw JSON, {len(res['mismatches'])} mismatches)")
+            for m in res["mismatches"]:
+                lines.append(f"- {m}")
+        lines.append("")
+    return lines
+
+
+def cmd_eval(args, store):
+    from datetime import date
+
+    from . import evals
+    results = evals.run_suite(args.suite)
+    lines = _eval_lines(results)
+    print("\n".join(lines))
+    if args.write:
+        header = [f"# Eval results ({date.today().isoformat()})", "",
+                  ("Computed by code, no API keys: `prozorro-mcp eval --suite all`. The reconcile suite runs on "
+                  "the bundled demo snapshot."), ""]
+        Path(args.write).write_text("\n".join(header + lines) + "\n", encoding="utf-8")
+    if not all(r["passed"] for r in results.values()):
+        raise SystemExit(1)
+
+
 def cmd_serve(args, store):
     from .server import build_server
     server = build_server(store)
@@ -216,6 +257,11 @@ def build_parser() -> argparse.ArgumentParser:
     wr.add_argument("name")
     w.set_defaults(func=cmd_watch)
 
+    s = sub.add_parser("eval", help="run the keyless evals")
+    s.add_argument("--suite", default="all", help="flags, normalize, reconcile or all")
+    s.add_argument("--write", help="also write the results as Markdown to this file")
+    s.set_defaults(func=cmd_eval, no_store=True)
+
     s = sub.add_parser("serve", help="run the MCP server (stdio by default)")
     s.add_argument("--demo", action="store_true", help="serve the bundled demo data")
     s.add_argument("--http", action="store_true", help="streamable HTTP instead of stdio")
@@ -234,7 +280,7 @@ def main(argv: list[str] | None = None) -> int:
                 pass
     args = build_parser().parse_args(argv)
     try:
-        store = _open_store(args)
+        store = None if getattr(args, "no_store", False) else _open_store(args)
     except OSError as exc:
         print(f"error: cannot open the database: {exc}", file=sys.stderr)
         return 1
@@ -253,7 +299,8 @@ def main(argv: list[str] | None = None) -> int:
               file=sys.stderr)
         return 130
     finally:
-        store.close()
+        if store is not None:
+            store.close()
 
 
 if __name__ == "__main__":
