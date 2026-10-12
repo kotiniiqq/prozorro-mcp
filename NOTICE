@@ -1,0 +1,11 @@
+prozorro-mcp
+Copyright (c) 2026 Kyrylo Kalashnyk
+
+This package bundles two classifier files from ProzorroUKR/standards
+(https://github.com/ProzorroUKR/standards), licensed under the Apache License 2.0:
+  src/prozorro_mcp/data/dk021_uk.json  (ДК 021:2015 / CPV, Ukrainian names)
+  src/prozorro_mcp/data/ua_regions.json (regions of Ukraine)
+
+Tender and plan data come from the public Prozorro API
+(https://public-api.prozorro.gov.ua). The bundled demo snapshot is a small
+extract of that public data with contact persons removed.

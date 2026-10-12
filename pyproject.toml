@@ -1,0 +1,34 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "prozorro-mcp"
+version = "0.1.0"
+description = "MCP server and CLI over Prozorro, Ukraine's public procurement data: tender search, upcoming plans, market and competitor analysis, red flags. Local sync, no keys."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{ name = "Kyrylo Kalashnyk" }]
+keywords = ["mcp", "prozorro", "ukraine", "public-procurement", "tenders", "open-data"]
+dependencies = ["httpx>=0.27", "mcp>=2.3,<3"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "respx>=0.21", "ruff>=0.6"]
+
+[project.scripts]
+prozorro-mcp = "prozorro_mcp.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/kotiniiqq/prozorro-mcp"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/prozorro_mcp"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src", "tests"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py311"
