@@ -1,6 +1,6 @@
-"""MCP server: 11 read-only tools over the local Prozorro data.
+"""MCP server: 11 read-only tools over the local Prozorro data, plus `sync_data` when a syncer is given.
 
-    claude mcp add prozorro -- prozorro-mcp serve      # after: uv tool install git+https://github.com/kotiniiqq/prozorro-mcp
+    claude mcp add prozorro -- prozorro-mcp serve      # after: uv tool install prozorro-mcp
 """
 from functools import wraps
 from typing import Literal
@@ -22,10 +22,18 @@ INSTRUCTIONS = (
     "accept plain words in Ukrainian, Russian or English. Always cite tender links. Red flags are reasons to "
     "look closer, never accusations."
 )
+SYNC_INSTRUCTIONS = (
+    " Data can be downloaded from here: when a question needs a region or period that is not synced, offer "
+    "sync_data (it runs in the background; the first sync of a busy oblast takes about 20 minutes per week) "
+    "instead of the CLI command, and check progress with coverage. If a result has `data_source`, say that "
+    "the answer comes from the demo snapshot."
+)
 
 # The tools only read the local database: nothing is changed and nothing outside the machine is called.
 READ_ONLY = ToolAnnotations(read_only_hint=True, destructive_hint=False, idempotent_hint=True,
                             open_world_hint=False)
+# sync_data writes the local database and calls the public Prozorro API; running it twice changes nothing more.
+SYNC = ToolAnnotations(read_only_hint=False, destructive_hint=False, idempotent_hint=True, open_world_hint=True)
 
 
 def _errors(fn):
@@ -61,15 +69,43 @@ def _with_hint(store: Store, result: dict, region: str | None = None, since: str
     return result
 
 
-def build_server(store: Store) -> MCPServer:
-    server = MCPServer(name="prozorro", instructions=INSTRUCTIONS)
-    tool = lambda description: server.tool(annotations=READ_ONLY, description=description)
+def build_server(store: Store, syncer=None) -> MCPServer:
+    server = MCPServer(name="prozorro", instructions=INSTRUCTIONS + (SYNC_INSTRUCTIONS if syncer else ""))
 
-    @tool("What the local data covers: regions, period, CPV filter, counts, last sync, and the command to "
-          "add more. Call this first when unsure.")
+    def tool(description, annotations=READ_ONLY):
+        def register(fn):
+            @wraps(fn)
+            def sourced(*args, **kwargs):
+                result = fn(*args, **kwargs)
+                if getattr(store, "is_demo", False) and isinstance(result, dict):
+                    from .demo import DEMO_SOURCE
+                    result["data_source"] = DEMO_SOURCE
+                return result
+            return server.tool(annotations=annotations, description=description)(sourced)
+        return register
+
+    @tool("What the local data covers: regions, period, CPV filter, counts, last sync, the background sync "
+          "progress if any, and how to add more. Call this first when unsure.")
     @_errors
     def coverage() -> dict:
-        return coverage_info(store)
+        info = coverage_info(store)
+        if syncer is not None:
+            info["sync"] = syncer.status()
+        return info
+
+    if syncer is not None:
+        @tool("Download Prozorro tenders and plans for regions (any spelling) into the local data, in the "
+              "background. days: how far back (default 7, or the current period); cpv: keep only these "
+              "categories. Without regions it fetches what changed since the last sync. Regions are added to "
+              "what is already synced. Returns at once; check coverage for progress.", annotations=SYNC)
+        @_errors
+        def sync_data(regions: list[str] | None = None, days: int | None = None,
+                      cpv: str | None = None) -> dict:
+            resolved = [resolve_region(r) for r in regions] if regions else None
+            prefixes, _ = _cpv(cpv)
+            if days is not None and not 1 <= days <= 92:
+                raise ValueError("days must be between 1 and 92.")
+            return syncer.start(resolved, days, prefixes)
 
     @tool("Find buyers and suppliers by part of a name (or an exact EDRPOU code). role: any, buyer, supplier.")
     @_errors

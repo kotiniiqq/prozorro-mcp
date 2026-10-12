@@ -90,3 +90,35 @@ def demo_store() -> Store:
         store.close()
         os.replace(tmp, target)
     return Store(target)
+
+
+DEMO_SOURCE = ("demo snapshot (Lviv oblast, 5-12 October 2026): your own data is not synced yet. Call "
+               "coverage for the sync progress, or sync_data to start it.")
+
+
+class LiveOrDemo:
+    """The local database once a sync has finished; until then the bundled demo, so a fresh install answers."""
+
+    def __init__(self, live: Store, demo_factory=demo_store):
+        self.live = live
+        self._demo_factory = demo_factory
+        self._demo: Store | None = None
+
+    @property
+    def is_demo(self) -> bool:
+        return self.live.get_state("last_sync") is None
+
+    def _current(self) -> Store:
+        if not self.is_demo:
+            return self.live
+        if self._demo is None:
+            self._demo = self._demo_factory()
+        return self._demo
+
+    def __getattr__(self, name):
+        return getattr(self._current(), name)
+
+    def close(self) -> None:
+        self.live.close()
+        if self._demo is not None:
+            self._demo.close()

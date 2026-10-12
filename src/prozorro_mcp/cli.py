@@ -193,9 +193,26 @@ def cmd_eval(args, store):
         raise SystemExit(1)
 
 
+def _settings_regions(values: list[str] | None) -> list[str] | None:
+    """--region may come from a settings form as one comma-separated string, possibly empty."""
+    words = [w.strip() for v in values or [] for w in v.split(",") if w.strip()]
+    return [resolve_region(w) for w in words] or None
+
+
 def cmd_serve(args, store):
-    from .server import build_server
-    server = build_server(store)
+    from . import server as server_mod
+    syncer = None
+    if not args.demo:
+        from .background import BackgroundSync
+        from .demo import LiveOrDemo
+        regions = _settings_regions(args.region)
+        if not args.http:
+            # over HTTP anyone who reaches the endpoint could start downloads, so sync stays local
+            syncer = BackgroundSync(store.path, api_factory=_api_factory, now=_now)
+            if args.sync_on_start:
+                syncer.start(regions, args.days)
+        store = LiveOrDemo(store)
+    server = server_mod.build_server(store, syncer)
     if args.http:
         print(f"MCP over streamable HTTP on http://{args.host}:{args.port}/mcp", file=sys.stderr)
         server.run("streamable-http", host=args.host, port=args.port)
@@ -281,6 +298,11 @@ def build_parser() -> argparse.ArgumentParser:
     s.add_argument("--http", action="store_true", help="streamable HTTP instead of stdio")
     s.add_argument("--host", default="127.0.0.1")
     s.add_argument("--port", type=int, default=8000)
+    s.add_argument("--sync-on-start", action="store_true",
+                   help="download what changed in the background when the server starts")
+    s.add_argument("--region", action="append",
+                   help="with --sync-on-start: regions to add (repeat, or comma-separated)")
+    s.add_argument("--days", type=int, help="with --sync-on-start: how many days back")
     s.set_defaults(func=cmd_serve)
     return p
 

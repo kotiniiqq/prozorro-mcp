@@ -129,3 +129,11 @@ def test_concurrency_is_limited():
 
     run(go())
     assert state["max"] == 3
+
+
+def test_httpx_does_not_log_every_request():
+    """The MCP server logs at INFO to stderr; one line per request would flood the client's log."""
+    import logging
+
+    import prozorro_mcp.api  # noqa: F401
+    assert logging.getLogger("httpx").level >= logging.WARNING  # set explicitly, whatever the root level is

@@ -7,6 +7,7 @@ from factories import make_plan, make_tender
 from mcp.client import Client
 
 from prozorro_mcp.server import build_server
+from prozorro_mcp.store import Store
 from prozorro_mcp.sync import Coverage
 
 TOOLS = ["buyer_profile", "competitors", "coverage", "find_entity", "get_tender", "market_overview",
@@ -35,19 +36,27 @@ def payload(result):
     return json.loads(result.content[0].text)
 
 
-def call(store, name, args=None):
+def call_with(store, syncer, name, args=None):
     async def go():
-        async with Client(build_server(store)) as client:
+        async with Client(build_server(store, syncer)) as client:
             return await client.call_tool(name, args or {})
     return anyio.run(go)
 
 
-def list_tools(store):
+def call(store, name, args=None):
+    return call_with(store, None, name, args)
+
+
+def list_tools_with(store, syncer):
     async def go():
-        async with Client(build_server(store)) as client:
+        async with Client(build_server(store, syncer)) as client:
             return await client.list_tools()
     res = anyio.run(go)
     return getattr(res, "tools", res)
+
+
+def list_tools(store):
+    return list_tools_with(store, None)
 
 
 def test_exactly_eleven_tools(store):
@@ -121,3 +130,57 @@ def test_red_flags_without_scope_is_an_error(filled):
 def test_bad_since_is_an_error(filled):
     res = call(filled, "market_overview", {"since": "last tuesday"})
     assert res.is_error and "7d" in res.content[0].text
+
+
+class FakeSyncer:
+    def __init__(self):
+        self.calls = []
+
+    def start(self, regions=None, days=None, cpv=None):
+        self.calls.append((regions, days, cpv))
+        return {"started": True, "state": "running", "regions": regions}
+
+    def status(self):
+        return {"state": "running", "fraction": 0.4}
+
+
+def test_with_a_syncer_there_is_one_more_tool_and_only_it_writes(store):
+    tools = {t.name: t.annotations for t in list_tools_with(store, FakeSyncer())}
+    assert sorted(tools) == sorted(TOOLS + ["sync_data"])
+    a = tools["sync_data"]
+    assert (a.read_only_hint, a.destructive_hint, a.idempotent_hint, a.open_world_hint) == (
+        False, False, True, True)
+    assert all(tools[n].read_only_hint for n in TOOLS)
+
+
+def test_sync_data_resolves_words_and_starts_the_syncer(filled):
+    fake = FakeSyncer()
+    data = payload(call_with(filled, fake, "sync_data", {"regions": ["волынь"], "days": 14, "cpv": "борошно"}))
+    from prozorro_mcp.normalize import resolve_cpv
+    assert data["started"] and fake.calls == [(["Волинська область"], 14, resolve_cpv("борошно"))]
+
+
+def test_sync_data_unknown_region_is_a_readable_error(filled):
+    res = call_with(filled, FakeSyncer(), "sync_data", {"regions": ["Атлантида"]})
+    assert res.is_error and "Атлантида" in res.content[0].text
+
+
+def test_sync_data_rejects_absurd_days(filled):
+    res = call_with(filled, FakeSyncer(), "sync_data", {"regions": ["Львів"], "days": 400})
+    assert res.is_error and "92" in res.content[0].text
+
+
+def test_coverage_shows_the_sync_status(filled):
+    assert payload(call_with(filled, FakeSyncer(), "coverage"))["sync"]["state"] == "running"
+
+
+def test_until_the_first_sync_finishes_answers_come_from_the_demo_and_say_so(tmp_path, filled):
+    from prozorro_mcp.demo import LiveOrDemo
+    live = Store(tmp_path / "live.db")
+    both = LiveOrDemo(live, demo_factory=lambda: filled)
+    data = payload(call_with(both, None, "search_tenders", {"status": "any"}))
+    assert data["total"] == 3 and "demo" in data["data_source"]
+    live.set_state("last_sync", "2026-10-12T00:00:00+00:00")
+    data = payload(call_with(both, None, "search_tenders", {"status": "any"}))
+    assert data["total"] == 0 and "data_source" not in data
+    live.close()

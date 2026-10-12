@@ -1,5 +1,6 @@
 """Async client for the public Prozorro API: change feeds and full documents, polite and retrying."""
 import asyncio
+import logging
 from dataclasses import dataclass
 from typing import Literal
 
@@ -14,6 +15,9 @@ BACKOFF = (1, 2, 4, 8, 16)
 RETRY_STATUS = {429, 500, 502, 503, 504}
 
 Kind = Literal["tenders", "plans"]
+
+# the MCP server logs at INFO to stderr; httpx would add a line for every one of thousands of requests
+logging.getLogger("httpx").setLevel(logging.WARNING)
 
 
 class APIError(RuntimeError):

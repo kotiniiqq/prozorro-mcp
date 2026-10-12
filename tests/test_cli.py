@@ -129,3 +129,56 @@ def test_progress_line_drops_eta_when_done(capsys):
     assert "left" not in capsys.readouterr().err
     cli._print_progress(SyncProgress("tenders", 10, 0.5, 120.0))
     assert "~2 min left" in capsys.readouterr().err
+
+
+class Captured:
+    def __init__(self):
+        self.store = self.syncer = self.transport = self.demo_while_running = None
+
+    def build(self, store, syncer=None):
+        self.store, self.syncer = store, syncer
+        return self
+
+    def run(self, transport, **kw):
+        self.transport = transport
+        if self.syncer is not None:
+            self.syncer.wait(10)
+        self.demo_while_running = getattr(self.store, "is_demo", None)
+
+
+@pytest.fixture
+def served(monkeypatch):
+    import prozorro_mcp.server as server_mod
+    cap = Captured()
+    monkeypatch.setattr(server_mod, "build_server", cap.build)
+    return cap
+
+
+def test_serve_syncs_on_start_the_regions_from_the_settings(tmp_path, capsys, monkeypatch, served):
+    a = make_tender(id="a")
+    fake = FakeAPI(tenders_pages=[[entry(a)]], docs=[a])
+    monkeypatch.setattr(cli, "_api_factory", lambda: fake)
+    monkeypatch.setattr(cli, "_now", lambda: NOW)
+    db = str(tmp_path / "s.db")
+    code, _, _ = run(["--db", db, "serve", "--sync-on-start", "--region", "Львів, Волинь", "--days", "3"], capsys)
+    assert code == 0 and served.transport == "stdio"
+    status = served.syncer.status()
+    assert status["state"] == "done" and status["regions"] == ["Волинська область", "Львівська область"]
+    assert served.demo_while_running is False  # the finished sync switched it to the live data
+
+
+def test_serve_with_empty_settings_on_a_fresh_install_starts_nothing(tmp_path, capsys, monkeypatch, served):
+    monkeypatch.setattr(cli, "_api_factory", lambda: FakeAPI())
+    code, _, _ = run(["--db", str(tmp_path / "e.db"), "serve", "--sync-on-start", "--region", ""], capsys)
+    assert code == 0 and served.syncer.status()["state"] == "idle" and served.demo_while_running
+
+
+def test_serve_over_http_has_no_sync_tool(tmp_path, capsys, served):
+    code, _, _ = run(["--db", str(tmp_path / "h.db"), "serve", "--http"], capsys)
+    assert code == 0 and served.syncer is None and served.transport == "streamable-http"
+
+
+def test_serve_unknown_region_in_settings_exits_2(tmp_path, capsys, served):
+    code, _, err = run(["--db", str(tmp_path / "u.db"), "serve", "--sync-on-start", "--region", "Атлантида"],
+                       capsys)
+    assert code == 2 and "Атлантида" in err
