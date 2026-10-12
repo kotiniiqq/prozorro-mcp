@@ -33,7 +33,7 @@ uv --version
 ## Крок 2. Встановіть prozorro-mcp
 
 ```bash
-uv tool install git+https://github.com/kotiniiqq/prozorro-mcp
+uv tool install prozorro-mcp
 ```
 
 Тепер у терміналі працює команда `prozorro-mcp`. Перевірте її на вбудованих демо-даних (Львівська

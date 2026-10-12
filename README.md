@@ -17,11 +17,10 @@ needed: the Prozorro API is public, and nothing here calls an LLM.
 
 ## Try it in one minute (bundled demo, no sync)
 
-You need [uv](https://docs.astral.sh/uv/getting-started/installation/). The package is not on PyPI yet,
-so it is installed straight from GitHub:
+You need [uv](https://docs.astral.sh/uv/getting-started/installation/) (or plain `pip install prozorro-mcp`):
 
 ```bash
-uvx --from git+https://github.com/kotiniiqq/prozorro-mcp prozorro-mcp search --demo --query борошно --status any
+uvx prozorro-mcp search --demo --query борошно --status any
 ```
 
 The demo is a real snapshot of Lviv oblast for one week (5–12 October 2026): 5,479 tenders, 1,120 of
@@ -34,7 +33,7 @@ The server runs locally over stdio. Pick your client:
 **Claude Code**
 
 ```bash
-claude mcp add prozorro -- uvx --from git+https://github.com/kotiniiqq/prozorro-mcp prozorro-mcp serve
+claude mcp add prozorro -- uvx prozorro-mcp serve
 ```
 
 **Claude Desktop**: Settings → Developer → Edit Config. The file is
@@ -46,7 +45,7 @@ claude mcp add prozorro -- uvx --from git+https://github.com/kotiniiqq/prozorro-
   "mcpServers": {
     "prozorro": {
       "command": "uvx",
-      "args": ["--from", "git+https://github.com/kotiniiqq/prozorro-mcp", "prozorro-mcp", "serve"]
+      "args": ["prozorro-mcp", "serve"]
     }
   }
 }
@@ -63,7 +62,7 @@ as Claude Desktop.
     "prozorro": {
       "type": "stdio",
       "command": "uvx",
-      "args": ["--from", "git+https://github.com/kotiniiqq/prozorro-mcp", "prozorro-mcp", "serve"]
+      "args": ["prozorro-mcp", "serve"]
     }
   }
 }
@@ -77,7 +76,7 @@ ChatGPT and claude.ai in the browser only connect to remote servers over HTTPS. 
 ## Sync your own data
 
 ```bash
-uvx --from git+https://github.com/kotiniiqq/prozorro-mcp prozorro-mcp sync --region Львівська --days 7
+uvx prozorro-mcp sync --region Львівська --days 7
 ```
 
 - **Regions** work in any spelling: `Львів`, `львовская`, `Lviv`, `Kyiv city`, `Київська`. Repeat
@@ -96,7 +95,7 @@ uvx --from git+https://github.com/kotiniiqq/prozorro-mcp prozorro-mcp sync --reg
 ## Use it without an AI client
 
 The same numbers, as a table, CSV (opens in Excel with Cyrillic intact) or JSON. Install the command
-once with `uv tool install git+https://github.com/kotiniiqq/prozorro-mcp`, and then:
+once with `uv tool install prozorro-mcp`, and then:
 
 ```bash
 prozorro-mcp search --cpv реактиви --region Львівська            # open tenders, nearest deadline first
