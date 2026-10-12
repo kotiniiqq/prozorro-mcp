@@ -13,7 +13,7 @@ local copy of the official open data for the regions you choose. Then you can as
 Every number is computed by code from the data, and the assistant only writes the text. No API keys are
 needed: the Prozorro API is public, and nothing here calls an LLM.
 
-> Ukrainian step-by-step guide for non-developers: [docs/guide.uk.md](docs/guide.uk.md).
+> Ukrainian step-by-step guide for non-developers: [docs/guide.uk.md](https://github.com/kotiniiqq/prozorro-mcp/blob/main/docs/guide.uk.md).
 
 ## Try it in one minute (bundled demo, no sync)
 
@@ -26,7 +26,18 @@ uvx prozorro-mcp search --demo --query борошно --status any
 The demo is a real snapshot of Lviv oblast for one week (5–12 October 2026): 5,479 tenders, 1,120 of
 them with public bids, and 1,619 upcoming plans. Contact persons were removed.
 
-## Connect it to your AI client
+## Claude Desktop: one-click extension
+
+Download [prozorro-mcp.mcpb](https://github.com/kotiniiqq/prozorro-mcp/releases/latest/download/prozorro-mcp.mcpb)
+and open it (or drag it into Settings → Extensions). Claude Desktop installs Python and the package by
+itself, so there is nothing else to install and no config to edit. In the install dialog, type your
+oblasts (for example `Львівська, Волинська`) and the days of history.
+
+It answers from the bundled demo right away, while your regions download in the background. Every
+start fetches what changed since the last one. To add a region later, ask Claude: *"download Volyn oblast
+for the last two weeks"*.
+
+## Connect it to other AI clients
 
 The server runs locally over stdio. Pick your client:
 
@@ -36,7 +47,7 @@ The server runs locally over stdio. Pick your client:
 claude mcp add prozorro -- uvx prozorro-mcp serve
 ```
 
-**Claude Desktop**: Settings → Developer → Edit Config. The file is
+**Claude Desktop without the extension**: Settings → Developer → Edit Config. The file is
 `%APPDATA%\Claude\claude_desktop_config.json` on Windows and
 `~/Library/Application Support/Claude/claude_desktop_config.json` on macOS:
 
@@ -89,6 +100,9 @@ uvx prozorro-mcp sync --region Львівська --days 7
   categories.
 - **Next runs** (`prozorro-mcp sync` with no options) fetch only what changed since the last run.
   Ctrl+C is safe: run the command again and it continues from where it stopped.
+- **From the server**: `prozorro-mcp serve --sync-on-start` fetches what changed in the background when the
+  client starts it (add `--region` and `--days` to widen the coverage). Until the first sync finishes,
+  the tools answer from the demo and every result says so in `data_source`.
 - **Status**: `prozorro-mcp status` shows what is covered. Data lives in `~/.prozorro-mcp/data.db`; set
   `PROZORRO_MCP_DB` to move it.
 
@@ -110,8 +124,10 @@ daily list of new tenders without opening any website.
 
 ## Tools
 
-All 11 tools only read the local database. Each one declares `readOnlyHint: true`,
-`destructiveHint: false`, `idempotentHint: true` and `openWorldHint: false`.
+Eleven tools only read the local database. Each one declares `readOnlyHint: true`,
+`destructiveHint: false`, `idempotentHint: true` and `openWorldHint: false`. The twelfth, `sync_data`,
+downloads data, so it is marked `readOnlyHint: false` and `openWorldHint: true`. It exists only in the
+local stdio server, not in HTTP mode.
 
 | tool | what it returns |
 |---|---|
@@ -126,6 +142,7 @@ All 11 tools only read the local database. Each one declares `readOnlyHint: true
 | `upcoming_plans` | annual-plan items with no tender yet |
 | `red_flags` | the four flags below, each with evidence and a link |
 | `watch_digest` | new tenders for your saved searches |
+| `sync_data` | starts a background download of regions or a longer period; `coverage` shows the progress |
 
 When a question needs data that is not synced, for example another oblast or an older period, the
 result says so and gives the exact `sync` command. It does not return an empty list that looks like
@@ -159,7 +176,7 @@ A flag is a reason to look closer, **not proof of wrongdoing**.
 ## Evals
 
 They run without keys or network, all computed by code: `prozorro-mcp eval --suite all`. The latest
-results are in [evals/RESULTS.md](evals/RESULTS.md).
+results are in [evals/RESULTS.md](https://github.com/kotiniiqq/prozorro-mcp/blob/main/evals/RESULTS.md).
 
 - **Flags**: 35 labelled cases, including near-threshold negatives such as 29% vs 30% above the median
   or exactly half the money. Precision and recall are 1.0 for every flag.
@@ -191,10 +208,11 @@ read-only. Add rate limits at the proxy before exposing it.
 
 ```bash
 python -m venv .venv && .venv/bin/pip install -e ".[dev]"    # Windows: .venv\Scripts\pip
-pytest -q          # 177 tests, no network: recorded API responses and built tenders
+pytest -q          # 197 tests, no network: recorded API responses and built tenders
 ruff check .
 python scripts/capture_fixtures.py    # refresh the recorded API responses
 python scripts/build_demo.py          # rebuild the demo snapshot (live sync, about 20 minutes)
+python scripts/build_mcpb.py          # the Claude Desktop extension (needs Node for the official packer)
 ```
 
 The code is split by job: `api` (feed client) → `sync` → `store` (SQLite) → `analytics` (every number)
@@ -204,7 +222,7 @@ The code is split by job: `api` (feed client) → `sync` → `store` (SQLite) �
 
 - **v2**: a `price_raised_after_signing` flag, for contracts whose price grew through amendments. This
   needs a sync of contract changes.
-- **Later**: a hosted HTTP instance; Telegram or e-mail alerts as a separate service; owners of
+- **Later**: a hosted HTTP instance for ChatGPT and claude.ai; Telegram or e-mail alerts as a separate service; owners of
   companies from the EDR register.
 - **Not planned**: a "chance to win" or "recommended bid". It would be a guess dressed as a fact.
 
@@ -212,6 +230,6 @@ The code is split by job: `api` (feed client) → `sync` → `store` (SQLite) �
 
 Tender and plan data come from the public [Prozorro API](https://public-api.prozorro.gov.ua). ДК 021
 (CPV) names and the region list come from [ProzorroUKR/standards](https://github.com/ProzorroUKR/standards)
-(Apache-2.0); see [NOTICE](NOTICE).
+(Apache-2.0); see [NOTICE](https://github.com/kotiniiqq/prozorro-mcp/blob/main/NOTICE).
 
 MIT License.
