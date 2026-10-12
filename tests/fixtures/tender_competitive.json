@@ -1,0 +1,2470 @@
+{
+ "description": "",
+ "date": "2026-10-10T09:19:50.036046+03:00",
+ "dateModified": "2026-10-10T09:19:50.036046+03:00",
+ "dateCreated": "2026-10-01T15:55:06.736887+03:00",
+ "tenderID": "UA-2026-10-01-010168-a",
+ "documents": [
+  {
+   "confidentiality": "public",
+   "documentType": "contractProforma",
+   "description": "SHA1:28e186ba803e657024c3bfc167e1f490ca47ab96;SHA2-384:fc961be270ea4878d31c5aca3aabfa7df2d7482a2cfcc954c74f780fd16a0b401587e30931fc90e8321d440e629d1167;Antivirus: ESET Antivirus",
+   "relatedItem": "f13614263461484c8f5bdb36bd7960a0",
+   "id": "1511f2794e3142e4be4a08adc76f7207",
+   "datePublished": "2026-10-01T15:55:08.015699+03:00",
+   "hash": "md5:be950e8792183efd90f6f9699abd179e",
+   "title": "проект договору Matrice 4T 40шт.docx",
+   "format": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+   "url": "https://public-docs.prozorro.gov.ua/get/021d6d9488a049c7b4515314262679f5?Signature=hJO7EkPwLGUL9VNlz%2BAebCQC4G3Fi5QIDbcZCBLUiY0otLXWjwTwB5G%2Bcjm0xt1PLxc%2BAYZvZLWae3NKE4b0Cw%3D%3D&KeyID=52462340",
+   "documentOf": "tender",
+   "dateModified": "2026-10-01T15:55:08.015699+03:00",
+   "author": "tender_owner",
+   "language": "uk"
+  },
+  {
+   "confidentiality": "public",
+   "documentType": "notice",
+   "description": "SHA1:fdebd81e6a6edf9ac9a274bb73f4cf1dabf39a76;SHA2-384:0e04d7f1b96b7c61db204dd06adceb80009d9d8052d5f84b82ea5a25ef0f1d5d5fc3129b7f5abbef38641948c098d480;Antivirus: ESET Antivirus",
+   "id": "1b86676e133d4b4588c97ec9e972a04d",
+   "datePublished": "2026-10-01T15:55:25.076520+03:00",
+   "hash": "md5:ae3d36828b9c68102bccf322f9b13964",
+   "title": "sign.p7s",
+   "format": "application/pkcs7-signature",
+   "url": "https://public-docs.prozorro.gov.ua/get/958e562a71ab44ed93aa4b4cd4b43752?Signature=qO3i7y2sOfjfmVZghM%2FrxmwfWw637aCcdJCiAgMfsqBo1T20arrDD3Ociqr4zhiVsGM0j%2FEOMzzWHt5aML98Bg%3D%3D&KeyID=52462340",
+   "documentOf": "tender",
+   "dateModified": "2026-10-01T15:55:25.679336+03:00",
+   "author": "tender_owner",
+   "language": "uk"
+  }
+ ],
+ "owner": "prom.ua",
+ "title": "Квадрокоптер DJI Matrice 4T (CP.EN.00000546.02)",
+ "mainProcurementCategory": "goods",
+ "procurementMethod": "selective",
+ "contractChangeRationaleTypes": {
+  "durationExtension": {
+   "description_en": "Еxtension of the period of the procurement contract duration and the term of obligations fulfilment regarding the transfer of goods, implementation of works and provision of services in case of documented objective circumstances that led to such extension, including circumstances of force majeure, delays in funding of procuring entitys expenditures, provided that such changes will not increase the sum of money specified in the procurement contract",
+   "title_en": "Subparagraph 4 of paragraph 19",
+   "description_uk": "Продовження строку дії договору про закупівлю та/або строку виконання зобов’язань щодо передачі товару, виконання робіт, надання послуг у разі виникнення документально підтверджених об’єктивних обставин, що спричинили таке продовження, у тому числі обставин непереборної сили, затримки фінансування витрат замовника, за умови, що такі зміни не призведуть до збільшення суми, визначеної в договорі про закупівлю",
+   "title_uk": "Підпункт 4 пункту 19",
+   "uri": "https://zakon.rada.gov.ua/laws/show/1178-2022-%D0%BF/conv#n426",
+   "scheme": "DECREE1178"
+  },
+  "fiscalYearExtension": {
+   "description_en": "The validity of the procurement contract may be extended for a period sufficient to conduct the procurement/simplified procurement procedure at the beginning of the following year in an amount not exceeding 20 percent of the amount specified in the initial procurement contract concluded in the previous year, if the expenditures to achieve this goal have been approved in accordance with the established procedure",
+   "title_en": "Subparagraph 8 of paragraph 19",
+   "description_uk": "Дія договору про закупівлю може бути продовжена на строк, достатній для проведення процедури закупівлі/спрощеної закупівлі на початку наступного року в обсязі, що не перевищує 20 відсотків суми, визначеної в початковому договорі про закупівлю, укладеному в попередньому році, якщо видатки на досягнення цієї цілі затверджено в установленому порядку",
+   "title_uk": "Підпункт 8 пункту 19",
+   "uri": "https://zakon.rada.gov.ua/laws/show/1178-2022-%D0%BF/conv#n426",
+   "scheme": "DECREE1178"
+  },
+  "itemPriceChange": {
+   "description_en": "An increase in the price per unit of goods agreed by the parties by no more than 10 percent in proportion to the fluctuation in the price of such goods on the market that occurred from the date of conclusion of the procurement contract (in the event of an increase in the price per unit of goods under this subparagraph for the first time) or from the date of the last amendment to the procurement contract in terms of price changes (in the event of an increase in the price per unit of goods under this subparagraph for the second and subsequent times), subject to documentary confirmation of such fluctuations. Such amendments to the procurement contract may be made no earlier than 90 days from the date of signing the procurement contract or making amendments to it regarding an increase in the unit price of the goods, provided that such amendments do not lead to an increase in the amount specified in the procurement contract. The restriction on the timing of amendments to the procurement contract regarding an increase in the unit price of goods shall not apply in the event of a change in the terms of the procurement contract for gasoline and diesel fuel, natural gas, and electricity. The restriction on increasing the unit price by no more than 10 percent applies to each individual case of increasing the unit price (without limiting the number of changes). The changed unit price shall not exceed 50 percent of the unit price specified in the initial procurement contract",
+   "title_en": "Subparagraph 2 of paragraph 19",
+   "description_uk": "Узгодженого сторонами збільшення ціни за одиницю товару не більше ніж на 10 відсотків пропорційно коливанню ціни такого товару на ринку, що відбулося з дня укладення договору про закупівлю (у разі збільшення ціни за одиницю товару за цим підпунктом вперше) або з дня останнього внесення змін до договору про закупівлю в частині зміни ціни (у разі збільшення ціни за одиницю товару за цим підпунктом вдруге і далі), за умови документального підтвердження такого коливання. Такі зміни до договору про закупівлю можуть бути внесені не раніше 90 днів з дня підписання договору про закупівлю або внесення до нього змін щодо збільшення ціни за одиницю товару за умови, що такі зміни не призведуть до збільшення суми, визначеної в договорі про закупівлю. Обмеження стосовно строків внесення змін до договору про закупівлю щодо збільшення ціни за одиницю товару не застосовується у разі зміни умов договору про закупівлю бензину та дизельного пального, природного газу та електричної енергії. Обмеження щодо збільшення ціни за одиницю товару не більше ніж на 10 відсотків застосовується щодо кожного окремого випадку збільшення ціни за одиницю товару (без обмеження кількості змін). Змінена ціна за одиницю товару не повинна перевищувати 50 відсотків ціни за одиницю товару, що передбачена в початковому договорі про закупівлю",
+   "title_uk": "Підпункт 2 пункту 19",
+   "uri": "https://zakon.rada.gov.ua/laws/show/1178-2022-%D0%BF/conv#n426",
+   "scheme": "DECREE1178"
+  },
+  "priceReductionWithoutQuantity": {
+   "description_en": "Approval of a price change in a procurement contract in a downward direction (without changing the quantity (volume) and quality of goods, works and services), including in the event of fluctuations in the price of goods on the market",
+   "title_en": "Subparagraph 5 of paragraph 19",
+   "description_uk": "Погодження зміни ціни в договорі про закупівлю в бік зменшення (без зміни кількості (обсягу) та якості товарів, робіт і послуг), у тому числі у разі коливання ціни товару на ринку",
+   "title_uk": "Підпункт 5 пункту 19",
+   "uri": "https://zakon.rada.gov.ua/laws/show/1178-2022-%D0%BF/conv#n426",
+   "scheme": "DECREE1178"
+  },
+  "qualityImprovement": {
+   "description_en": "Іmprovement of the item's quality, provided that such improvement will not increase the sum of money specified in the procurement contract",
+   "title_en": "Subparagraph 3 of paragraph 19",
+   "description_uk": "Покращення якості предмета закупівлі за умови, що таке покращення не призведе до збільшення суми, визначеної в договорі про закупівлю",
+   "title_uk": "Підпункт 3 пункту 19",
+   "uri": "https://zakon.rada.gov.ua/laws/show/1178-2022-%D0%BF/conv#n426",
+   "scheme": "DECREE1178"
+  },
+  "taxationSystem": {
+   "description_en": "Changes in the price in the purchase contract due to changes in tax and duty rates and/or changes in the conditions for granting tax benefits - in proportion to the change in such rates and/or tax benefits, as well as in connection with changes in the taxation system in proportion to the change in the tax burden as a result of changes in the taxation system",
+   "title_en": "Subparagraph 6 of paragraph 19",
+   "description_uk": "Зміни ціни в договорі про закупівлю у зв’язку з зміною ставок податків і зборів та/або зміною умов щодо надання пільг з оподаткування - пропорційно до зміни таких ставок та/або пільг з оподаткування, а також у зв’язку із зміною системи оподаткування пропорційно до зміни податкового навантаження внаслідок зміни системи оподаткування",
+   "title_uk": "Підпункт 6 пункту 19",
+   "uri": "https://zakon.rada.gov.ua/laws/show/1178-2022-%D0%BF/conv#n426",
+   "scheme": "DECREE1178"
+  },
+  "externalIndicators": {
+   "description_en": "Changes in the consumer price index established by state statistics authorities in accordance with the law, changes in foreign currency exchange rates, changes in stock market quotations or Platts, ARGUS indicators, regulated prices (tariffs), standards, weighted average prices for electricity on the \"day ahead\" market applied in the purchase agreement, if the procurement contract establishes a procedure for changing the price",
+   "title_en": "Subparagraph 7 of paragraph 19",
+   "description_uk": "Зміни встановленого згідно із законодавством органами державної статистики індексу споживчих цін, зміни курсу іноземної валюти, зміни біржових котирувань або показників Platts, ARGUS, регульованих цін (тарифів), нормативів, середньозважених цін на електроенергію на ринку \"на добу наперед\", що застосовуються в договорі про закупівлю, у разі встановлення в договорі про закупівлю порядку зміни ціни",
+   "title_uk": "Підпункт 7 пункту 19",
+   "uri": "https://zakon.rada.gov.ua/laws/show/1178-2022-%D0%BF/conv#n426",
+   "scheme": "DECREE1178"
+  },
+  "volumeCuts": {
+   "description_en": "Reduction of the procurement's volume, particularly taking into account the actual expenditures of the procuring entity",
+   "title_en": "Subparagraph 1 of paragraph 19",
+   "description_uk": "Зменшення обсягів закупівлі, зокрема з урахуванням фактичного обсягу видатків замовника",
+   "title_uk": "Підпункт 1 пункту 19",
+   "uri": "https://zakon.rada.gov.ua/laws/show/1178-2022-%D0%BF/conv#n426",
+   "scheme": "DECREE1178"
+  },
+  "restoration": {
+   "description_en": "Reduction in the volume of procurement and/or price under contracts for construction works of real estate objects in accordance with the Resolution of the Cabinet of Ministers of Ukraine dated April 25, 2023, No. 382 \"On the implementation of an experimental project for the restoration of settlements affected by the armed aggression of the Russian Federation\" (Official Bulletin of Ukraine, 2023, No. 46, Article 2466), if the development of project documentation is entrusted to the contractor, after the expert review and approval of the project documentation in accordance with the procedure established by law",
+   "title_en": "Subparagraph 9 of paragraph 19",
+   "description_uk": "Зменшення обсягів закупівлі та/або ціни згідно з договорами про закупівлю робіт з будівництва об’єктів нерухомого майна відповідно до постанови Кабінету Міністрів України від 25 квітня 2023 р. № 382 \"Про реалізацію експериментального проекту щодо відновлення населених пунктів, які постраждали внаслідок збройної агресії Російської Федерації\" (Офіційний вісник України, 2023 р., № 46, ст. 2466), якщо розроблення проектної документації покладено на підрядника, після проведення експертизи та затвердження проектної документації в установленому законодавством порядку",
+   "title_uk": "Підпункт 9 пункту 19",
+   "uri": "https://zakon.rada.gov.ua/laws/show/1178-2022-%D0%BF/conv#n426",
+   "scheme": "DECREE1178"
+  },
+  "projectDocumentation": {
+   "description_en": "Calculation of the contract price, specified (agreed) in accordance with the approved project documentation to the procurement contract specified in the third paragraph of part one of Article 41 of the Law. Such notification shall be accompanied by the specified contract price (including documents containing information on prices for material resources) in machine-readable format",
+   "title_en": "Paragraph 16 of Clause 20",
+   "description_uk": "Складення договірної ціни, уточненої (узгодженої) відповідно до затвердженої проектної документації до договору про закупівлю, зазначеного в абзаці третьому частини першої статті 41 Закону. До такого повідомлення додається уточнена договірна ціна (у тому числі документи, що містять інформацію про ціни на матеріальні ресурси) у машинозчитувальному форматі",
+   "title_uk": "Абзац 16 пункту 20",
+   "uri": "https://zakon.rada.gov.ua/laws/show/1178-2022-%D0%BF/conv#n426",
+   "scheme": "DECREE1178"
+  },
+  "emergencyReconstruction": {
+   "description_en": "The procurement of goods, works, and services for/from construction, repair, and other engineering and technical measures to protect facilities is carried out: critical infrastructure of the fuel and energy sector critical infrastructure; the life support systems sector of critical infrastructure as part of the implementation of a pilot project in accordance with Resolution No. 142 of the Cabinet of Ministers of Ukraine dated February 7, 2025, \"On the implementation of a pilot project for new construction, reconstruction, major repairs, repair, and other engineering and technical measures to protect critical infrastructure facilities in the fuel and energy sector of critical infrastructure\" (Official Gazette of Ukraine, 2025, No. 20, p. 1335) under procurement contracts concluded before March 1, 2026",
+   "title_en": "Subparagraph 13 of paragraph 13",
+   "description_uk": "Здійснюється закупівля товарів, робіт та послуг для/з будівництва, ремонту та інших інженерно-технічних заходів із захисту об’єктів: критичної інфраструктури паливно-енергетичного сектору критичної інфраструктури; сектору систем життєзабезпечення критичної інфраструктури в рамках реалізації експериментального проекту відповідно до постанови Кабінету Міністрів України від 7 лютого 2025 р. № 142 \"Про реалізацію експериментального проекту щодо нового будівництва, реконструкції, капітального ремонту, ремонту та інших інженерно-технічних заходів із захисту об’єктів критичної інфраструктури паливно-енергетичного сектору критичної інфраструктури\" (Офіційний вісник України, 2025 р., № 20, ст. 1335) за договорами про закупівлю, які укладаються до 1 березня 2026 року",
+   "title_uk": "Підпункт 13 пункту 13",
+   "uri": "https://zakon.rada.gov.ua/laws/show/1178-2022-%D0%BF/conv#n426",
+   "scheme": "DECREE1178"
+  },
+  "infrastructureProtection": {
+   "description_en": "The procurement of goods, works, and services for measures aimed at ensuring the protection of facilities belonging to enterprises, institutions, and organizations in the electric power, nuclear, coal, oil and gas industries, as well as critical infrastructure facilities in the railway transport subsector of the transport and postal sector, including for the organization of protection of their employees in terms of construction, creation, and arrangement of civil defense structures, for the restoration of such facilities destroyed or damaged as a result of the armed aggression of the Russian Federation, as well as for the implementation of priority emergency repair work on railway infrastructure facilities and the repair of traction and rolling stock",
+   "title_en": "Subparagraph 15 of paragraph 13",
+   "description_uk": "Здійснюється закупівля товарів, робіт і послуг для проведення заходів, спрямованих на забезпечення захисту об’єктів підприємств, установ та організацій електроенергетичного, ядерно-промислового, вугільно-промислового, нафтогазового комплексів та об’єктів критичної інфраструктури підсектору залізничного транспорту сектору транспорту і пошти, у тому числі для організації захисту їх працівників у частині будівництва, створення та облаштування об’єктів фонду захисних споруд цивільного захисту, для відновлення зруйнованих або пошкоджених внаслідок збройної агресії Російської Федерації таких об’єктів, а також для проведення першочергових аварійно-відбудовних робіт на об’єктах залізничної інфраструктури та ремонту тягового і рухомого складу",
+   "title_uk": "Підпункт 15 пункту 13",
+   "uri": "https://zakon.rada.gov.ua/laws/show/1178-2022-%D0%BF/conv#n426",
+   "scheme": "DECREE1178"
+  },
+  "externalCofinancing": {
+   "description_en": "Co-financing in the amount of not less than 75 percent of the price of the procurement contract concluded by the electricity transmission system operator, using funds from loans, credits, and grants provided in accordance with Ukraine's international agreements by the organizations specified in the second part of Article 6 of the Law, with the subsequent application of the rules and procedures established by the organization providing such co-financing",
+   "title_en": "Subparagraph 10 of paragraph 19",
+   "description_uk": "Співфінансування в обсязі не менш як 75 відсотків ціни договору про закупівлю, укладеного оператором системи передачі електричної енергії, за кошти кредитів, позик, грантів, що надаються відповідно до міжнародних договорів України організаціями, зазначеними у другій частині статті 6 Закону, із подальшим застосуванням правил і процедур, встановлених організацією, що здійснює таке співфінансування",
+   "title_uk": "Підпункт 10 пункту 19",
+   "uri": "https://zakon.rada.gov.ua/laws/show/1178-2022-%D0%BF/conv#n426",
+   "scheme": "DECREE1178"
+  },
+  "emergencyElectricitySupply": {
+   "description_en": "Changes in purchase volumes, prices, and other terms of the contract for the supply of electricity, effective as of the date of entry into force of Resolution of the Cabinet of Ministers of Ukraine No. 44 dated January 17, 2026, \"On Amendments to Clause 19 of the Specifics of Public Procurement of Goods, Works, and Services for Customers Provided for by the Law of Ukraine \"On Public Procurement,\" for the period of the legal regime of martial law in Ukraine and for 90 days from the date of its termination or cancellation,\" in order to comply with the requirements set forth in paragraph 6 of Resolution of the Cabinet of Ministers of Ukraine No. 39 dated January 15, 2026, \"Certain Issues of Overcoming the Consequences of a State-Level Emergency in Electric Power Systems,\" as amended by Resolution of the Cabinet of Ministers of Ukraine No. 43 dated January 17, 2026",
+   "title_en": "Subparagraph 11 of paragraph 19",
+   "description_uk": "Зміни обсягів закупівлі, ціни та інших умов договору про закупівлю на постачання електричної енергії, чинного на дату набрання чинності постановою Кабінету Міністрів України від 17 січня 2026 р. № 44 \"Про внесення зміни до пункту 19 особливостей здійснення публічних закупівель товарів, робіт і послуг для замовників, передбачених Законом України \"Про публічні закупівлі\", на період дії правового режиму воєнного стану в Україні та протягом 90 днів з дня його припинення або скасування\", для виконання вимог, визначених пунктом 6 постанови Кабінету Міністрів України від 15 січня 2026 р. № 39 \"Деякі питання подолання наслідків надзвичайної ситуації державного рівня в електроенергетичних системах\", - із змінами, внесеними постановою Кабінету Міністрів України від 17 січня 2026 р. № 43",
+   "title_uk": "Підпункт 11 пункту 19",
+   "uri": "https://zakon.rada.gov.ua/laws/show/1178-2022-%D0%BF/conv#n426",
+   "scheme": "DECREE1178"
+  }
+ },
+ "milestones": [
+  {
+   "id": "95234cdbbba34fd5bec14dda9162b94d",
+   "title": "signingTheContract",
+   "description": "до 30.11.2026",
+   "type": "delivery",
+   "code": "standard",
+   "percentage": 100.0,
+   "duration": {
+    "days": 50,
+    "type": "calendar"
+   },
+   "sequenceNumber": 1
+  },
+  {
+   "id": "92ee7b81e1b64ffeb5f0b50322147d38",
+   "title": "deliveryOfGoods",
+   "description": "",
+   "type": "financing",
+   "code": "postpayment",
+   "percentage": 100.0,
+   "duration": {
+    "days": 10,
+    "type": "calendar"
+   },
+   "sequenceNumber": 2
+  }
+ ],
+ "procurementMethodType": "priceQuotation",
+ "awardCriteria": "lowestCost",
+ "status": "complete",
+ "agreement": {
+  "id": "e534226dfd8f48f0aa5e1adc6ecdd7e0"
+ },
+ "value": {
+  "amount": 15575000.0,
+  "currency": "UAH",
+  "valueAddedTaxIncluded": false
+ },
+ "tenderPeriod": {
+  "startDate": "2026-10-01T15:55:26.090112+03:00",
+  "endDate": "2026-10-06T08:00:00+03:00"
+ },
+ "procuringEntity": {
+  "name": "Військова частина А7049",
+  "identifier": {
+   "scheme": "UA-EDR",
+   "id": "26623342",
+   "legalName": "Військова частина А7049"
+  },
+  "address": {
+   "countryName": "Україна"
+  },
+  "kind": "defense"
+ },
+ "items": [
+  {
+   "category": "34710000-259894-40996564",
+   "id": "84a2b3f58f8d4378b90c26f695509bb9",
+   "description": "Квадрокоптери",
+   "quantity": 89.0,
+   "classification": {
+    "description": "Вертольоти, літаки, космічні та інші літальні апарати з двигуном",
+    "scheme": "ДК021",
+    "id": "34710000-7"
+   },
+   "deliveryDate": {
+    "endDate": "2026-11-30T00:00:00+02:00"
+   },
+   "deliveryAddress": {
+    "region": "Дніпропетровська область",
+    "countryName": "Україна"
+   },
+   "unit": {
+    "name": "штука",
+    "code": "H87"
+   }
+  }
+ ],
+ "criteria": [
+  {
+   "id": "f89c3d3f9c044191a9c97cda0e81d04b",
+   "description": "Учасник або кінцевий бенефіціарний власник учасника, член або учасник (акціонер) юридичної особи - учасника є особою, до якої застосовано санкцію у вигляді заборони на здійснення у неї публічних закупівель товарів, робіт і послуг згідно із Законом України \"Про санкції\", або учасник є громадянином Російської Федерації/Республіки Білорусь/Ісламської Республіки Іран (крім того, що проживає на території України на законних підставах); юридичною особою, створеною та зареєстрованою відповідно до законодавства Російської Федерації/Республіки Білорусь/Ісламської Республіки Іран; юридичною особою, створеною та зареєстрованою відповідно до законодавства України, кінцевим бенефіціарним власником, членом або учасником (акціонером), що має частку в статутному капіталі 10 і більше відсотків (далі - активи), якої є Російська Федерація/Республіка Білорусь/Ісламська Республіка Іран, громадянин Російської Федерації/Республіки Білорусь/Ісламської Республіки Іран (крім того, що проживає на території України на законних підставах), або юридичною особою, утвореною та зареєстрованою відповідно до законодавства Російської Федерації/Республіки Білорусь/Ісламської Республіки Іран, крім випадків, коли активи в установленому законодавством порядку передані в управління АРМА або пропонує товар походженням з Російської Федерації/Республіки Білорусь/Ісламської Республіки Іран",
+   "source": "tenderer",
+   "relatesTo": "tender",
+   "classification": {
+    "scheme": "DECREE822",
+    "id": "CRITERION.EXCLUSION.CONVICTIONS.TERRORIST_OFFENCES"
+   },
+   "title": "Вчинення правопорушень, повʼязаних із застосуванням санкцій",
+   "legislation": [
+    {
+     "version": "2026-01-26",
+     "identifier": {
+      "id": "822",
+      "legalName": "Постанова про затвердження Порядку формування та використання електронного каталогу",
+      "uri": "https://zakon.rada.gov.ua/laws/show/822-2020-%D0%BF#n130"
+     },
+     "type": "NATIONAL_LEGISLATION",
+     "article": "40.6"
+    },
+    {
+     "version": "2026-01-26",
+     "identifier": {
+      "id": "822",
+      "legalName": "Постанова про затвердження Порядку формування та використання електронного каталогу",
+      "uri": "https://zakon.rada.gov.ua/laws/show/822-2020-%D0%BF#n130"
+     },
+     "type": "NATIONAL_LEGISLATION",
+     "article": "40.13"
+    },
+    {
+     "version": "2026-01-26",
+     "identifier": {
+      "id": "822",
+      "legalName": "Постанова про затвердження Порядку формування та використання електронного каталогу",
+      "uri": "https://zakon.rada.gov.ua/laws/show/822-2020-%D0%BF#n165"
+     },
+     "type": "NATIONAL_LEGISLATION",
+     "article": "57"
+    }
+   ],
+   "requirementGroups": [
+    {
+     "id": "4a43bc20c13548ff9b690cf05f63de97",
+     "description": "Підтверджується, що",
+     "requirements": [
+      {
+       "id": "c9bc444125054a699d31abad46364506",
+       "title": "Учасник або кінцевий бенефіціарний власник учасника, член або учасник (акціонер) юридичної особи - учасника не є особою, до якої застосовано санкцію у вигляді заборони на здійснення у неї публічних закупівель товарів, робіт і послуг згідно із Законом України \"Про санкції\"",
+       "dataType": "boolean",
+       "status": "active",
+       "expectedValue": true,
+       "datePublished": "2026-10-01T15:55:08.627268+03:00"
+      },
+      {
+       "id": "281a7a5cb1724964bcb71598536d633e",
+       "title": "Учасник процедури закупівлі не є юридичною особою, утвореною та зареєстрованою відповідно до законодавства України, кінцевим бенефіціарним власником, членом або учасником (акціонером), що має частку в статутному капіталі 10 і більше відсотків (далі - активи), якої є Російська Федерація/Республіка Білорусь/Ісламська Республіка Іран, громадянин Російської Федерації/Республіки Білорусь/Ісламської Республіки Іран (крім того, що проживає на території України на законних підставах), або юридичною особою, утвореною та зареєстрованою відповідно до законодавства Російської Федерації/Республіки Білорусь/Ісламської Республіки Іран, крім випадків, коли активи в установленому законодавством порядку передані в управління АРМА",
+       "dataType": "boolean",
+       "status": "active",
+       "expectedValue": true,
+       "datePublished": "2026-10-01T15:55:08.627268+03:00"
+      },
+      {
+       "id": "0fdfe7c44b254a63b27c025b4be29621",
+       "title": "Країною-походження товару не є Російська Федерація/Республіка Білорусь/Ісламська Республіка Іран",
+       "dataType": "boolean",
+       "status": "active",
+       "expectedValue": true,
+       "datePublished": "2026-10-01T15:55:08.627268+03:00"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "e09c19c099d0404db6d22da7ac638a8e",
+   "description": "Замовник має право відхилити пропозицію постачальника, що за результатами оцінки визначена економічно вигідною, якщо постачальник не виконав свої зобов’язання за раніше укладеним договором із цим самим замовником, що призвело до його дострокового розірвання, і було застосовано санкції у вигляді штрафів та/або відшкодування збитків протягом трьох років з дати дострокового розірвання такого договору, що підтверджується рішенням суду",
+   "source": "winner",
+   "relatesTo": "tender",
+   "classification": {
+    "scheme": "DECREE822",
+    "id": "CRITERION.EXCLUSION.CONFLICT_OF_INTEREST.EARLY_TERMINATION"
+   },
+   "title": "Наявність не виконаних зобов'язань за раніше укладеним договором",
+   "legislation": [
+    {
+     "version": "2026-01-26",
+     "identifier": {
+      "id": "822",
+      "legalName": "Постанова про затвердження Порядку формування та використання електронного каталогу",
+      "uri": "https://zakon.rada.gov.ua/laws/show/822-2020-%D0%BF#n180"
+     },
+     "type": "NATIONAL_LEGISLATION",
+     "article": "62"
+    }
+   ],
+   "requirementGroups": [
+    {
+     "id": "6861d6b41c8a4e8587dc1aca0c668574",
+     "description": "При відсутності не виконаних зобов'язань за раніше укладеним договором підтверджується, що",
+     "requirements": [
+      {
+       "id": "9ef27a24d89d4d769e49ae583eccec4b",
+       "title": "Учасник процедури закупівлі не мав з цим самим замовником договорів достроково розірваних через невиконання (учасником) своїх зобов'язань через що було застосовано санкції у вигляді штрафів та/або відшкодування збитків",
+       "dataType": "boolean",
+       "status": "active",
+       "expectedValue": true,
+       "datePublished": "2026-10-01T15:55:08.627268+03:00"
+      }
+     ]
+    },
+    {
+     "id": "97aa5b7e72e04a6bb8cc99b42a1c20a4",
+     "description": "При наявності не виконаних зобов'язань за раніше укладеним договором підтверджується, що",
+     "requirements": [
+      {
+       "id": "fe10ba1fcf3341dd86273045f8ba7ebb",
+       "title": "Учасник процедури закупівлі вжив заходів для доведення своєї надійності, а саме: сплатив або зобовʼязався сплатити відповідні зобовʼязання та відшкодування завданих збитків",
+       "dataType": "boolean",
+       "status": "active",
+       "expectedValue": true,
+       "datePublished": "2026-10-01T15:55:08.627268+03:00"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "4e5deab0ea3e476fbaae908a8c9e66de",
+   "description": "Технічна специфікація повинна містити опис усіх необхідних характеристик товарів, робіт або послуг, що закуповуються, у тому числі їх технічні, функціональні та якісні характеристики. Характеристики товарів, робіт або послуг можуть містити опис конкретного технологічного процесу або технології виробництва чи порядку постачання товару (товарів), виконання необхідних робіт, надання послуги (послуг)",
+   "source": "tenderer",
+   "relatesTo": "item",
+   "relatedItem": "84a2b3f58f8d4378b90c26f695509bb9",
+   "classification": {
+    "scheme": "ESPD211",
+    "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+   },
+   "title": "Технічні, якісні та кількісні характеристики предмета закупівлі",
+   "legislation": [
+    {
+     "version": "2024-04-19",
+     "identifier": {
+      "id": "922-VIII",
+      "legalName": "Закон України \"Про публічні закупівлі\"",
+      "uri": "https://zakon.rada.gov.ua/laws/show/922-19#n1398"
+     },
+     "type": "NATIONAL_LEGISLATION"
+    },
+    {
+     "version": "2024-04-19",
+     "identifier": {
+      "id": "922-VIII",
+      "legalName": "Закон України \"Про публічні закупівлі\"",
+      "uri": "https://zakon.rada.gov.ua/laws/show/922-19#n1426"
+     },
+     "type": "NATIONAL_LEGISLATION"
+    },
+    {
+     "version": "2023-10-31",
+     "identifier": {
+      "id": "1135-2023-п",
+      "legalName": "Про внесення змін до постанов Кабінету Міністрів України від 14 вересня 2020 р. № 822 і від 12 жовтня 2022 р. № 1178",
+      "uri": "https://zakon.rada.gov.ua/laws/show/1135-2023-%D0%BF#n24"
+     },
+     "type": "NATIONAL_LEGISLATION"
+    }
+   ],
+   "requirementGroups": [
+    {
+     "id": "631a3e2a64fc46d0a9f8af4e698ffee4",
+     "description": "Підтверджується, що",
+     "requirements": [
+      {
+       "id": "48ca98cb6e0b4605a23840edb25682a3",
+       "title": "Бренд",
+       "dataType": "string",
+       "status": "active",
+       "expectedValues": [
+        "DJI"
+       ],
+       "expectedMinItems": 1,
+       "expectedMaxItems": 1,
+       "datePublished": "2026-10-01T15:55:08.627268+03:00"
+      },
+      {
+       "id": "c36f71f044b34800bb6e34e045ccf41f",
+       "title": "Модель",
+       "dataType": "string",
+       "status": "active",
+       "expectedValues": [
+        "Matrice 4T"
+       ],
+       "expectedMinItems": 1,
+       "expectedMaxItems": 1,
+       "datePublished": "2026-10-01T15:55:08.627268+03:00"
+      },
+      {
+       "id": "825c01263cff45058f0b98ff545e2946",
+       "title": "Ємність акумулятора",
+       "dataType": "integer",
+       "status": "active",
+       "unit": {
+        "code": "4K",
+        "name": "міліампер"
+       },
+       "minValue": 6741,
+       "maxValue": 6741,
+       "datePublished": "2026-10-01T15:55:08.627268+03:00"
+      },
+      {
+       "id": "a2ddaad046454f56a35b0b80f07c95d8",
+       "title": "Тип двигуна",
+       "dataType": "string",
+       "status": "active",
+       "expectedValues": [
+        "електродвигун"
+       ],
+       "expectedMinItems": 1,
+       "expectedMaxItems": 1,
+       "datePublished": "2026-10-01T15:55:08.627268+03:00"
+      },
+      {
+       "id": "f5c76e0dba254202bc1dce0a6e47ac8f",
+       "title": "Максимальна висота польоту",
+       "dataType": "integer",
+       "status": "active",
+       "unit": {
+        "code": "MTR",
+        "name": "метр"
+       },
+       "minValue": 6000,
+       "maxValue": 6000,
+       "datePublished": "2026-10-01T15:55:08.627268+03:00"
+      },
+      {
+       "id": "a3238165c7a44672a51eaacdfd7b99c2",
+       "title": "Час польоту",
+       "dataType": "integer",
+       "status": "active",
+       "unit": {
+        "code": "MIN",
+        "name": "хвилина"
+       },
+       "minValue": 49,
+       "maxValue": 49,
+       "datePublished": "2026-10-01T15:55:08.627268+03:00"
+      },
+      {
+       "id": "e96f0702283442ddaf6e4a9373e65da7",
+       "title": "Акумуляторів у комплекті",
+       "dataType": "integer",
+       "status": "active",
+       "unit": {
+        "code": "H87",
+        "name": "штука"
+       },
+       "minValue": 1,
+       "maxValue": 1,
+       "datePublished": "2026-10-01T15:55:08.627268+03:00"
+      },
+      {
+       "id": "1413974e1978402fbc174a2794774b0f",
+       "title": "Тепловізор",
+       "dataType": "boolean",
+       "status": "active",
+       "expectedValue": true,
+       "datePublished": "2026-10-01T15:55:08.627268+03:00"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "noticePublicationDate": "2026-10-01T15:55:26.090112+03:00",
+ "bids": [
+  {
+   "id": "c5caa7c20f914454add286f7ef575a63",
+   "date": "2026-10-01T16:26:08.850455+03:00",
+   "documents": [
+    {
+     "confidentiality": "public",
+     "documentType": "proposal",
+     "description": "SHA1:33d6015e07627278dbf545c8b7e4cf5da82abba6;SHA2-384:73dbf4578981614c3ab4082917a76cdbd70b5fe71365b5792b69c890aa6cf679c4e479441c0c42c272643cd4609be51f;Antivirus: ESET Antivirus,fids:b4e785270e004c66ac67bc747dd58ef6:fide",
+     "id": "4af1e372b2bb4c4b8dd72936d25b6f50",
+     "datePublished": "2026-10-01T16:26:08.427095+03:00",
+     "hash": "md5:58dc8d0f57d235e8911f4e5a388f57f3",
+     "title": "sign.p7s",
+     "format": "application/pkcs7-signature",
+     "url": "https://public-docs.prozorro.gov.ua/get/e0feadfd61574bedaf1a069b0d258e66?Signature=uWR00nA6%2Fz8vlgp25yBWa7NQ4RK0WkeQxD%2FQEaIlnb5Sge8LKtfbFe4nk1YjFPC3%2FqeuaiBg0Tvyfr6B%2B9p4CA%3D%3D&KeyID=52462340",
+     "documentOf": "tender",
+     "dateModified": "2026-10-01T16:26:08.427095+03:00",
+     "language": "uk"
+    }
+   ],
+   "tenderers": [
+    {
+     "name": "ТОВ \"ХАБИКС\"",
+     "identifier": {
+      "scheme": "UA-EDR",
+      "id": "45359809",
+      "legalName": "ТОВ \"ХАБИКС\""
+     },
+     "address": {
+      "streetAddress": "Олександра Свіща, 83А, оф. 706",
+      "locality": "місто Одеса",
+      "region": "Одеська область",
+      "postalCode": "65005",
+      "countryName": "Україна"
+     },
+     "scale": "mid"
+    }
+   ],
+   "value": {
+    "amount": 15299100.0,
+    "currency": "UAH",
+    "valueAddedTaxIncluded": false
+   },
+   "requirementResponses": [
+    {
+     "requirement": {
+      "id": "9ef27a24d89d4d769e49ae583eccec4b",
+      "title": "Учасник процедури закупівлі не мав з цим самим замовником договорів достроково розірваних через невиконання (учасником) своїх зобов'язань через що було застосовано санкції у вигляді штрафів та/або відшкодування збитків"
+     },
+     "value": true,
+     "id": "e0b00906eabe4f2499ebe686281bcef4",
+     "classification": {
+      "scheme": "DECREE822",
+      "id": "CRITERION.EXCLUSION.CONFLICT_OF_INTEREST.EARLY_TERMINATION"
+     }
+    },
+    {
+     "requirement": {
+      "id": "c9bc444125054a699d31abad46364506",
+      "title": "Учасник або кінцевий бенефіціарний власник учасника, член або учасник (акціонер) юридичної особи - учасника не є особою, до якої застосовано санкцію у вигляді заборони на здійснення у неї публічних закупівель товарів, робіт і послуг згідно із Законом України \"Про санкції\""
+     },
+     "value": true,
+     "id": "59d21f61eb024c1d9800ea76a8f3a30e",
+     "classification": {
+      "scheme": "DECREE822",
+      "id": "CRITERION.EXCLUSION.CONVICTIONS.TERRORIST_OFFENCES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "281a7a5cb1724964bcb71598536d633e",
+      "title": "Учасник процедури закупівлі не є юридичною особою, утвореною та зареєстрованою відповідно до законодавства України, кінцевим бенефіціарним власником, членом або учасником (акціонером), що має частку в статутному капіталі 10 і більше відсотків (далі - активи), якої є Російська Федерація/Республіка Білорусь/Ісламська Республіка Іран, громадянин Російської Федерації/Республіки Білорусь/Ісламської Республіки Іран (крім того, що проживає на території України на законних підставах), або юридичною особою, утвореною та зареєстрованою відповідно до законодавства Російської Федерації/Республіки Білорусь/Ісламської Республіки Іран, крім випадків, коли активи в установленому законодавством порядку передані в управління АРМА"
+     },
+     "value": true,
+     "id": "8698b99f1e7b4614b4ce9799d2ce2a05",
+     "classification": {
+      "scheme": "DECREE822",
+      "id": "CRITERION.EXCLUSION.CONVICTIONS.TERRORIST_OFFENCES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "0fdfe7c44b254a63b27c025b4be29621",
+      "title": "Країною-походження товару не є Російська Федерація/Республіка Білорусь/Ісламська Республіка Іран"
+     },
+     "value": true,
+     "id": "febca58e06c6484ba3100e8441c4c2b0",
+     "classification": {
+      "scheme": "DECREE822",
+      "id": "CRITERION.EXCLUSION.CONVICTIONS.TERRORIST_OFFENCES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "48ca98cb6e0b4605a23840edb25682a3",
+      "title": "Бренд"
+     },
+     "values": [
+      "DJI"
+     ],
+     "id": "b6e88103f208425db4122aa59e973e5d",
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "c36f71f044b34800bb6e34e045ccf41f",
+      "title": "Модель"
+     },
+     "values": [
+      "Matrice 4T"
+     ],
+     "id": "47f1cc88b7884ea39de75bee93e8cc21",
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "825c01263cff45058f0b98ff545e2946",
+      "title": "Ємність акумулятора"
+     },
+     "value": 6741,
+     "id": "b2adf055cf054f27ab224ca768af7a2f",
+     "unit": {
+      "code": "4K",
+      "name": "міліампер"
+     },
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "a2ddaad046454f56a35b0b80f07c95d8",
+      "title": "Тип двигуна"
+     },
+     "values": [
+      "електродвигун"
+     ],
+     "id": "21762278c11843919e983504b0d42f34",
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "f5c76e0dba254202bc1dce0a6e47ac8f",
+      "title": "Максимальна висота польоту"
+     },
+     "value": 6000,
+     "id": "30c2c5e62e69487f9e4f46ed8403debb",
+     "unit": {
+      "code": "MTR",
+      "name": "метр"
+     },
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "a3238165c7a44672a51eaacdfd7b99c2",
+      "title": "Час польоту"
+     },
+     "value": 49,
+     "id": "05ac8de7631744e4ba5b05e2179f9398",
+     "unit": {
+      "code": "MIN",
+      "name": "хвилина"
+     },
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "e96f0702283442ddaf6e4a9373e65da7",
+      "title": "Акумуляторів у комплекті"
+     },
+     "value": 1,
+     "id": "678002d9eb2e4ac485e2f7a2f95881f9",
+     "unit": {
+      "code": "H87",
+      "name": "штука"
+     },
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "1413974e1978402fbc174a2794774b0f",
+      "title": "Тепловізор"
+     },
+     "value": true,
+     "id": "5d1dca6cbe4c48f6b69b00008c4a3756",
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    }
+   ],
+   "status": "active",
+   "items": [
+    {
+     "id": "84a2b3f58f8d4378b90c26f695509bb9",
+     "description": "Квадрокоптер DJI Matrice 4T (CP.EN.00000546.02)",
+     "unit": {
+      "name": "штука",
+      "value": {
+       "amount": 171900.0,
+       "currency": "UAH",
+       "valueAddedTaxIncluded": false
+      },
+      "code": "H87"
+     },
+     "quantity": 89.0,
+     "product": "f696ff1e41974a82a48439ec3984c406"
+    }
+   ],
+   "submissionDate": "2026-10-01T16:26:08.850455+03:00",
+   "initialValue": {
+    "amount": 15299100.0,
+    "currency": "UAH",
+    "valueAddedTaxIncluded": false
+   }
+  },
+  {
+   "requirementResponses": [
+    {
+     "requirement": {
+      "id": "c9bc444125054a699d31abad46364506",
+      "title": "Учасник або кінцевий бенефіціарний власник учасника, член або учасник (акціонер) юридичної особи - учасника не є особою, до якої застосовано санкцію у вигляді заборони на здійснення у неї публічних закупівель товарів, робіт і послуг згідно із Законом України \"Про санкції\""
+     },
+     "value": true,
+     "id": "0a6526486dc04187af84c3456be9545c",
+     "classification": {
+      "scheme": "DECREE822",
+      "id": "CRITERION.EXCLUSION.CONVICTIONS.TERRORIST_OFFENCES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "281a7a5cb1724964bcb71598536d633e",
+      "title": "Учасник процедури закупівлі не є юридичною особою, утвореною та зареєстрованою відповідно до законодавства України, кінцевим бенефіціарним власником, членом або учасником (акціонером), що має частку в статутному капіталі 10 і більше відсотків (далі - активи), якої є Російська Федерація/Республіка Білорусь/Ісламська Республіка Іран, громадянин Російської Федерації/Республіки Білорусь/Ісламської Республіки Іран (крім того, що проживає на території України на законних підставах), або юридичною особою, утвореною та зареєстрованою відповідно до законодавства Російської Федерації/Республіки Білорусь/Ісламської Республіки Іран, крім випадків, коли активи в установленому законодавством порядку передані в управління АРМА"
+     },
+     "value": true,
+     "id": "5d79b6ae878b4c349d1838de75d6dfb5",
+     "classification": {
+      "scheme": "DECREE822",
+      "id": "CRITERION.EXCLUSION.CONVICTIONS.TERRORIST_OFFENCES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "0fdfe7c44b254a63b27c025b4be29621",
+      "title": "Країною-походження товару не є Російська Федерація/Республіка Білорусь/Ісламська Республіка Іран"
+     },
+     "value": true,
+     "id": "731327f0f3a943d3a631a023f6975368",
+     "classification": {
+      "scheme": "DECREE822",
+      "id": "CRITERION.EXCLUSION.CONVICTIONS.TERRORIST_OFFENCES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "9ef27a24d89d4d769e49ae583eccec4b",
+      "title": "Учасник процедури закупівлі не мав з цим самим замовником договорів достроково розірваних через невиконання (учасником) своїх зобов'язань через що було застосовано санкції у вигляді штрафів та/або відшкодування збитків"
+     },
+     "value": true,
+     "id": "342f2c8d4adf454fa977486728a76e71",
+     "classification": {
+      "scheme": "DECREE822",
+      "id": "CRITERION.EXCLUSION.CONFLICT_OF_INTEREST.EARLY_TERMINATION"
+     }
+    },
+    {
+     "requirement": {
+      "id": "48ca98cb6e0b4605a23840edb25682a3",
+      "title": "Бренд"
+     },
+     "values": [
+      "DJI"
+     ],
+     "id": "c494c677d66e4bf5817408df43d990ed",
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "c36f71f044b34800bb6e34e045ccf41f",
+      "title": "Модель"
+     },
+     "values": [
+      "Matrice 4T"
+     ],
+     "id": "138e7fcdd68149f6b01020619ef1d86f",
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "825c01263cff45058f0b98ff545e2946",
+      "title": "Ємність акумулятора"
+     },
+     "value": 6741,
+     "id": "afd261b5cfd945309f7838ff2ec6b824",
+     "unit": {
+      "code": "4K",
+      "name": "міліампер"
+     },
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "a2ddaad046454f56a35b0b80f07c95d8",
+      "title": "Тип двигуна"
+     },
+     "values": [
+      "електродвигун"
+     ],
+     "id": "e480827353fc4c37ace195d3d705e618",
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "f5c76e0dba254202bc1dce0a6e47ac8f",
+      "title": "Максимальна висота польоту"
+     },
+     "value": 6000,
+     "id": "949e13fead8c4ef1822aa05962f19cf2",
+     "unit": {
+      "code": "MTR",
+      "name": "метр"
+     },
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "a3238165c7a44672a51eaacdfd7b99c2",
+      "title": "Час польоту"
+     },
+     "value": 49,
+     "id": "f7abcd2456f844a39ef0ae58a1ecc4d1",
+     "unit": {
+      "code": "MIN",
+      "name": "хвилина"
+     },
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "e96f0702283442ddaf6e4a9373e65da7",
+      "title": "Акумуляторів у комплекті"
+     },
+     "value": 1,
+     "id": "b40ada32b98f4547b9d7bf8c36fb9b97",
+     "unit": {
+      "code": "H87",
+      "name": "штука"
+     },
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "1413974e1978402fbc174a2794774b0f",
+      "title": "Тепловізор"
+     },
+     "value": true,
+     "id": "af214bed151445958ece360d9e9c698b",
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    }
+   ],
+   "items": [
+    {
+     "id": "84a2b3f58f8d4378b90c26f695509bb9",
+     "description": "Квадрокоптер DJI Matrice 4T (CP.EN.00000546.02)",
+     "unit": {
+      "name": "штука",
+      "value": {
+       "amount": 174800.0,
+       "currency": "UAH",
+       "valueAddedTaxIncluded": false
+      },
+      "code": "H87"
+     },
+     "quantity": 89.0,
+     "product": "f696ff1e41974a82a48439ec3984c406"
+    }
+   ],
+   "value": {
+    "amount": 15557200.0,
+    "currency": "UAH",
+    "valueAddedTaxIncluded": false
+   },
+   "tenderers": [
+    {
+     "name": "ТОВАРИСТВО З ОБМЕЖЕНОЮ ВІДПОВІДАЛЬНІСТЮ \"ІНКАС ЮА\"",
+     "identifier": {
+      "scheme": "UA-EDR",
+      "id": "44975155",
+      "legalName": "ТОВАРИСТВО З ОБМЕЖЕНОЮ ВІДПОВІДАЛЬНІСТЮ \"ІНКАС ЮА\"",
+      "uri": "https://inkas.ua"
+     },
+     "address": {
+      "countryName": "Україна"
+     },
+     "scale": "mid"
+    }
+   ],
+   "status": "active",
+   "id": "3f66a78818834096aae99a4b7525375a",
+   "date": "2026-10-02T16:49:48.899664+03:00",
+   "documents": [
+    {
+     "confidentiality": "public",
+     "documentType": "proposal",
+     "id": "36eccc4615b84271b1207ddbbf1ea9a7",
+     "datePublished": "2026-10-02T16:49:48.685879+03:00",
+     "hash": "md5:fb3891a30097e173e511f43f156266ba",
+     "title": "sign.p7s",
+     "format": "application/pkcs7-signature",
+     "url": "https://public-docs.prozorro.gov.ua/get/3252419b8d9244abb383b2297a05ecc8?Signature=1Rbo%2BqHggwMpvIyUQSsDAuyP7WiD%2FxA8InaOXGgAJsS95NBo3qo5odkRwmv37BvSU8z8KZJ88JuY8ikQBoYcDg%3D%3D&KeyID=52462340",
+     "documentOf": "tender",
+     "dateModified": "2026-10-02T16:49:48.685879+03:00",
+     "language": "uk"
+    }
+   ],
+   "submissionDate": "2026-10-02T16:49:48.899664+03:00",
+   "initialValue": {
+    "amount": 15557200.0,
+    "currency": "UAH",
+    "valueAddedTaxIncluded": false
+   }
+  },
+  {
+   "requirementResponses": [
+    {
+     "requirement": {
+      "id": "48ca98cb6e0b4605a23840edb25682a3",
+      "title": "Бренд"
+     },
+     "values": [
+      "DJI"
+     ],
+     "id": "e6ec8886fc414579a25f505700a47b66",
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "c36f71f044b34800bb6e34e045ccf41f",
+      "title": "Модель"
+     },
+     "values": [
+      "Matrice 4T"
+     ],
+     "id": "a8d2b0d123984172becaba08c68c24ac",
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "a2ddaad046454f56a35b0b80f07c95d8",
+      "title": "Тип двигуна"
+     },
+     "values": [
+      "електродвигун"
+     ],
+     "id": "02768678dc3f4db99d4bedf255bbe963",
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "c9bc444125054a699d31abad46364506",
+      "title": "Учасник або кінцевий бенефіціарний власник учасника, член або учасник (акціонер) юридичної особи - учасника не є особою, до якої застосовано санкцію у вигляді заборони на здійснення у неї публічних закупівель товарів, робіт і послуг згідно із Законом України \"Про санкції\""
+     },
+     "value": true,
+     "id": "e0f99eb8a7e84e6084c5b148506a8318",
+     "classification": {
+      "scheme": "DECREE822",
+      "id": "CRITERION.EXCLUSION.CONVICTIONS.TERRORIST_OFFENCES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "281a7a5cb1724964bcb71598536d633e",
+      "title": "Учасник процедури закупівлі не є юридичною особою, утвореною та зареєстрованою відповідно до законодавства України, кінцевим бенефіціарним власником, членом або учасником (акціонером), що має частку в статутному капіталі 10 і більше відсотків (далі - активи), якої є Російська Федерація/Республіка Білорусь/Ісламська Республіка Іран, громадянин Російської Федерації/Республіки Білорусь/Ісламської Республіки Іран (крім того, що проживає на території України на законних підставах), або юридичною особою, утвореною та зареєстрованою відповідно до законодавства Російської Федерації/Республіки Білорусь/Ісламської Республіки Іран, крім випадків, коли активи в установленому законодавством порядку передані в управління АРМА"
+     },
+     "value": true,
+     "id": "af18bb7f95744c3586a7de15b794c08a",
+     "classification": {
+      "scheme": "DECREE822",
+      "id": "CRITERION.EXCLUSION.CONVICTIONS.TERRORIST_OFFENCES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "0fdfe7c44b254a63b27c025b4be29621",
+      "title": "Країною-походження товару не є Російська Федерація/Республіка Білорусь/Ісламська Республіка Іран"
+     },
+     "value": true,
+     "id": "a12b675a8f744c92a641ce9102fd73a1",
+     "classification": {
+      "scheme": "DECREE822",
+      "id": "CRITERION.EXCLUSION.CONVICTIONS.TERRORIST_OFFENCES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "9ef27a24d89d4d769e49ae583eccec4b",
+      "title": "Учасник процедури закупівлі не мав з цим самим замовником договорів достроково розірваних через невиконання (учасником) своїх зобов'язань через що було застосовано санкції у вигляді штрафів та/або відшкодування збитків"
+     },
+     "value": true,
+     "id": "0dc8c5b3e78d4c358fee3baf5b26d1ba",
+     "classification": {
+      "scheme": "DECREE822",
+      "id": "CRITERION.EXCLUSION.CONFLICT_OF_INTEREST.EARLY_TERMINATION"
+     }
+    },
+    {
+     "requirement": {
+      "id": "825c01263cff45058f0b98ff545e2946",
+      "title": "Ємність акумулятора"
+     },
+     "value": 6741,
+     "id": "f97f3d2ecf5a4b3891f03657aa411ad5",
+     "unit": {
+      "code": "4K",
+      "name": "міліампер"
+     },
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "a3238165c7a44672a51eaacdfd7b99c2",
+      "title": "Час польоту"
+     },
+     "value": 49,
+     "id": "c356319c907e41df9a5074a8a9505859",
+     "unit": {
+      "code": "MIN",
+      "name": "хвилина"
+     },
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "e96f0702283442ddaf6e4a9373e65da7",
+      "title": "Акумуляторів у комплекті"
+     },
+     "value": 1,
+     "id": "cae20a48df554245b13ed9cdee685349",
+     "unit": {
+      "code": "H87",
+      "name": "штука"
+     },
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "1413974e1978402fbc174a2794774b0f",
+      "title": "Тепловізор"
+     },
+     "value": true,
+     "id": "fd2c715170b241e7996700728a9ce0d8",
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "f5c76e0dba254202bc1dce0a6e47ac8f",
+      "title": "Максимальна висота польоту"
+     },
+     "value": 6000,
+     "id": "b33cf3e14c8d451db733d28dcf376395",
+     "unit": {
+      "code": "MTR",
+      "name": "метр"
+     },
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    }
+   ],
+   "items": [
+    {
+     "id": "84a2b3f58f8d4378b90c26f695509bb9",
+     "description": "Квадрокоптер DJI Matrice 4T (CP.EN.00000546.02)",
+     "unit": {
+      "name": "штука",
+      "value": {
+       "amount": 172222.0,
+       "currency": "UAH",
+       "valueAddedTaxIncluded": false
+      },
+      "code": "H87"
+     },
+     "quantity": 89.0,
+     "product": "f696ff1e41974a82a48439ec3984c406"
+    }
+   ],
+   "value": {
+    "amount": 15327758.0,
+    "currency": "UAH",
+    "valueAddedTaxIncluded": false
+   },
+   "tenderers": [
+    {
+     "name": "ТОВАРИСТВО З ОБМЕЖЕНОЮ ВІДПОВІДАЛЬНІСТЮ «НЕКСОРА ТРЕЙД»",
+     "identifier": {
+      "scheme": "UA-EDR",
+      "id": "45837082",
+      "legalName": "ТОВАРИСТВО З ОБМЕЖЕНОЮ ВІДПОВІДАЛЬНІСТЮ «НЕКСОРА ТРЕЙД»"
+     },
+     "address": {
+      "streetAddress": "вулиця Бережанська, будинок 4 офіс 613",
+      "locality": "",
+      "region": "м. Київ",
+      "postalCode": "04082",
+      "countryName": "Україна"
+     },
+     "scale": "micro"
+    }
+   ],
+   "status": "active",
+   "id": "3a522d16394c4a7ba069b265a294ce67",
+   "date": "2026-10-05T18:48:01.997524+03:00",
+   "documents": [
+    {
+     "confidentiality": "public",
+     "documentType": "proposal",
+     "id": "81b7bd5d54674abd8bc32c40ac6af205",
+     "datePublished": "2026-10-05T18:48:01.698835+03:00",
+     "hash": "md5:67a6bf98d8e050c539c863a17704e527",
+     "title": "sign.p7s",
+     "format": "application/pkcs7-signature",
+     "url": "https://public-docs.prozorro.gov.ua/get/f860618ee4c1423bab2db3dcbd217a82?Signature=7OQPCmaLB2n8JIlXZ13X6PEy59KpVqAVs1HM5WrXH4GpBd0UwezCQeLsC36L2M2sXl%2Fv%2Bqm3nnLKpdUICfACBA%3D%3D&KeyID=52462340",
+     "documentOf": "tender",
+     "dateModified": "2026-10-05T18:48:01.698835+03:00",
+     "language": "uk"
+    }
+   ],
+   "submissionDate": "2026-10-05T18:48:01.997524+03:00",
+   "initialValue": {
+    "amount": 15327758.0,
+    "currency": "UAH",
+    "valueAddedTaxIncluded": false
+   }
+  },
+  {
+   "requirementResponses": [
+    {
+     "requirement": {
+      "id": "48ca98cb6e0b4605a23840edb25682a3",
+      "title": "Бренд"
+     },
+     "values": [
+      "DJI"
+     ],
+     "id": "e87c07256c7c456fa0e26ec906603f3c",
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "c36f71f044b34800bb6e34e045ccf41f",
+      "title": "Модель"
+     },
+     "values": [
+      "Matrice 4T"
+     ],
+     "id": "eef5d1354d12476e94cd431ff579e7d9",
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "a2ddaad046454f56a35b0b80f07c95d8",
+      "title": "Тип двигуна"
+     },
+     "values": [
+      "електродвигун"
+     ],
+     "id": "2209de3fcb89466db955ae15e8163db9",
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "825c01263cff45058f0b98ff545e2946",
+      "title": "Ємність акумулятора"
+     },
+     "value": 6741,
+     "id": "a6086973fd5242939ca2fcda12901399",
+     "unit": {
+      "code": "4K",
+      "name": "міліампер"
+     },
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "a3238165c7a44672a51eaacdfd7b99c2",
+      "title": "Час польоту"
+     },
+     "value": 49,
+     "id": "4e2b8b509bcf4e4cb4f398686f26cf77",
+     "unit": {
+      "code": "MIN",
+      "name": "хвилина"
+     },
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "e96f0702283442ddaf6e4a9373e65da7",
+      "title": "Акумуляторів у комплекті"
+     },
+     "value": 1,
+     "id": "27348232e59a432cb7a393dd9f4bcf1c",
+     "unit": {
+      "code": "H87",
+      "name": "штука"
+     },
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "1413974e1978402fbc174a2794774b0f",
+      "title": "Тепловізор"
+     },
+     "value": true,
+     "id": "2f572a8c354848a98f87e705f346fc48",
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "f5c76e0dba254202bc1dce0a6e47ac8f",
+      "title": "Максимальна висота польоту"
+     },
+     "value": 6000,
+     "id": "04aca3ad0bfe4ea78db66d0161682b33",
+     "unit": {
+      "code": "MTR",
+      "name": "метр"
+     },
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "c9bc444125054a699d31abad46364506",
+      "title": "Учасник або кінцевий бенефіціарний власник учасника, член або учасник (акціонер) юридичної особи - учасника не є особою, до якої застосовано санкцію у вигляді заборони на здійснення у неї публічних закупівель товарів, робіт і послуг згідно із Законом України \"Про санкції\""
+     },
+     "value": true,
+     "id": "2a610ff1b8a742abb7702d959588ea05",
+     "classification": {
+      "scheme": "DECREE822",
+      "id": "CRITERION.EXCLUSION.CONVICTIONS.TERRORIST_OFFENCES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "281a7a5cb1724964bcb71598536d633e",
+      "title": "Учасник процедури закупівлі не є юридичною особою, утвореною та зареєстрованою відповідно до законодавства України, кінцевим бенефіціарним власником, членом або учасником (акціонером), що має частку в статутному капіталі 10 і більше відсотків (далі - активи), якої є Російська Федерація/Республіка Білорусь/Ісламська Республіка Іран, громадянин Російської Федерації/Республіки Білорусь/Ісламської Республіки Іран (крім того, що проживає на території України на законних підставах), або юридичною особою, утвореною та зареєстрованою відповідно до законодавства Російської Федерації/Республіки Білорусь/Ісламської Республіки Іран, крім випадків, коли активи в установленому законодавством порядку передані в управління АРМА"
+     },
+     "value": true,
+     "id": "4f4fbd8e09044e1dae9e57025af9ccb6",
+     "classification": {
+      "scheme": "DECREE822",
+      "id": "CRITERION.EXCLUSION.CONVICTIONS.TERRORIST_OFFENCES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "0fdfe7c44b254a63b27c025b4be29621",
+      "title": "Країною-походження товару не є Російська Федерація/Республіка Білорусь/Ісламська Республіка Іран"
+     },
+     "value": true,
+     "id": "75b75c813da24d658ab10401831804c5",
+     "classification": {
+      "scheme": "DECREE822",
+      "id": "CRITERION.EXCLUSION.CONVICTIONS.TERRORIST_OFFENCES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "9ef27a24d89d4d769e49ae583eccec4b",
+      "title": "Учасник процедури закупівлі не мав з цим самим замовником договорів достроково розірваних через невиконання (учасником) своїх зобов'язань через що було застосовано санкції у вигляді штрафів та/або відшкодування збитків"
+     },
+     "value": true,
+     "id": "52d4f94b37d8463f96348c2d3a023542",
+     "classification": {
+      "scheme": "DECREE822",
+      "id": "CRITERION.EXCLUSION.CONFLICT_OF_INTEREST.EARLY_TERMINATION"
+     }
+    }
+   ],
+   "items": [
+    {
+     "id": "84a2b3f58f8d4378b90c26f695509bb9",
+     "description": "Квадрокоптер DJI Matrice 4T (CP.EN.00000546.02)",
+     "unit": {
+      "name": "штука",
+      "value": {
+       "amount": 173488.0,
+       "currency": "UAH",
+       "valueAddedTaxIncluded": false
+      },
+      "code": "H87"
+     },
+     "quantity": 89.0,
+     "product": "f696ff1e41974a82a48439ec3984c406"
+    }
+   ],
+   "value": {
+    "amount": 15440432.0,
+    "currency": "UAH",
+    "valueAddedTaxIncluded": false
+   },
+   "tenderers": [
+    {
+     "name": "ТОВАРИСТВО З ОБМЕЖЕНОЮ ВІДПОВІДАЛЬНІСТЮ \"АМТРІКС\"",
+     "identifier": {
+      "scheme": "UA-EDR",
+      "id": "44963443",
+      "legalName": "ТОВАРИСТВО З ОБМЕЖЕНОЮ ВІДПОВІДАЛЬНІСТЮ \"АМТРІКС\""
+     },
+     "address": {
+      "streetAddress": "вул.Франка Івана (Шевченківський р-н), будинок 18 А",
+      "locality": "",
+      "region": "м. Київ",
+      "postalCode": "01054",
+      "countryName": "Україна"
+     },
+     "scale": "mid"
+    }
+   ],
+   "status": "active",
+   "id": "1460d200a03e48d69026e7c10d8b8c40",
+   "date": "2026-10-05T19:24:09.378347+03:00",
+   "documents": [
+    {
+     "confidentiality": "public",
+     "documentType": "proposal",
+     "id": "cafceda5d0c6423482c84492d42d5b13",
+     "datePublished": "2026-10-05T19:24:09.065945+03:00",
+     "hash": "md5:4c0aa96ab984a79f87c9c57aaebf1567",
+     "title": "sign.p7s",
+     "format": "application/pkcs7-signature",
+     "url": "https://public-docs.prozorro.gov.ua/get/4fb92ff48b754f0e888c4c7947d9bb6f?Signature=uC10ZYOKiZ7tpIabQb7D1g21z2sSL5F8MW7TuPOP5tUr9XwaBtKBUagjsDMlPORpuAwLrX8YSmXdnh8LJhCYBQ%3D%3D&KeyID=52462340",
+     "documentOf": "tender",
+     "dateModified": "2026-10-05T19:24:09.065945+03:00",
+     "language": "uk"
+    }
+   ],
+   "submissionDate": "2026-10-05T19:24:09.378347+03:00",
+   "initialValue": {
+    "amount": 15440432.0,
+    "currency": "UAH",
+    "valueAddedTaxIncluded": false
+   }
+  },
+  {
+   "requirementResponses": [
+    {
+     "requirement": {
+      "id": "9ef27a24d89d4d769e49ae583eccec4b",
+      "title": "Учасник процедури закупівлі не мав з цим самим замовником договорів достроково розірваних через невиконання (учасником) своїх зобов'язань через що було застосовано санкції у вигляді штрафів та/або відшкодування збитків"
+     },
+     "value": true,
+     "id": "3e0b0cadbd5742f49f1f39a2f244deff",
+     "classification": {
+      "scheme": "DECREE822",
+      "id": "CRITERION.EXCLUSION.CONFLICT_OF_INTEREST.EARLY_TERMINATION"
+     }
+    },
+    {
+     "requirement": {
+      "id": "c9bc444125054a699d31abad46364506",
+      "title": "Учасник або кінцевий бенефіціарний власник учасника, член або учасник (акціонер) юридичної особи - учасника не є особою, до якої застосовано санкцію у вигляді заборони на здійснення у неї публічних закупівель товарів, робіт і послуг згідно із Законом України \"Про санкції\""
+     },
+     "value": true,
+     "id": "8e890860196b4d7f801533f41b33d12b",
+     "classification": {
+      "scheme": "DECREE822",
+      "id": "CRITERION.EXCLUSION.CONVICTIONS.TERRORIST_OFFENCES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "281a7a5cb1724964bcb71598536d633e",
+      "title": "Учасник процедури закупівлі не є юридичною особою, утвореною та зареєстрованою відповідно до законодавства України, кінцевим бенефіціарним власником, членом або учасником (акціонером), що має частку в статутному капіталі 10 і більше відсотків (далі - активи), якої є Російська Федерація/Республіка Білорусь/Ісламська Республіка Іран, громадянин Російської Федерації/Республіки Білорусь/Ісламської Республіки Іран (крім того, що проживає на території України на законних підставах), або юридичною особою, утвореною та зареєстрованою відповідно до законодавства Російської Федерації/Республіки Білорусь/Ісламської Республіки Іран, крім випадків, коли активи в установленому законодавством порядку передані в управління АРМА"
+     },
+     "value": true,
+     "id": "3c7bf9081bf94c91bacefa87322eedc9",
+     "classification": {
+      "scheme": "DECREE822",
+      "id": "CRITERION.EXCLUSION.CONVICTIONS.TERRORIST_OFFENCES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "0fdfe7c44b254a63b27c025b4be29621",
+      "title": "Країною-походження товару не є Російська Федерація/Республіка Білорусь/Ісламська Республіка Іран"
+     },
+     "value": true,
+     "id": "03f9b25e0ec04ab1afd05c14d2ea4f82",
+     "classification": {
+      "scheme": "DECREE822",
+      "id": "CRITERION.EXCLUSION.CONVICTIONS.TERRORIST_OFFENCES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "48ca98cb6e0b4605a23840edb25682a3",
+      "title": "Бренд"
+     },
+     "values": [
+      "DJI"
+     ],
+     "id": "560a0349dc354cbd8b0193adbac429f5",
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "c36f71f044b34800bb6e34e045ccf41f",
+      "title": "Модель"
+     },
+     "values": [
+      "Matrice 4T"
+     ],
+     "id": "347cb37f21b145dab677deaf872a1393",
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "825c01263cff45058f0b98ff545e2946",
+      "title": "Ємність акумулятора"
+     },
+     "value": 6741,
+     "id": "d4d998a3e58f4366a6f3305f537ae430",
+     "unit": {
+      "code": "4K",
+      "name": "міліампер"
+     },
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "a2ddaad046454f56a35b0b80f07c95d8",
+      "title": "Тип двигуна"
+     },
+     "values": [
+      "електродвигун"
+     ],
+     "id": "fa6078e50c3540a7aba93bdc9dd0d6ee",
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "f5c76e0dba254202bc1dce0a6e47ac8f",
+      "title": "Максимальна висота польоту"
+     },
+     "value": 6000,
+     "id": "1337b917ba28458ea4cb6f12cd3698a1",
+     "unit": {
+      "code": "MTR",
+      "name": "метр"
+     },
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "a3238165c7a44672a51eaacdfd7b99c2",
+      "title": "Час польоту"
+     },
+     "value": 49,
+     "id": "dd424a23b77c49668721dd9080a28788",
+     "unit": {
+      "code": "MIN",
+      "name": "хвилина"
+     },
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "e96f0702283442ddaf6e4a9373e65da7",
+      "title": "Акумуляторів у комплекті"
+     },
+     "value": 1,
+     "id": "08c4cb53b7304c838f50cb004689b38e",
+     "unit": {
+      "code": "H87",
+      "name": "штука"
+     },
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "1413974e1978402fbc174a2794774b0f",
+      "title": "Тепловізор"
+     },
+     "value": true,
+     "id": "3ffc5d09ff3e4a32b6410aef857312f3",
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    }
+   ],
+   "items": [
+    {
+     "id": "84a2b3f58f8d4378b90c26f695509bb9",
+     "description": "Квадрокоптер DJI Matrice 4T (CP.EN.00000546.02)",
+     "unit": {
+      "name": "штука",
+      "value": {
+       "amount": 172734.0,
+       "currency": "UAH",
+       "valueAddedTaxIncluded": false
+      },
+      "code": "H87"
+     },
+     "quantity": 89.0,
+     "product": "f696ff1e41974a82a48439ec3984c406"
+    }
+   ],
+   "value": {
+    "amount": 15373326.0,
+    "currency": "UAH",
+    "valueAddedTaxIncluded": false
+   },
+   "tenderers": [
+    {
+     "name": "ТОВ \"УМО УКРАЇНА\"",
+     "identifier": {
+      "scheme": "UA-EDR",
+      "id": "45274055",
+      "legalName": "ТОВ \"УМО УКРАЇНА\"",
+      "uri": "http://umo-ukraine.com"
+     },
+     "address": {
+      "streetAddress": "вул.Кочура Григорія будинок 19 корпус 6",
+      "locality": "м. Київ",
+      "region": "м. Київ",
+      "postalCode": "03110",
+      "countryName": "Україна"
+     },
+     "scale": "mid"
+    }
+   ],
+   "status": "active",
+   "id": "66cb1eaeef624ed9b676bfa3f071b49e",
+   "date": "2026-10-05T21:23:55.850062+03:00",
+   "documents": [
+    {
+     "confidentiality": "public",
+     "documentType": "proposal",
+     "description": "SHA1:c857fd23021d98b163b40d38869b885457b48477;SHA2-384:e5b83d185bcbe50163592bb9dc572807e00666f4b941aa7f0ee5147dfddb3ea22f25df5742d041ea94754c92f04a9312;Antivirus: ESET Antivirus,fids:5d2a7e47884543afb1378830b47bb384:fide",
+     "id": "9d52023ca231434598a3c45a2ae87eb2",
+     "datePublished": "2026-10-05T21:23:55.508045+03:00",
+     "hash": "md5:722a93a2e6f12924b486b851eea3698e",
+     "title": "sign.p7s",
+     "format": "application/pkcs7-signature",
+     "url": "https://public-docs.prozorro.gov.ua/get/7bf1208284b249f9ba0faedd52591eeb?Signature=na3tINydHQmkJRUTkjclQZt%2F3B7eibS6DYieFGv7Dp%2FFQkkWD7onNteBPP3OQcpt2uWYgmNyQwQnHzPbicuuAg%3D%3D&KeyID=52462340",
+     "documentOf": "tender",
+     "dateModified": "2026-10-05T21:23:55.508045+03:00",
+     "language": "uk"
+    }
+   ],
+   "submissionDate": "2026-10-05T21:23:55.850062+03:00",
+   "initialValue": {
+    "amount": 15373326.0,
+    "currency": "UAH",
+    "valueAddedTaxIncluded": false
+   }
+  },
+  {
+   "requirementResponses": [
+    {
+     "requirement": {
+      "id": "c9bc444125054a699d31abad46364506",
+      "title": "Учасник або кінцевий бенефіціарний власник учасника, член або учасник (акціонер) юридичної особи - учасника не є особою, до якої застосовано санкцію у вигляді заборони на здійснення у неї публічних закупівель товарів, робіт і послуг згідно із Законом України \"Про санкції\""
+     },
+     "value": true,
+     "id": "9305e6cd62d048fbaa9085243e9617a0",
+     "classification": {
+      "scheme": "DECREE822",
+      "id": "CRITERION.EXCLUSION.CONVICTIONS.TERRORIST_OFFENCES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "281a7a5cb1724964bcb71598536d633e",
+      "title": "Учасник процедури закупівлі не є юридичною особою, утвореною та зареєстрованою відповідно до законодавства України, кінцевим бенефіціарним власником, членом або учасником (акціонером), що має частку в статутному капіталі 10 і більше відсотків (далі - активи), якої є Російська Федерація/Республіка Білорусь/Ісламська Республіка Іран, громадянин Російської Федерації/Республіки Білорусь/Ісламської Республіки Іран (крім того, що проживає на території України на законних підставах), або юридичною особою, утвореною та зареєстрованою відповідно до законодавства Російської Федерації/Республіки Білорусь/Ісламської Республіки Іран, крім випадків, коли активи в установленому законодавством порядку передані в управління АРМА"
+     },
+     "value": true,
+     "id": "1bbad729799b4fb194b8c82de787b13d",
+     "classification": {
+      "scheme": "DECREE822",
+      "id": "CRITERION.EXCLUSION.CONVICTIONS.TERRORIST_OFFENCES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "0fdfe7c44b254a63b27c025b4be29621",
+      "title": "Країною-походження товару не є Російська Федерація/Республіка Білорусь/Ісламська Республіка Іран"
+     },
+     "value": true,
+     "id": "0286512891df42fab980efe011934608",
+     "classification": {
+      "scheme": "DECREE822",
+      "id": "CRITERION.EXCLUSION.CONVICTIONS.TERRORIST_OFFENCES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "9ef27a24d89d4d769e49ae583eccec4b",
+      "title": "Учасник процедури закупівлі не мав з цим самим замовником договорів достроково розірваних через невиконання (учасником) своїх зобов'язань через що було застосовано санкції у вигляді штрафів та/або відшкодування збитків"
+     },
+     "value": true,
+     "id": "f291b7141e2c498fa8dc4a3c23d741e9",
+     "classification": {
+      "scheme": "DECREE822",
+      "id": "CRITERION.EXCLUSION.CONFLICT_OF_INTEREST.EARLY_TERMINATION"
+     }
+    },
+    {
+     "requirement": {
+      "id": "48ca98cb6e0b4605a23840edb25682a3",
+      "title": "Бренд"
+     },
+     "values": [
+      "DJI"
+     ],
+     "id": "1fbee145d4774f189e91911201b3913c",
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "c36f71f044b34800bb6e34e045ccf41f",
+      "title": "Модель"
+     },
+     "values": [
+      "Matrice 4T"
+     ],
+     "id": "d0b34000e2dd4d11a8fbe3effcc84a70",
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "825c01263cff45058f0b98ff545e2946",
+      "title": "Ємність акумулятора"
+     },
+     "value": 6741,
+     "id": "1fc1946d8b47414ab25c63bd7d86345b",
+     "unit": {
+      "code": "4K",
+      "name": "міліампер"
+     },
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "a2ddaad046454f56a35b0b80f07c95d8",
+      "title": "Тип двигуна"
+     },
+     "values": [
+      "електродвигун"
+     ],
+     "id": "3afd144fa1034cde8ad81d86b3f55aaa",
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "f5c76e0dba254202bc1dce0a6e47ac8f",
+      "title": "Максимальна висота польоту"
+     },
+     "value": 6000,
+     "id": "43af4a33810c4149ac2a4a3806486750",
+     "unit": {
+      "code": "MTR",
+      "name": "метр"
+     },
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "a3238165c7a44672a51eaacdfd7b99c2",
+      "title": "Час польоту"
+     },
+     "value": 49,
+     "id": "0e3c454ea27449d781213b04a7128512",
+     "unit": {
+      "code": "MIN",
+      "name": "хвилина"
+     },
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "e96f0702283442ddaf6e4a9373e65da7",
+      "title": "Акумуляторів у комплекті"
+     },
+     "value": 1,
+     "id": "cf27ff31fbb8422ca6cb8159ade70a55",
+     "unit": {
+      "code": "H87",
+      "name": "штука"
+     },
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "1413974e1978402fbc174a2794774b0f",
+      "title": "Тепловізор"
+     },
+     "value": true,
+     "id": "1bb2cc0b23874fad8cb7ab9bf5fbdd85",
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    }
+   ],
+   "items": [
+    {
+     "id": "84a2b3f58f8d4378b90c26f695509bb9",
+     "description": "Квадрокоптер DJI Matrice 4T (CP.EN.00000546.02)",
+     "unit": {
+      "name": "штука",
+      "value": {
+       "amount": 175000.0,
+       "currency": "UAH",
+       "valueAddedTaxIncluded": false
+      },
+      "code": "H87"
+     },
+     "quantity": 89.0,
+     "product": "f696ff1e41974a82a48439ec3984c406"
+    }
+   ],
+   "value": {
+    "amount": 15575000.0,
+    "currency": "UAH",
+    "valueAddedTaxIncluded": false
+   },
+   "tenderers": [
+    {
+     "name": "ТОВАРИСТВО З ОБМЕЖЕНОЮ ВІДПОВІДАЛЬНІСТЮ \"АВАЛОН СКАЙ\"",
+     "identifier": {
+      "scheme": "UA-EDR",
+      "id": "38677243",
+      "legalName": "ТОВАРИСТВО З ОБМЕЖЕНОЮ ВІДПОВІДАЛЬНІСТЮ \"АВАЛОН СКАЙ\""
+     },
+     "address": {
+      "countryName": "Україна"
+     },
+     "scale": "micro"
+    }
+   ],
+   "status": "active",
+   "id": "65ee38555ca44a4587ff62c924f320cb",
+   "date": "2026-10-05T21:54:29.407249+03:00",
+   "documents": [
+    {
+     "confidentiality": "public",
+     "documentType": "proposal",
+     "id": "21bf2e7e28354e49b8870b4c6b8259a8",
+     "datePublished": "2026-10-05T21:54:29.143265+03:00",
+     "hash": "md5:e3b810c9d715d995472f1f47a1ce00ea",
+     "title": "sign.p7s",
+     "format": "application/pkcs7-signature",
+     "url": "https://public-docs.prozorro.gov.ua/get/732c5a4ca85d4a49a4528e33b848bb13?Signature=76iSVO7cKb83kLn5zgSC3P3zgcFQma0Iy78IMNFSVDSpx5JWaIyVP6qCroppzv%2BuLeXA6qubXj8emU1uumTjCQ%3D%3D&KeyID=52462340",
+     "documentOf": "tender",
+     "dateModified": "2026-10-05T21:54:29.143265+03:00",
+     "language": "uk"
+    }
+   ],
+   "submissionDate": "2026-10-05T21:54:29.407249+03:00",
+   "initialValue": {
+    "amount": 15575000.0,
+    "currency": "UAH",
+    "valueAddedTaxIncluded": false
+   }
+  },
+  {
+   "requirementResponses": [
+    {
+     "requirement": {
+      "id": "48ca98cb6e0b4605a23840edb25682a3",
+      "title": "Бренд"
+     },
+     "values": [
+      "DJI"
+     ],
+     "id": "66be697b87ba437389f38663a13bd1c7",
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "c36f71f044b34800bb6e34e045ccf41f",
+      "title": "Модель"
+     },
+     "values": [
+      "Matrice 4T"
+     ],
+     "id": "998cbd359442481693d97221d3273703",
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "a2ddaad046454f56a35b0b80f07c95d8",
+      "title": "Тип двигуна"
+     },
+     "values": [
+      "електродвигун"
+     ],
+     "id": "6bedfe797b2d4d928f43b80f88cf2e18",
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "825c01263cff45058f0b98ff545e2946",
+      "title": "Ємність акумулятора"
+     },
+     "value": 6741,
+     "id": "57503d606b8f4551a776bad20fc84e21",
+     "unit": {
+      "code": "4K",
+      "name": "міліампер"
+     },
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "a3238165c7a44672a51eaacdfd7b99c2",
+      "title": "Час польоту"
+     },
+     "value": 49,
+     "id": "4985e38ea5a8450090e8cde307ce6726",
+     "unit": {
+      "code": "MIN",
+      "name": "хвилина"
+     },
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "e96f0702283442ddaf6e4a9373e65da7",
+      "title": "Акумуляторів у комплекті"
+     },
+     "value": 1,
+     "id": "ed28091caa5849babaa5dccc93a07481",
+     "unit": {
+      "code": "H87",
+      "name": "штука"
+     },
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "1413974e1978402fbc174a2794774b0f",
+      "title": "Тепловізор"
+     },
+     "value": true,
+     "id": "6862ce4455e641f9910b96f6c49a37b7",
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "f5c76e0dba254202bc1dce0a6e47ac8f",
+      "title": "Максимальна висота польоту"
+     },
+     "value": 6000,
+     "id": "3341fd68195c494ca25ceed9c6ed50dd",
+     "unit": {
+      "code": "MTR",
+      "name": "метр"
+     },
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "0fdfe7c44b254a63b27c025b4be29621",
+      "title": "Країною-походження товару не є Російська Федерація/Республіка Білорусь/Ісламська Республіка Іран"
+     },
+     "value": true,
+     "id": "78e836f8fcfb48188ffef309e16493bb",
+     "classification": {
+      "scheme": "DECREE822",
+      "id": "CRITERION.EXCLUSION.CONVICTIONS.TERRORIST_OFFENCES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "281a7a5cb1724964bcb71598536d633e",
+      "title": "Учасник процедури закупівлі не є юридичною особою, утвореною та зареєстрованою відповідно до законодавства України, кінцевим бенефіціарним власником, членом або учасником (акціонером), що має частку в статутному капіталі 10 і більше відсотків (далі - активи), якої є Російська Федерація/Республіка Білорусь/Ісламська Республіка Іран, громадянин Російської Федерації/Республіки Білорусь/Ісламської Республіки Іран (крім того, що проживає на території України на законних підставах), або юридичною особою, утвореною та зареєстрованою відповідно до законодавства Російської Федерації/Республіки Білорусь/Ісламської Республіки Іран, крім випадків, коли активи в установленому законодавством порядку передані в управління АРМА"
+     },
+     "value": true,
+     "id": "cf9599c4a4a94fc9acec2ef9ee14cd13",
+     "classification": {
+      "scheme": "DECREE822",
+      "id": "CRITERION.EXCLUSION.CONVICTIONS.TERRORIST_OFFENCES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "c9bc444125054a699d31abad46364506",
+      "title": "Учасник або кінцевий бенефіціарний власник учасника, член або учасник (акціонер) юридичної особи - учасника не є особою, до якої застосовано санкцію у вигляді заборони на здійснення у неї публічних закупівель товарів, робіт і послуг згідно із Законом України \"Про санкції\""
+     },
+     "value": true,
+     "id": "ca23c0681c664964b57ab47820faa5b5",
+     "classification": {
+      "scheme": "DECREE822",
+      "id": "CRITERION.EXCLUSION.CONVICTIONS.TERRORIST_OFFENCES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "9ef27a24d89d4d769e49ae583eccec4b",
+      "title": "Учасник процедури закупівлі не мав з цим самим замовником договорів достроково розірваних через невиконання (учасником) своїх зобов'язань через що було застосовано санкції у вигляді штрафів та/або відшкодування збитків"
+     },
+     "value": true,
+     "id": "8f923d6b4bc445e695eac56c42d73268",
+     "classification": {
+      "scheme": "DECREE822",
+      "id": "CRITERION.EXCLUSION.CONFLICT_OF_INTEREST.EARLY_TERMINATION"
+     }
+    }
+   ],
+   "items": [
+    {
+     "id": "84a2b3f58f8d4378b90c26f695509bb9",
+     "description": "Квадрокоптер DJI Matrice 4T (CP.EN.00000546.02)",
+     "unit": {
+      "name": "штука",
+      "value": {
+       "amount": 171713.0,
+       "currency": "UAH",
+       "valueAddedTaxIncluded": false
+      },
+      "code": "H87"
+     },
+     "quantity": 89.0,
+     "product": "f696ff1e41974a82a48439ec3984c406"
+    }
+   ],
+   "value": {
+    "amount": 15282457.0,
+    "currency": "UAH",
+    "valueAddedTaxIncluded": false
+   },
+   "tenderers": [
+    {
+     "name": "ТОВАРИСТВО З ОБМЕЖЕНОЮ ВІДПОВІДАЛЬНІСТЮ \"ІТГ \"ІНТЕК-ГАЗ\"",
+     "identifier": {
+      "scheme": "UA-EDR",
+      "id": "21494259",
+      "legalName": "ТОВАРИСТВО З ОБМЕЖЕНОЮ ВІДПОВІДАЛЬНІСТЮ \"ІТГ \"ІНТЕК-ГАЗ\""
+     },
+     "address": {
+      "streetAddress": "вул.Здановської Юлії, будинок 52/3, офіс 246",
+      "locality": "",
+      "region": "м. Київ",
+      "postalCode": "03189",
+      "countryName": "Україна"
+     },
+     "scale": "micro"
+    }
+   ],
+   "status": "active",
+   "id": "476e3a54b5be4bd280c4e0d4b0fd8da4",
+   "date": "2026-10-05T23:09:05.305098+03:00",
+   "submissionDate": "2026-10-05T23:09:05.305098+03:00",
+   "documents": [
+    {
+     "confidentiality": "public",
+     "documentType": "proposal",
+     "id": "29cd6dd3f659454a91321a92349f2ae4",
+     "datePublished": "2026-10-05T23:07:35.340411+03:00",
+     "hash": "md5:1eba0bd40df9cea6d13a69298d39a838",
+     "title": "sign.p7s",
+     "format": "application/pkcs7-signature",
+     "url": "https://public-docs.prozorro.gov.ua/get/f8864205fb484526ab674464221d424b?Signature=UlhGgmW4AvzmC2vG5MXrWiNXYoxYFNChj3n9RHbWEkSQdda03B7f8azgM2j06veMJ1Vb9FrxKgRhsLw1lHyVCg%3D%3D&KeyID=52462340",
+     "documentOf": "tender",
+     "dateModified": "2026-10-05T23:07:35.340411+03:00",
+     "language": "uk"
+    },
+    {
+     "confidentiality": "public",
+     "documentType": "proposal",
+     "id": "29cd6dd3f659454a91321a92349f2ae4",
+     "datePublished": "2026-10-05T23:09:04.973593+03:00",
+     "hash": "md5:2660d4c7f8f73658a79d45f4ef3037d2",
+     "title": "sign.p7s",
+     "format": "application/pkcs7-signature",
+     "url": "https://public-docs.prozorro.gov.ua/get/9760af3aba9e41dcb6324abd19eb9e99?Signature=wAKneyDF6XUgKHHj4JQyHM04IYo0QWcJp%2BjhfrBlX%2BvGgsRg2dgbGK3e6uFI33aNsLZ%2FO7lEppqND2LeC5wYAw%3D%3D&KeyID=52462340",
+     "documentOf": "tender",
+     "dateModified": "2026-10-05T23:09:04.973593+03:00",
+     "language": "uk"
+    }
+   ],
+   "initialValue": {
+    "amount": 15282457.0,
+    "currency": "UAH",
+    "valueAddedTaxIncluded": false
+   }
+  },
+  {
+   "requirementResponses": [
+    {
+     "requirement": {
+      "id": "c9bc444125054a699d31abad46364506",
+      "title": "Учасник або кінцевий бенефіціарний власник учасника, член або учасник (акціонер) юридичної особи - учасника не є особою, до якої застосовано санкцію у вигляді заборони на здійснення у неї публічних закупівель товарів, робіт і послуг згідно із Законом України \"Про санкції\""
+     },
+     "value": true,
+     "id": "3a8137b7713441a2beed1f0afbd6d37c",
+     "classification": {
+      "scheme": "DECREE822",
+      "id": "CRITERION.EXCLUSION.CONVICTIONS.TERRORIST_OFFENCES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "281a7a5cb1724964bcb71598536d633e",
+      "title": "Учасник процедури закупівлі не є юридичною особою, утвореною та зареєстрованою відповідно до законодавства України, кінцевим бенефіціарним власником, членом або учасником (акціонером), що має частку в статутному капіталі 10 і більше відсотків (далі - активи), якої є Російська Федерація/Республіка Білорусь/Ісламська Республіка Іран, громадянин Російської Федерації/Республіки Білорусь/Ісламської Республіки Іран (крім того, що проживає на території України на законних підставах), або юридичною особою, утвореною та зареєстрованою відповідно до законодавства Російської Федерації/Республіки Білорусь/Ісламської Республіки Іран, крім випадків, коли активи в установленому законодавством порядку передані в управління АРМА"
+     },
+     "value": true,
+     "id": "c9adf965187e412bb1186bf5ef081fb1",
+     "classification": {
+      "scheme": "DECREE822",
+      "id": "CRITERION.EXCLUSION.CONVICTIONS.TERRORIST_OFFENCES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "0fdfe7c44b254a63b27c025b4be29621",
+      "title": "Країною-походження товару не є Російська Федерація/Республіка Білорусь/Ісламська Республіка Іран"
+     },
+     "value": true,
+     "id": "ab4b8103977647eab9fd7c6235de3388",
+     "classification": {
+      "scheme": "DECREE822",
+      "id": "CRITERION.EXCLUSION.CONVICTIONS.TERRORIST_OFFENCES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "9ef27a24d89d4d769e49ae583eccec4b",
+      "title": "Учасник процедури закупівлі не мав з цим самим замовником договорів достроково розірваних через невиконання (учасником) своїх зобов'язань через що було застосовано санкції у вигляді штрафів та/або відшкодування збитків"
+     },
+     "value": true,
+     "id": "6b96299f5879403c9009317cb7e19af3",
+     "classification": {
+      "scheme": "DECREE822",
+      "id": "CRITERION.EXCLUSION.CONFLICT_OF_INTEREST.EARLY_TERMINATION"
+     }
+    },
+    {
+     "requirement": {
+      "id": "48ca98cb6e0b4605a23840edb25682a3",
+      "title": "Бренд"
+     },
+     "values": [
+      "DJI"
+     ],
+     "id": "b1074f8cce4a459db7b355a9a5879de1",
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "c36f71f044b34800bb6e34e045ccf41f",
+      "title": "Модель"
+     },
+     "values": [
+      "Matrice 4T"
+     ],
+     "id": "545f750131194567b03c4919bc10671e",
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "825c01263cff45058f0b98ff545e2946",
+      "title": "Ємність акумулятора"
+     },
+     "value": 6741,
+     "id": "2e8ad60f02bf4daa8cc7c3c41c93d64a",
+     "unit": {
+      "code": "4K",
+      "name": "міліампер"
+     },
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "a2ddaad046454f56a35b0b80f07c95d8",
+      "title": "Тип двигуна"
+     },
+     "values": [
+      "електродвигун"
+     ],
+     "id": "c4f299a5fb524d55a8a0b1ed3f9ce387",
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "f5c76e0dba254202bc1dce0a6e47ac8f",
+      "title": "Максимальна висота польоту"
+     },
+     "value": 6000,
+     "id": "20a5025bc7ca451688cc474c9c205b11",
+     "unit": {
+      "code": "MTR",
+      "name": "метр"
+     },
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "a3238165c7a44672a51eaacdfd7b99c2",
+      "title": "Час польоту"
+     },
+     "value": 49,
+     "id": "a6a5da61b88e48089c2b48c7767567ee",
+     "unit": {
+      "code": "MIN",
+      "name": "хвилина"
+     },
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "e96f0702283442ddaf6e4a9373e65da7",
+      "title": "Акумуляторів у комплекті"
+     },
+     "value": 1,
+     "id": "1be3e6886ce64fe79cc20753b915062c",
+     "unit": {
+      "code": "H87",
+      "name": "штука"
+     },
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    },
+    {
+     "requirement": {
+      "id": "1413974e1978402fbc174a2794774b0f",
+      "title": "Тепловізор"
+     },
+     "value": true,
+     "id": "9c779d33e1874e9093d6344839d78bc9",
+     "classification": {
+      "scheme": "ESPD211",
+      "id": "CRITERION.OTHER.SUBJECT_OF_PROCUREMENT.TECHNICAL_FEATURES"
+     }
+    }
+   ],
+   "items": [
+    {
+     "id": "84a2b3f58f8d4378b90c26f695509bb9",
+     "description": "Квадрокоптер DJI Matrice 4T (CP.EN.00000546.02)",
+     "unit": {
+      "name": "штука",
+      "value": {
+       "amount": 175000.0,
+       "currency": "UAH",
+       "valueAddedTaxIncluded": false
+      },
+      "code": "H87"
+     },
+     "quantity": 89.0,
+     "product": "f696ff1e41974a82a48439ec3984c406"
+    }
+   ],
+   "value": {
+    "amount": 15575000.0,
+    "currency": "UAH",
+    "valueAddedTaxIncluded": false
+   },
+   "tenderers": [
+    {
+     "name": "ТОВАРИСТВО З ОБМЕЖЕНОЮ ВІДПОВІДАЛЬНІСТЮ \"СПЕЦПРИЛАД\"",
+     "identifier": {
+      "scheme": "UA-EDR",
+      "id": "45301675",
+      "legalName": "ТОВАРИСТВО З ОБМЕЖЕНОЮ ВІДПОВІДАЛЬНІСТЮ \"СПЕЦПРИЛАД\""
+     },
+     "address": {
+      "streetAddress": "Маккейна Джона, будинок, 3а, квартира, 136",
+      "locality": "Київ",
+      "region": "Київська область",
+      "postalCode": "01042",
+      "countryName": "Україна"
+     },
+     "scale": "micro"
+    }
+   ],
+   "status": "active",
+   "id": "54ed1eb2c53140108220b37f589409f3",
+   "date": "2026-10-05T23:18:53.321743+03:00",
+   "documents": [
+    {
+     "confidentiality": "public",
+     "documentType": "proposal",
+     "id": "f96c2588eb90475a9c303a0de663d184",
+     "datePublished": "2026-10-05T23:18:53.077501+03:00",
+     "hash": "md5:254ebfdc7a49052cedfd9b3e789b8530",
+     "title": "sign.p7s",
+     "format": "application/pkcs7-signature",
+     "url": "https://public-docs.prozorro.gov.ua/get/940987859f7e483e9fc431361b959f1d?Signature=9hI%2FjE%2BDcV7K3XYBkHO3MaOhBffxKgtK74VD1Kyq%2Bru3Dbg%2Fq4ts%2FoYvbiuWbCCYWKu4lm3vnthCxn1aZA3LBg%3D%3D&KeyID=52462340",
+     "documentOf": "tender",
+     "dateModified": "2026-10-05T23:18:53.077501+03:00",
+     "language": "uk"
+    }
+   ],
+   "submissionDate": "2026-10-05T23:18:53.321743+03:00",
+   "initialValue": {
+    "amount": 15575000.0,
+    "currency": "UAH",
+    "valueAddedTaxIncluded": false
+   }
+  }
+ ],
+ "awardPeriod": {
+  "startDate": "2026-10-06T08:00:04.545200+03:00",
+  "endDate": "2026-10-07T10:33:54.888570+03:00"
+ },
+ "awards": [
+  {
+   "id": "437c300d9faf4158bfc3f9b8cc713a7e",
+   "status": "active",
+   "date": "2026-10-07T10:33:54.888570+03:00",
+   "value": {
+    "amount": 15282457.0,
+    "currency": "UAH",
+    "valueAddedTaxIncluded": false
+   },
+   "suppliers": [
+    {
+     "name": "ТОВАРИСТВО З ОБМЕЖЕНОЮ ВІДПОВІДАЛЬНІСТЮ \"ІТГ \"ІНТЕК-ГАЗ\"",
+     "identifier": {
+      "scheme": "UA-EDR",
+      "id": "21494259",
+      "legalName": "ТОВАРИСТВО З ОБМЕЖЕНОЮ ВІДПОВІДАЛЬНІСТЮ \"ІТГ \"ІНТЕК-ГАЗ\""
+     },
+     "address": {
+      "streetAddress": "вул.Здановської Юлії, будинок 52/3, офіс 246",
+      "locality": "",
+      "region": "м. Київ",
+      "postalCode": "03189",
+      "countryName": "Україна"
+     },
+     "scale": "micro"
+    }
+   ],
+   "bid_id": "476e3a54b5be4bd280c4e0d4b0fd8da4",
+   "documents": [
+    {
+     "confidentiality": "public",
+     "documentType": "notice",
+     "id": "008b47f155e4471f882eeee4a5e26b55",
+     "datePublished": "2026-10-07T10:33:54.356992+03:00",
+     "hash": "md5:9a6b2a8937923e70cf2511b3756edb22",
+     "title": "sign.p7s",
+     "format": "application/pkcs7-signature",
+     "url": "https://public-docs.prozorro.gov.ua/get/0eadbbec2ad7427aa19101508502d624?Signature=ncpCBU8Mx4anOQfPqVnRkT9OkPjj3XJzbMcn7MIrIt%2FJjhqalYpKc0%2BMbwZrcIAA4aUaohBU3%2Fs6jaCcVdz1Cw%3D%3D&KeyID=52462340",
+     "documentOf": "tender",
+     "dateModified": "2026-10-07T10:33:54.356992+03:00",
+     "author": "tender_owner",
+     "language": "uk"
+    }
+   ],
+   "period": {
+    "startDate": "2026-10-06T08:00:04.545200+03:00",
+    "endDate": "2026-10-09T00:00:00+03:00"
+   },
+   "qualified": true
+  }
+ ],
+ "contracts": [
+  {
+   "id": "dc7d9496d51d4f3e80943afe9155c9d0",
+   "status": "active",
+   "awardID": "437c300d9faf4158bfc3f9b8cc713a7e",
+   "date": "2026-10-10T09:19:50.036046+03:00",
+   "contractID": "UA-2026-10-01-010168-a-a1",
+   "title": "Квадрокоптер DJI Matrice 4T (CP.EN.00000546.02)",
+   "description": "",
+   "value": {
+    "amount": 15282457.0,
+    "currency": "UAH",
+    "valueAddedTaxIncluded": false,
+    "amountNet": 15282457.0
+   }
+  }
+ ],
+ "id": "f13614263461484c8f5bdb36bd7960a0"
+}

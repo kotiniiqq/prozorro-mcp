@@ -1,0 +1,1137 @@
+{
+ "description": "18420000-9 Аксесуари для одягу",
+ "date": "2026-10-10T00:00:06.642149+03:00",
+ "dateModified": "2026-10-10T00:00:06.642149+03:00",
+ "dateCreated": "2026-09-29T09:55:01.794532+03:00",
+ "tenderID": "UA-2026-09-29-001444-a",
+ "documents": [
+  {
+   "confidentiality": "public",
+   "documentType": "biddingDocuments",
+   "id": "55e42d6172964d5084c5337e6aa7ff50",
+   "datePublished": "2026-09-29T09:55:03.088177+03:00",
+   "hash": "md5:f7ad9eddedd04cc6f366a14f5bbf41bb",
+   "title": "КД _ Рукавиці.docx",
+   "format": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+   "url": "https://public-docs.prozorro.gov.ua/get/c0b0e12b22c14042a2995a746dd3b665?Signature=C2rQ7aRNbop5oEB0AoZMr2idswlsvlcF6vm1tRmVh%2BStATiGCzxbM1DhzipJ6rv%2BtGN9xz1VF0E2xoNi1nY6Ag%3D%3D&KeyID=52462340",
+   "documentOf": "tender",
+   "dateModified": "2026-09-29T09:55:03.088177+03:00",
+   "author": "tender_owner",
+   "language": "uk"
+  },
+  {
+   "confidentiality": "public",
+   "documentType": "contractProforma",
+   "id": "536461777b2e4c08893efaf7101c1755",
+   "datePublished": "2026-09-29T09:55:03.088177+03:00",
+   "hash": "md5:c4778ed62fe8e08fe93914e74250f98e",
+   "title": "Договір_рукавиці брезентові.docx",
+   "format": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+   "url": "https://public-docs.prozorro.gov.ua/get/aaf121bbccab4022b8f5b877d53f119a?Signature=385PIggY4g3wT9c2PSEhA6%2Bq9atVTNJHm9Fvc6AQWesqS%2Fg1wLEMV3Ojjjo0znYBiDuKdkvPHrShfDriLKazDA%3D%3D&KeyID=52462340",
+   "documentOf": "tender",
+   "dateModified": "2026-09-29T09:55:03.088177+03:00",
+   "author": "tender_owner",
+   "language": "uk"
+  }
+ ],
+ "status": "active.qualification",
+ "owner": "it.ua",
+ "title": "Рукавиці та рукавички",
+ "mainProcurementCategory": "goods",
+ "procurementMethod": "open",
+ "contractChangeRationaleTypes": {
+  "durationExtension": {
+   "description_en": "Extension of the period of the procurement contract duration and the term of obligations fulfilment regarding the transfer of goods, implementation of works and provision of services in case of documented objective circumstances that led to such extension, including circumstances of force majeure, delays in funding of procuring entitys expenditures, provided that such changes will not increase the sum of money specified in the procurement contract",
+   "title_en": "Clause 4, Part 5, Article 41",
+   "description_uk": "Продовження строку дії договору про закупівлю та строку виконання зобов’язань щодо передачі товару, виконання робіт, надання послуг у разі виникнення документально підтверджених об’єктивних обставин, що спричинили таке продовження, у тому числі обставин непереборної сили, затримки фінансування витрат замовника, за умови що такі зміни не призведуть до збільшення суми, визначеної в договорі про закупівлю",
+   "title_uk": "Пункт 4 частини 5 статті 41",
+   "uri": "https://zakon.rada.gov.ua/laws/show/922-19/ed20241023#n1760",
+   "scheme": "LAW922"
+  },
+  "fiscalYearExtension": {
+   "description_en": "Еffect of the procurement contract may be extended for a period sufficient for conduction of the procurement procedure/simplified procurement at the beginning of the next year in volume that does not exceed 20% of the sum specified in the initial procurement contract concluded in the previous year, if expenditures for achieving this goal are approved in the prescribed manner",
+   "title_en": "Part 6 of Article 41",
+   "description_uk": "Дія договору про закупівлю може бути продовжена на строк, достатній для проведення процедури закупівлі/спрощеної закупівлі на початку наступного року в обсязі, що не перевищує 20 відсотків суми, визначеної в початковому договорі про закупівлю, укладеному в попередньому році, якщо видатки на досягнення цієї цілі затверджено в установленому порядку",
+   "title_uk": "Частина 6 статті 41",
+   "uri": "https://zakon.rada.gov.ua/laws/show/922-19/ed20241023#n1760",
+   "scheme": "LAW922"
+  },
+  "priceClarification": {
+   "description_en": "Drawing up a contract price, specified in accordance with the approved project documentation for the purchase contract, specified in paragraph three of part one of this article",
+   "title_en": "Clause 2, Part 7, Article 41",
+   "description_uk": "Складання договірної ціни, уточненої відповідно до затвердженої проектної документації до договору про закупівлю, зазначеного в абзаці третьому частини першої цієї статті",
+   "title_uk": "Пункт 2 частини 7 статті 41",
+   "uri": "https://zakon.rada.gov.ua/laws/show/922-19/ed20241023#n1760",
+   "scheme": "LAW922"
+  },
+  "itemPriceVariation": {
+   "description_en": "An increase in the price per unit of goods by up to 10 percent in proportion to the increase in the market price of such goods in the event of fluctuations in the market price of such goods, provided that such a change does not lead to an increase in the amount specified in the procurement contract; - no more than once every 90 days from the date of signing the procurement contract/making changes to such a contract regarding an increase in the price per unit of goods. The restriction on the timing of changes in the price per unit of goods does not apply in cases of changes in the terms of the contract for the procurement of gasoline and diesel fuel, natural gas, and electricity",
+   "title_en": "Clause 2, Part 5, Article 41",
+   "description_uk": "Збільшення ціни за одиницю товару до 10 відсотків пропорційно збільшенню ціни такого товару на ринку у разі коливання ціни такого товару на ринку за умови, що така зміна не призведе до збільшення суми, визначеної в договорі про закупівлю, - не частіше ніж один раз на 90 днів з моменту підписання договору про закупівлю/внесення змін до такого договору щодо збільшення ціни за одиницю товару. Обмеження щодо строків зміни ціни за одиницю товару не застосовується у випадках зміни умов договору про закупівлю бензину та дизельного пального, природного газу та електричної енергії",
+   "title_uk": "Пункт 2 частини 5 статті 41",
+   "uri": "https://zakon.rada.gov.ua/laws/show/922-19/ed20241023#n1760",
+   "scheme": "LAW922"
+  },
+  "priceReduction": {
+   "description_en": "Аpproval of price changes in the procurement contract in the direction of reduction (without changing the quantity (volume) and quality of goods, works and services), including in case of fluctuations in the price of goods on the market",
+   "title_en": "Clause 5, Part 5, Article 41",
+   "description_uk": "Погодження зміни ціни в договорі про закупівлю в бік зменшення (без зміни кількості (обсягу) та якості товарів, робіт і послуг), у тому числі у разі коливання ціни товару на ринку",
+   "title_uk": "Пункт 5 частини 5 статті 41",
+   "uri": "https://zakon.rada.gov.ua/laws/show/922-19/ed20241023#n1760",
+   "scheme": "LAW922"
+  },
+  "qualityImprovement": {
+   "description_en": "Іmprovement of the item's quality, provided that such improvement will not increase the sum of money specified in the procurement contract",
+   "title_en": "Clause 3, Part 5, Article 41",
+   "description_uk": "Покращення якості предмета закупівлі, за умови що таке покращення не призведе до збільшення суми, визначеної в договорі про закупівлю",
+   "title_uk": "Пункт 3 частини 5 статті 41",
+   "uri": "https://zakon.rada.gov.ua/laws/show/922-19/ed20241023#n1760",
+   "scheme": "LAW922"
+  },
+  "taxRate": {
+   "description_en": "Changes in the price in the purchase contract due to changes in tax and duty rates and/or changes in the conditions for granting tax benefits - in proportion to the change in such rates and/or tax benefits",
+   "title_en": "Clause 6, Part 5, Article 41",
+   "description_uk": "Зміни ціни в договорі про закупівлю у зв’язку зі зміною ставок податків і зборів та/або зміною умов щодо надання пільг з оподаткування - пропорційно до зміни таких ставок та/або пільг з оподаткування",
+   "title_uk": "Пункт 6 частини 5 статті 41",
+   "uri": "https://zakon.rada.gov.ua/laws/show/922-19/ed20241023#n1760",
+   "scheme": "LAW922"
+  },
+  "thirdParty": {
+   "description_en": "Changes in the consumer price index established in accordance with the legislation by state statistics bodies, changes in foreign currency exchange rates, changes in stock market quotes or Platts, ARGUS indicators of regulated prices (tariffs) and standards applied in the procurement contract, if the procurement contract establishes the procedure for changing the price",
+   "title_en": "Clause 7, Part 5, Article 41",
+   "description_uk": "Зміни встановленого згідно із законодавством органами державної статистики індексу споживчих цін, зміни курсу іноземної валюти, зміни біржових котирувань або показників Platts, ARGUS регульованих цін (тарифів) і нормативів, що застосовуються в договорі про закупівлю, у разі встановлення в договорі про закупівлю порядку зміни ціни",
+   "title_uk": "Пункт 7 частини 5 статті 41",
+   "uri": "https://zakon.rada.gov.ua/laws/show/922-19/ed20241023#n1760",
+   "scheme": "LAW922"
+  },
+  "volumeCuts": {
+   "description_en": "Reduction of the procurement's volume, particularly taking into account the actual expenditures of the procuring entity",
+   "title_en": "Clause 1, Part 5, Article 41",
+   "description_uk": "Зменшення обсягів закупівлі, зокрема з урахуванням фактичного обсягу видатків замовника",
+   "title_uk": "Пункт 1 частини 5 статті 41",
+   "uri": "https://zakon.rada.gov.ua/laws/show/922-19/ed20241023#n1760",
+   "scheme": "LAW922"
+  }
+ },
+ "milestones": [
+  {
+   "id": "e4d88ea363f34b098334a6a16003675a",
+   "title": "dateOfInvoicing",
+   "description": "попередня оплата у розмірі 50% від загальної вартості Договору протягом 14 (чотирнадцяти) календарних днів з дати підписання Договору та отримання рахунку від Постачальника",
+   "type": "financing",
+   "code": "prepayment",
+   "percentage": 50.0,
+   "duration": {
+    "days": 14,
+    "type": "calendar"
+   },
+   "sequenceNumber": 1,
+   "relatedLot": "18b3f9fea812476a994604397041d0f2"
+  },
+  {
+   "id": "beddf5880c354abeb9d4f5fc8e047cbb",
+   "title": "deliveryOfGoods",
+   "description": "остаточний розрахунок у розмірі 50% від загальної вартості Договору протягом 14 (чотирнадцяти) календарних днів з дати поставки Товару та підписання Сторонами видаткової накладної",
+   "type": "financing",
+   "code": "postpayment",
+   "percentage": 50.0,
+   "duration": {
+    "days": 14,
+    "type": "calendar"
+   },
+   "sequenceNumber": 2,
+   "relatedLot": "18b3f9fea812476a994604397041d0f2"
+  },
+  {
+   "id": "5522dfc9f1cc441e97e63fc9bb15e6a1",
+   "title": "submittingPayment",
+   "description": "Поставка здійснюється на умовах DDP, згідно з ІНКОТЕРМС – 2020. Поставка Товару здійснюється протягом 14 календарних днів з дати підписання Договору і сплати попередньої оплати в розмірі 50% від загальної вартості Договору, але не пізніше 31.01.2027 р.",
+   "type": "delivery",
+   "code": "standard",
+   "percentage": 100.0,
+   "duration": {
+    "days": 14,
+    "type": "calendar"
+   },
+   "sequenceNumber": 3,
+   "relatedLot": "18b3f9fea812476a994604397041d0f2"
+  },
+  {
+   "id": "416e108e386941d8ae4991da2a215b42",
+   "title": "dateOfInvoicing",
+   "description": "попередня оплата у розмірі 50% від загальної вартості Договору протягом 14 (чотирнадцяти) календарних днів з дати підписання Договору та отримання рахунку від Постачальника",
+   "type": "financing",
+   "code": "prepayment",
+   "percentage": 50.0,
+   "duration": {
+    "days": 14,
+    "type": "calendar"
+   },
+   "sequenceNumber": 1,
+   "relatedLot": "7d2484ab8d954e94a9f3f480c1ed1fd7"
+  },
+  {
+   "id": "e18b2fdde07c41c587c93723fe489bc8",
+   "title": "deliveryOfGoods",
+   "description": "остаточний розрахунок у розмірі 50% від загальної вартості Договору протягом 14 (чотирнадцяти) календарних днів з дати поставки Товару та підписання Сторонами видаткової накладної",
+   "type": "financing",
+   "code": "postpayment",
+   "percentage": 50.0,
+   "duration": {
+    "days": 14,
+    "type": "calendar"
+   },
+   "sequenceNumber": 2,
+   "relatedLot": "7d2484ab8d954e94a9f3f480c1ed1fd7"
+  },
+  {
+   "id": "0054b72f64414ebfa80c909a313a23fd",
+   "title": "submittingPayment",
+   "description": "Поставка здійснюється на умовах DDP, згідно з ІНКОТЕРМС – 2020. Поставка Товару здійснюється протягом 14 календарних днів з дати підписання Договору і сплати попередньої оплати в розмірі 50% від загальної вартості Договору, але не пізніше 31.01.2027 р",
+   "type": "delivery",
+   "code": "standard",
+   "percentage": 100.0,
+   "duration": {
+    "days": 14,
+    "type": "calendar"
+   },
+   "sequenceNumber": 3,
+   "relatedLot": "7d2484ab8d954e94a9f3f480c1ed1fd7"
+  }
+ ],
+ "submissionMethod": "electronicAuction",
+ "awardCriteria": "lowestCost",
+ "procuringEntity": {
+  "name": "Ukraine's defense-industrial complex",
+  "identifier": {
+   "scheme": "UA-EDR",
+   "id": "99999999",
+   "legalName": "Ukraine's defense-industrial complex"
+  },
+  "address": {
+   "countryName": "Україна"
+  },
+  "kind": "other"
+ },
+ "value": {
+  "currency": "UAH",
+  "valueAddedTaxIncluded": false,
+  "amount": 743386.25
+ },
+ "tenderPeriod": {
+  "startDate": "2026-10-03T00:00:00+03:00",
+  "endDate": "2026-10-10T00:00:00+03:00"
+ },
+ "lots": [
+  {
+   "title": "Лот 1. Рукавиці робочі",
+   "status": "active",
+   "id": "18b3f9fea812476a994604397041d0f2",
+   "date": "2026-09-29T09:55:01.794532+03:00",
+   "value": {
+    "currency": "UAH",
+    "valueAddedTaxIncluded": false,
+    "amount": 520580.0
+   },
+   "minimalStep": {
+    "currency": "UAH",
+    "valueAddedTaxIncluded": false,
+    "amount": 2602.9
+   }
+  },
+  {
+   "title": "Лот 2. Рукавички робочі",
+   "status": "active",
+   "id": "7d2484ab8d954e94a9f3f480c1ed1fd7",
+   "date": "2026-09-29T09:55:01.794532+03:00",
+   "value": {
+    "currency": "UAH",
+    "valueAddedTaxIncluded": false,
+    "amount": 222806.25
+   },
+   "minimalStep": {
+    "currency": "UAH",
+    "valueAddedTaxIncluded": false,
+    "amount": 1114.03
+   }
+  }
+ ],
+ "procurementMethodType": "requestForProposal",
+ "enquiryPeriod": {
+  "startDate": "2026-09-29T09:55:01.794532+03:00",
+  "clarificationsUntil": "2026-10-07T00:00:00+03:00",
+  "endDate": "2026-10-03T00:00:00+03:00"
+ },
+ "items": [
+  {
+   "id": "aae1ea29351a48e095134236485bf9a8",
+   "description": "Рукавиці комбіновані робочі",
+   "unit": {
+    "name": "пара",
+    "code": "PR"
+   },
+   "quantity": 5468.0,
+   "classification": {
+    "description": "Аксесуари для одягу",
+    "scheme": "ДК021",
+    "id": "18420000-9"
+   },
+   "deliveryDate": {
+    "endDate": "2027-01-31T00:00:00+02:00"
+   },
+   "deliveryAddress": {
+    "locality": "Відповідно до документації",
+    "countryName": "Україна"
+   },
+   "relatedLot": "18b3f9fea812476a994604397041d0f2"
+  },
+  {
+   "id": "aa4baac30b374c12a371974f0476ab7e",
+   "description": "Рукавиці брезентові робочі",
+   "unit": {
+    "name": "пара",
+    "code": "PR"
+   },
+   "quantity": 5188.0,
+   "classification": {
+    "description": "Аксесуари для одягу",
+    "scheme": "ДК021",
+    "id": "18420000-9"
+   },
+   "deliveryDate": {
+    "endDate": "2027-01-31T00:00:00+02:00"
+   },
+   "deliveryAddress": {
+    "locality": "Відповідно до документації",
+    "countryName": "Україна"
+   },
+   "relatedLot": "18b3f9fea812476a994604397041d0f2"
+  },
+  {
+   "id": "52524e7498a044888f2d5d2212944ab2",
+   "description": "Рукавиці брезентові з подвійним надолонником робочі",
+   "unit": {
+    "name": "пара",
+    "code": "PR"
+   },
+   "quantity": 1072.0,
+   "classification": {
+    "description": "Аксесуари для одягу",
+    "scheme": "ДК021",
+    "id": "18420000-9"
+   },
+   "deliveryDate": {
+    "endDate": "2027-01-31T00:00:00+02:00"
+   },
+   "deliveryAddress": {
+    "locality": "Відповідно до документації",
+    "countryName": "Україна"
+   },
+   "relatedLot": "18b3f9fea812476a994604397041d0f2"
+  },
+  {
+   "id": "dacda024493b41f2a9dc386e3b13152e",
+   "description": "Рукавички діелектричні безшовні",
+   "unit": {
+    "name": "пара",
+    "code": "PR"
+   },
+   "quantity": 255.0,
+   "classification": {
+    "description": "Аксесуари для одягу",
+    "scheme": "ДК021",
+    "id": "18420000-9"
+   },
+   "deliveryDate": {
+    "endDate": "2027-01-31T00:00:00+02:00"
+   },
+   "deliveryAddress": {
+    "locality": "Відповідно до документації",
+    "countryName": "Україна"
+   },
+   "relatedLot": "7d2484ab8d954e94a9f3f480c1ed1fd7"
+  },
+  {
+   "id": "cd1a2530a1ce48d4ac7fb2e0eda42612",
+   "description": "Рукавички (КРАГИ) зварювальника спилкові",
+   "unit": {
+    "name": "пара",
+    "code": "PR"
+   },
+   "quantity": 612.0,
+   "classification": {
+    "description": "Аксесуари для одягу",
+    "scheme": "ДК021",
+    "id": "18420000-9"
+   },
+   "deliveryDate": {
+    "endDate": "2027-01-31T00:00:00+02:00"
+   },
+   "deliveryAddress": {
+    "locality": "Відповідно до документації",
+    "countryName": "Україна"
+   },
+   "relatedLot": "7d2484ab8d954e94a9f3f480c1ed1fd7"
+  }
+ ],
+ "noticePublicationDate": "2026-09-29T09:55:08.219343+03:00",
+ "bids": [
+  {
+   "items": [
+    {
+     "id": "aae1ea29351a48e095134236485bf9a8",
+     "description": "Рукавиці комбіновані робочі",
+     "unit": {
+      "name": "пара",
+      "code": "PR"
+     },
+     "quantity": 5468.0,
+     "relatedLot": "18b3f9fea812476a994604397041d0f2"
+    },
+    {
+     "id": "aa4baac30b374c12a371974f0476ab7e",
+     "description": "Рукавиці брезентові робочі",
+     "unit": {
+      "name": "пара",
+      "code": "PR"
+     },
+     "quantity": 5188.0,
+     "relatedLot": "18b3f9fea812476a994604397041d0f2"
+    },
+    {
+     "id": "52524e7498a044888f2d5d2212944ab2",
+     "description": "Рукавиці брезентові з подвійним надолонником робочі",
+     "unit": {
+      "name": "пара",
+      "code": "PR"
+     },
+     "quantity": 1072.0,
+     "relatedLot": "18b3f9fea812476a994604397041d0f2"
+    }
+   ],
+   "lotValues": [
+    {
+     "value": {
+      "amount": 488286.0,
+      "currency": "UAH",
+      "valueAddedTaxIncluded": false
+     },
+     "relatedLot": "18b3f9fea812476a994604397041d0f2",
+     "status": "active",
+     "date": "2026-10-04T12:05:04.949394+03:00",
+     "initialValue": {
+      "amount": 488286.0,
+      "currency": "UAH",
+      "valueAddedTaxIncluded": false
+     }
+    }
+   ],
+   "tenderers": [
+    {
+     "name": "ТОВ АЛЮР",
+     "identifier": {
+      "scheme": "UA-EDR",
+      "id": "19097605",
+      "legalName": "ТОВ АЛЮР"
+     },
+     "address": {
+      "streetAddress": "Вул Микитинська буд.55 кв 66",
+      "locality": "Нікополь",
+      "region": "Дніпропетровська область",
+      "postalCode": "53211",
+      "countryName": "Україна"
+     },
+     "scale": "sme"
+    }
+   ],
+   "status": "active",
+   "id": "f68adc867ea54db28e6e48ed28ed0baf",
+   "date": "2026-10-04T12:05:04.949394+03:00",
+   "documents": [
+    {
+     "confidentiality": "public",
+     "documentType": "technicalSpecifications",
+     "title_en": "квітанція про здачу балансу (5).rtf",
+     "title_ru": "квітанція про здачу балансу (5).rtf",
+     "description": "SHA1: 54711f50cc51a27c05a518c2a51991947090f54d",
+     "id": "9f3c3c7102224139bbefce5cbfd0397b",
+     "datePublished": "2026-10-04T12:03:53.897628+03:00",
+     "hash": "md5:d3c9598b1e0dbd02f31e534f8767d7c7",
+     "title": "квітанція про здачу балансу (5).rtf",
+     "format": "application/rtf",
+     "url": "https://public-docs.prozorro.gov.ua/get/b4add85e811141919b50a022104ea56c?Signature=rhKux3JeeSR6XoWpM9y1qjexLLyO61OKUZGkzUMC7MyjOddtYa0RNIH3Iat%2FT8wHV7r9TktqQS8%2BB%2BGr%2B22lAw%3D%3D&KeyID=52462340",
+     "documentOf": "tender",
+     "dateModified": "2026-10-04T12:03:53.897628+03:00",
+     "language": "uk"
+    },
+    {
+     "confidentiality": "public",
+     "documentType": "technicalSpecifications",
+     "title_en": "квітанція про здачу балансу (5).rtf.p7s",
+     "title_ru": "квітанція про здачу балансу (5).rtf.p7s",
+     "description": "SHA1: b573c92105ba0085cff150065820d3f7bada3503",
+     "id": "c121edc08b154fb8b059936252f63831",
+     "datePublished": "2026-10-04T12:03:53.897628+03:00",
+     "hash": "md5:5a71782ce3468b6314b2a43167304050",
+     "title": "квітанція про здачу балансу (5).rtf.p7s",
+     "format": "application/pkcs7-signature",
+     "url": "https://public-docs.prozorro.gov.ua/get/147851764e364ef5a6d751cbff849cf8?Signature=M66mOkgwBlJU5YGrB%2BbGlXaZN6VKZlgpaFSfqXtv7vVqHx9ZZqHMtyYbByElEkZIfhnhsb1wwmiPcfOhmcucDA%3D%3D&KeyID=52462340",
+     "documentOf": "tender",
+     "dateModified": "2026-10-04T12:03:53.897628+03:00",
+     "language": "uk"
+    },
+    {
+     "confidentiality": "public",
+     "documentType": "technicalSpecifications",
+     "title_en": "S0111007 1-мс_ 2-мс. Фінансова звітність мікропідприємства за 2025рік.pdf",
+     "title_ru": "S0111007 1-мс_ 2-мс. Фінансова звітність мікропідприємства за 2025рік.pdf",
+     "description": "SHA1: 93faa6bc1a9a6d2f4b2a40e4531f1b3bb4076798",
+     "id": "e8996bca924e4febad59656e8188f59c",
+     "datePublished": "2026-10-04T12:03:53.897628+03:00",
+     "hash": "md5:f276cb7ea363237b680209709a5c9462",
+     "title": "S0111007 1-мс_ 2-мс. Фінансова звітність мікропідприємства за 2025рік.pdf",
+     "format": "application/pdf",
+     "url": "https://public-docs.prozorro.gov.ua/get/2e45cf9d923a41dcb119548b24725fec?Signature=kztsuzL526FurYf%2FeH31kA5M9p%2BOfB%2BbBCc4UMsptZbdYF4N%2FQh0WRcvQ4irg4jtPw%2B1h8diLOxr1ojeyGJAAw%3D%3D&KeyID=52462340",
+     "documentOf": "tender",
+     "dateModified": "2026-10-04T12:03:53.897628+03:00",
+     "language": "uk"
+    },
+    {
+     "confidentiality": "public",
+     "documentType": "technicalSpecifications",
+     "title_en": "S0111007 1-мс_ 2-мс. Фінансова звітність мікропідприємства за 2025рік.pdf.p7s",
+     "title_ru": "S0111007 1-мс_ 2-мс. Фінансова звітність мікропідприємства за 2025рік.pdf.p7s",
+     "description": "SHA1: 90bb9c880a502c8a35012464e0d87f1a4571a6ba",
+     "id": "7d665e1490564bdea97e1f6feba54f3d",
+     "datePublished": "2026-10-04T12:03:53.897628+03:00",
+     "hash": "md5:1ee4105f95a562b5adae2288badb3d00",
+     "title": "S0111007 1-мс_ 2-мс. Фінансова звітність мікропідприємства за 2025рік.pdf.p7s",
+     "format": "application/pkcs7-signature",
+     "url": "https://public-docs.prozorro.gov.ua/get/a69c0033b9e64a94915c922d3f0e162e?Signature=GuAP8IiVaxQDfKA%2F7AJ4ZvDgz0c8TRqoRwxBX7GnEUh%2FZVRkXoTnjppRcKrHqBYnWBF9jkhqVDxgdSYu0ix5Bw%3D%3D&KeyID=52462340",
+     "documentOf": "tender",
+     "dateModified": "2026-10-04T12:03:53.897628+03:00",
+     "language": "uk"
+    },
+    {
+     "confidentiality": "public",
+     "documentType": "technicalSpecifications",
+     "title_en": "Структура Власності АЛЮР-7 (51).pdf",
+     "title_ru": "Структура Власності АЛЮР-7 (51).pdf",
+     "description": "SHA1: a37f1c7bc8535bed145793389db8a1997bc50ccc",
+     "id": "1cbdf42a08634458a66ae45dbf0ff559",
+     "datePublished": "2026-10-04T12:03:53.897628+03:00",
+     "hash": "md5:5725dd832dc72428df9ed2ff1c72f3eb",
+     "title": "Структура Власності АЛЮР-7 (51).pdf",
+     "format": "application/pdf",
+     "url": "https://public-docs.prozorro.gov.ua/get/ff5b3870cad54f1384e4352271a541a5?Signature=oClyrqRzePpvF4n6t3KCVn64qfnRkJizlzXMJmE7O3OqRMfo38Jgz6fNaJEeCSnsMBWwlfrZwA9JWG0H77rpBw%3D%3D&KeyID=52462340",
+     "documentOf": "tender",
+     "dateModified": "2026-10-04T12:03:53.897628+03:00",
+     "language": "uk"
+    },
+    {
+     "confidentiality": "public",
+     "documentType": "technicalSpecifications",
+     "title_en": "Структура Власності АЛЮР-7 (51).pdf.p7s",
+     "title_ru": "Структура Власності АЛЮР-7 (51).pdf.p7s",
+     "description": "SHA1: 4ec406f89392a5f90b335a5efdcedf4cdd761b5a",
+     "id": "46509792d94245689186ab34c9c9c778",
+     "datePublished": "2026-10-04T12:03:53.897628+03:00",
+     "hash": "md5:8e45b1895cd9cfc8160e3c667cfbb318",
+     "title": "Структура Власності АЛЮР-7 (51).pdf.p7s",
+     "format": "application/pkcs7-signature",
+     "url": "https://public-docs.prozorro.gov.ua/get/c7630f6f1f0e4e899953cf024965efbd?Signature=W4CNNtTcHcuH68x32I8gR%2BQGZvk6lZRJjj3rJu6in7BU6ywebqHv4ctU43W%2ByfflXxQiM6TI%2F2ijVFdSxb3tCQ%3D%3D&KeyID=52462340",
+     "documentOf": "tender",
+     "dateModified": "2026-10-04T12:03:53.897628+03:00",
+     "language": "uk"
+    },
+    {
+     "confidentiality": "public",
+     "documentType": "technicalSpecifications",
+     "title_en": "ДОВІДКА про бенефеціара (63).pdf",
+     "title_ru": "ДОВІДКА про бенефеціара (63).pdf",
+     "description": "SHA1: d440952756c89ab3d4d74d663fd9b0c2d0cf1a36",
+     "id": "feed878c8bd540c6a1a8f1c2c61c3da6",
+     "datePublished": "2026-10-04T12:03:53.897628+03:00",
+     "hash": "md5:0fdb342cadc340ad38c4ed6ae7a008b7",
+     "title": "ДОВІДКА про бенефеціара (63).pdf",
+     "format": "application/pdf",
+     "url": "https://public-docs.prozorro.gov.ua/get/b53cc4acc4384cb8b87aea860d926c87?Signature=K55Cwj4Erbs5lx7wmIA%2FruXzYujhSekBGCrJ7zDawlBpqT2ipNtTF5X7PaPID91NLcio7QLNchkKiCX5NKTrAQ%3D%3D&KeyID=52462340",
+     "documentOf": "tender",
+     "dateModified": "2026-10-04T12:03:53.897628+03:00",
+     "language": "uk"
+    },
+    {
+     "confidentiality": "public",
+     "documentType": "technicalSpecifications",
+     "title_en": "ДОВІДКА про бенефеціара (63).pdf.p7s",
+     "title_ru": "ДОВІДКА про бенефеціара (63).pdf.p7s",
+     "description": "SHA1: e7207e81ed3d539bb72d7e08bd2023654a5d25b5",
+     "id": "2d719e4ea28e41c8a9a6deae54fc66f9",
+     "datePublished": "2026-10-04T12:03:53.897628+03:00",
+     "hash": "md5:88b60b4623cacf7aecc2171aee2df21d",
+     "title": "ДОВІДКА про бенефеціара (63).pdf.p7s",
+     "format": "application/pkcs7-signature",
+     "url": "https://public-docs.prozorro.gov.ua/get/b3f1a30e4c124cd486b6946ee8236a3e?Signature=4QQDCLoSv9Hegm8%2FG4qLwAwfQC%2FMi6LWhYC8pU88rDZmt%2BHHDqGE95teh3BmUz%2BHLnsO3da%2FOQ28Rq5UeeYvDQ%3D%3D&KeyID=52462340",
+     "documentOf": "tender",
+     "dateModified": "2026-10-04T12:03:53.897628+03:00",
+     "language": "uk"
+    },
+    {
+     "confidentiality": "public",
+     "documentType": "technicalSpecifications",
+     "title_en": "Документ про право підпису договорів 2026 - 2026-10-04T115830.162.pdf",
+     "title_ru": "Документ про право підпису договорів 2026 - 2026-10-04T115830.162.pdf",
+     "description": "SHA1: fcacc92890b47fa970df48ec6bed72c8044e5ce4",
+     "id": "07decd0f7865488ca5a8b4d21e740a13",
+     "datePublished": "2026-10-04T12:03:53.897628+03:00",
+     "hash": "md5:2c8f60eaf2996a92c7156f76f0a2e2e3",
+     "title": "Документ про право підпису договорів 2026 - 2026-10-04T115830.162.pdf",
+     "format": "application/pdf",
+     "url": "https://public-docs.prozorro.gov.ua/get/64c974b5a8634170a947e2d2cf2bf7d3?Signature=5ah5pEJgGGuOIaSw7Fsg%2BbOPWmN3uZoI7wsmPOiUUx7dB1Hw%2FzApHtZX9cOyC3BWvHYet2heMxCmqEy8uXVFDA%3D%3D&KeyID=52462340",
+     "documentOf": "tender",
+     "dateModified": "2026-10-04T12:03:53.897628+03:00",
+     "language": "uk"
+    },
+    {
+     "confidentiality": "public",
+     "documentType": "technicalSpecifications",
+     "title_en": "Документ про право підпису договорів 2026 - 2026-10-04T115830.162.pdf.p7s",
+     "title_ru": "Документ про право підпису договорів 2026 - 2026-10-04T115830.162.pdf.p7s",
+     "description": "SHA1: 2be4c06a10a3d2318087603e34271d850d1a987c",
+     "id": "4f8382f69dd641ab8f3143157109e3d0",
+     "datePublished": "2026-10-04T12:03:53.897628+03:00",
+     "hash": "md5:c181debcbe8eb928739ad132f4f41007",
+     "title": "Документ про право підпису договорів 2026 - 2026-10-04T115830.162.pdf.p7s",
+     "format": "application/pkcs7-signature",
+     "url": "https://public-docs.prozorro.gov.ua/get/003dcf04eb8e4e0799acfcb89d22c5e4?Signature=wvpXDHpheZmusggcR1jFRvmYiN7DpZa2ezMZolrtpEkBLd%2BWjan52ReFCUGCrh%2BWLome5CdmQ%2FGgGo46Pv9FDQ%3D%3D&KeyID=52462340",
+     "documentOf": "tender",
+     "dateModified": "2026-10-04T12:03:53.897628+03:00",
+     "language": "uk"
+    },
+    {
+     "confidentiality": "public",
+     "documentType": "technicalSpecifications",
+     "title_en": "рішення ТОВ АЛЮР-2 (1) - 2026-10-04T115828.330.pdf",
+     "title_ru": "рішення ТОВ АЛЮР-2 (1) - 2026-10-04T115828.330.pdf",
+     "description": "SHA1: a3665355a3e52edb225fe05ad55f4738d351f3f3",
+     "id": "5d4638872dd0469585fe663cc39461e4",
+     "datePublished": "2026-10-04T12:03:53.897628+03:00",
+     "hash": "md5:004a5be5ba59942f5886801446825e1f",
+     "title": "рішення ТОВ АЛЮР-2 (1) - 2026-10-04T115828.330.pdf",
+     "format": "application/pdf",
+     "url": "https://public-docs.prozorro.gov.ua/get/fe57575b034445288d38570d8a5df872?Signature=2rdXNlhhjW8W3ESD6t8uye8cHpBBkzoHmpGwykuW1AY0AsctF4jlQCwdK%2FigscS32bKe6J%2B1IF%2F9lNGfasRvBg%3D%3D&KeyID=52462340",
+     "documentOf": "tender",
+     "dateModified": "2026-10-04T12:03:53.897628+03:00",
+     "language": "uk"
+    },
+    {
+     "confidentiality": "public",
+     "documentType": "technicalSpecifications",
+     "title_en": "рішення ТОВ АЛЮР-2 (1) - 2026-10-04T115828.330.pdf.p7s",
+     "title_ru": "рішення ТОВ АЛЮР-2 (1) - 2026-10-04T115828.330.pdf.p7s",
+     "description": "SHA1: ad2166c34fe1997618f59db6821c09e093b0c059",
+     "id": "29cce2b2122d40d78d67ba12de407ec6",
+     "datePublished": "2026-10-04T12:03:53.897628+03:00",
+     "hash": "md5:33546778c784f16af99bec617b6d6327",
+     "title": "рішення ТОВ АЛЮР-2 (1) - 2026-10-04T115828.330.pdf.p7s",
+     "format": "application/pkcs7-signature",
+     "url": "https://public-docs.prozorro.gov.ua/get/43aa56153f06470da3b59083be17f90a?Signature=h%2B8QnuOU2a1Dzj2fc%2Bt9a5I37TdRl4oub24Fe7ExRR0EmCLtlGHQViwE8ZVfRw2KvAjbETOvk6XqR93H9ld3Cg%3D%3D&KeyID=52462340",
+     "documentOf": "tender",
+     "dateModified": "2026-10-04T12:03:53.897628+03:00",
+     "language": "uk"
+    },
+    {
+     "confidentiality": "public",
+     "documentType": "technicalSpecifications",
+     "title_en": "наказ на призначення директора (24)-2 - 2026-10-04T115826.686.pdf",
+     "title_ru": "наказ на призначення директора (24)-2 - 2026-10-04T115826.686.pdf",
+     "description": "SHA1: 99ff743018bd3fc6b21d5b8d47bc3a637e47d78d",
+     "id": "485838eef96148a28dd0cdca4c651f01",
+     "datePublished": "2026-10-04T12:03:53.897628+03:00",
+     "hash": "md5:45a6e5887963884e52575277ad2e5446",
+     "title": "наказ на призначення директора (24)-2 - 2026-10-04T115826.686.pdf",
+     "format": "application/pdf",
+     "url": "https://public-docs.prozorro.gov.ua/get/df26c453720242ff9d58bce55b418705?Signature=dnmEttsQMD1sUy1k2GBvzUg2ETDRQH5E8%2BHdwsey3jLB4BrvF1JqywRzYURi4bACJ4LcXR%2BZSJAtNoWXqXYxAg%3D%3D&KeyID=52462340",
+     "documentOf": "tender",
+     "dateModified": "2026-10-04T12:03:53.897628+03:00",
+     "language": "uk"
+    },
+    {
+     "confidentiality": "public",
+     "documentType": "technicalSpecifications",
+     "title_en": "наказ на призначення директора (24)-2 - 2026-10-04T115826.686.pdf.p7s",
+     "title_ru": "наказ на призначення директора (24)-2 - 2026-10-04T115826.686.pdf.p7s",
+     "description": "SHA1: 0322a504707ae36e71de7860dfc0755dd4713457",
+     "id": "4411d870acff460d8802d5e05ac19a1c",
+     "datePublished": "2026-10-04T12:03:53.897628+03:00",
+     "hash": "md5:9d9be231e5522e841c5a7d95a2bf5d35",
+     "title": "наказ на призначення директора (24)-2 - 2026-10-04T115826.686.pdf.p7s",
+     "format": "application/pkcs7-signature",
+     "url": "https://public-docs.prozorro.gov.ua/get/7dc342f2c0d1413a9c66989b080d326d?Signature=eNQPuwlwkvbl01SU7fvT2C3CP%2BFc78BM90MryghdHR17kGnO5jDtUSCNL0VkLfWnBljcRmLKlT1tLaPFeKd3DA%3D%3D&KeyID=52462340",
+     "documentOf": "tender",
+     "dateModified": "2026-10-04T12:03:53.897628+03:00",
+     "language": "uk"
+    },
+    {
+     "confidentiality": "public",
+     "documentType": "technicalSpecifications",
+     "title_en": "Технічка Чугуїв рукавички від 01102026.pdf",
+     "title_ru": "Технічка Чугуїв рукавички від 01102026.pdf",
+     "description": "SHA1: 3c9847deb534f62989be38c51082d7295a26da0f",
+     "id": "d2401fa13cd248d395510825785a58a1",
+     "datePublished": "2026-10-04T12:03:53.897628+03:00",
+     "hash": "md5:4b416200416b6f00b95acfa0f3924d63",
+     "title": "Технічка  рукавички від 01102026.pdf",
+     "format": "application/pdf",
+     "url": "https://public-docs.prozorro.gov.ua/get/2d89a2ba1c974b728417aefda9f71119?Signature=vJe2xOPkcvHKuOdYMSItUvNVuchw2yNga6jEZjwOwdFX9O7Ie%2BEK32H45SHo9of9VFweSDIyWOK3Qj4lP7vWBQ%3D%3D&KeyID=52462340",
+     "documentOf": "tender",
+     "dateModified": "2026-10-04T12:03:53.897628+03:00",
+     "language": "uk"
+    },
+    {
+     "confidentiality": "public",
+     "documentType": "technicalSpecifications",
+     "title_en": "Технічка Чугуїв рукавички від 01102026.pdf.p7s",
+     "title_ru": "Технічка Чугуїв рукавички від 01102026.pdf.p7s",
+     "description": "SHA1: 010d5f6fe31991392cc56f2db46f96c81bf58f19",
+     "id": "0d8751ef0af7427e90851757599af584",
+     "datePublished": "2026-10-04T12:03:53.897628+03:00",
+     "hash": "md5:3fd2d788763f0479d698072b4e70b709",
+     "title": "Технічка  рукавички від 01102026.pdf.p7s",
+     "format": "application/pkcs7-signature",
+     "url": "https://public-docs.prozorro.gov.ua/get/9cc2e5526648472984172de758f6eacf?Signature=Tt8faV8D4umaPy7m9cujImvoOoFMRW9nF56eQERM8FSUQBTOcXx8IJj%2B6O15OXeUV0GVX4IjMAgKMHSLMnpNBQ%3D%3D&KeyID=52462340",
+     "documentOf": "tender",
+     "dateModified": "2026-10-04T12:03:53.897628+03:00",
+     "language": "uk"
+    },
+    {
+     "confidentiality": "public",
+     "documentType": "technicalSpecifications",
+     "title_en": "Комерційна Чугуїв рукавички 01102026 (1).pdf",
+     "title_ru": "Комерційна Чугуїв рукавички 01102026 (1).pdf",
+     "description": "SHA1: e2da2fa2d237fe41ab46e40cfd44750583ea0b58",
+     "id": "3c3a47b760c5482aa02a553308dfb49f",
+     "datePublished": "2026-10-04T12:03:53.897628+03:00",
+     "hash": "md5:4e84c0a8a5f04122f141e46eda8768d5",
+     "title": "Комерційна  рукавички 01102026 (1).pdf",
+     "format": "application/pdf",
+     "url": "https://public-docs.prozorro.gov.ua/get/552a827d45bc469883262f46b97f1e7a?Signature=C1pxfbp7ulssuro6XYhfDyHypg9QYrLGOxLLEu05d%2FL8i2H9L3uh20mQzan2%2FC7cPo8R2XeuS0juQACbEOC%2BBA%3D%3D&KeyID=52462340",
+     "documentOf": "tender",
+     "dateModified": "2026-10-04T12:03:53.897628+03:00",
+     "language": "uk"
+    },
+    {
+     "confidentiality": "public",
+     "documentType": "technicalSpecifications",
+     "title_en": "Комерційна Чугуїв рукавички 01102026 (1).pdf.p7s",
+     "title_ru": "Комерційна Чугуїв рукавички 01102026 (1).pdf.p7s",
+     "description": "SHA1: 887ecda10c121f045c500129561414447d091057",
+     "id": "4ed637b786c94445a689ed18c376ecce",
+     "datePublished": "2026-10-04T12:03:53.897628+03:00",
+     "hash": "md5:ce1b75d9ed32650505e00af981290612",
+     "title": "Комерційна  рукавички 01102026 (1).pdf.p7s",
+     "format": "application/pkcs7-signature",
+     "url": "https://public-docs.prozorro.gov.ua/get/9439e978128e4bd5b685b54633add100?Signature=dcG7lWCtrptEhXLU%2B%2FPAuGKrTmEUg%2ByxFpUjOc6%2FcLiXBFiitjUWs9xxT4vreTqJbeAyUr8SvAH35Nhr%2FjpqCA%3D%3D&KeyID=52462340",
+     "documentOf": "tender",
+     "dateModified": "2026-10-04T12:03:53.897628+03:00",
+     "language": "uk"
+    },
+    {
+     "confidentiality": "public",
+     "documentType": "proposal",
+     "title_en": "sign.p7s",
+     "title_ru": "sign.p7s",
+     "description": "SHA1: 5d8f5fcddef5e4605b226a9a7e18d421ae7a6977",
+     "id": "e5a0c49fcda24d9ba335098771822a2e",
+     "datePublished": "2026-10-04T12:05:03.160055+03:00",
+     "hash": "md5:154b9a80ff5880ca8d1c7fb5d55d2e4b",
+     "title": "sign.p7s",
+     "format": "application/pkcs7-signature",
+     "url": "https://public-docs.prozorro.gov.ua/get/93134c0313884317abd7c5e31bdd3d9a?Signature=yEjIv%2FcSkTwCELodSLyhY8iAcJVWnNIHrtdKm4ZF1tDV5FVTn35vUpFgdOp%2BFl7uVZUVdY6TvJyZJ2IXlKn4CQ%3D%3D&KeyID=52462340",
+     "documentOf": "tender",
+     "dateModified": "2026-10-04T12:05:03.160055+03:00",
+     "language": "uk"
+    }
+   ],
+   "submissionDate": "2026-10-04T12:05:04.949394+03:00"
+  },
+  {
+   "items": [
+    {
+     "id": "dacda024493b41f2a9dc386e3b13152e",
+     "description": "Рукавички діелектричні безшовні",
+     "unit": {
+      "name": "пара",
+      "code": "PR"
+     },
+     "quantity": 255.0,
+     "relatedLot": "7d2484ab8d954e94a9f3f480c1ed1fd7"
+    },
+    {
+     "id": "cd1a2530a1ce48d4ac7fb2e0eda42612",
+     "description": "Рукавички (КРАГИ) зварювальника спилкові",
+     "unit": {
+      "name": "пара",
+      "code": "PR"
+     },
+     "quantity": 612.0,
+     "relatedLot": "7d2484ab8d954e94a9f3f480c1ed1fd7"
+    }
+   ],
+   "lotValues": [
+    {
+     "value": {
+      "amount": 220585.2,
+      "currency": "UAH",
+      "valueAddedTaxIncluded": false
+     },
+     "relatedLot": "7d2484ab8d954e94a9f3f480c1ed1fd7",
+     "status": "active",
+     "date": "2026-10-09T13:32:39.086845+03:00",
+     "initialValue": {
+      "amount": 220585.2,
+      "currency": "UAH",
+      "valueAddedTaxIncluded": false
+     }
+    }
+   ],
+   "tenderers": [
+    {
+     "name": "ТОВАРИСТВО З ОБМЕЖЕНОЮ ВІДПОВІДАЛЬНІСТЮ \"ОХОРОНА ПРАЦІ\"",
+     "identifier": {
+      "scheme": "UA-EDR",
+      "id": "44607446",
+      "legalName": "ТОВАРИСТВО З ОБМЕЖЕНОЮ ВІДПОВІДАЛЬНІСТЮ \"ОХОРОНА ПРАЦІ\""
+     },
+     "address": {
+      "streetAddress": "вул.Бойчука Михайла, будинок 30-А, квартира 59",
+      "locality": "Київ",
+      "region": "Київська область",
+      "postalCode": "01133",
+      "countryName": "Україна"
+     },
+     "scale": "sme"
+    }
+   ],
+   "status": "active",
+   "id": "cfce06a2bf9f4abc9fd113fc43bfcf60",
+   "date": "2026-10-09T13:32:39.086845+03:00",
+   "documents": [
+    {
+     "confidentiality": "public",
+     "documentType": "proposal",
+     "id": "bc7d538a6dd74a1095572f3f207ba62b",
+     "datePublished": "2026-10-09T13:32:38.967223+03:00",
+     "hash": "md5:991403d75fb2c532c71aebb4e369b356",
+     "title": "sign.p7s",
+     "format": "application/pkcs7-signature",
+     "url": "https://public-docs.prozorro.gov.ua/get/c244e9878ee64ddfb3c6997ea1836ddf?Signature=U%2BOYERZqh4E5lz1i4kTKYYgOKfBayojlaPJn3wDKy500%2F%2B4aGNjlfXz88X7zyJwIEXFKl1LD9ZJhLieJ5V%2BwBA%3D%3D&KeyID=52462340",
+     "documentOf": "tender",
+     "dateModified": "2026-10-09T13:32:38.967223+03:00",
+     "language": "uk"
+    }
+   ],
+   "eligibilityDocuments": [
+    {
+     "confidentiality": "public",
+     "documentType": "eligibilityDocuments",
+     "relatedItem": "7d2484ab8d954e94a9f3f480c1ed1fd7",
+     "id": "c1d7dbb2eaaa4ea580953d35de1e1811",
+     "datePublished": "2026-10-09T13:32:12.769000+03:00",
+     "hash": "md5:f2d644d59a0f2903face1bda67d9d7ae",
+     "title": "витяг ЄДР 11.09.26.pdf",
+     "format": "application/pdf",
+     "url": "https://public-docs.prozorro.gov.ua/get/a33bd6422c7544bab2d1f58bfa4d0330?Signature=i%2FIJQZHfJPIYURLBGG7M8s5bk1E1iLqr9Ha9OyeLCOhtUxpfMFeyo4%2FzKcpTJ70%2BCR0jqCz5nGux4IjBlhkiBw%3D%3D&KeyID=52462340",
+     "documentOf": "lot",
+     "dateModified": "2026-10-09T13:32:12.769000+03:00",
+     "language": "uk"
+    },
+    {
+     "confidentiality": "public",
+     "documentType": "eligibilityDocuments",
+     "relatedItem": "7d2484ab8d954e94a9f3f480c1ed1fd7",
+     "id": "9a308efffe6444fda76bcd81b886dff5",
+     "datePublished": "2026-10-09T13:32:12.769000+03:00",
+     "hash": "md5:89367f881de2541a5bfdc2285bb41e5d",
+     "title": "витяг ЄДР 11.09.26.pdf.p7s",
+     "format": "application/pkcs7-signature",
+     "url": "https://public-docs.prozorro.gov.ua/get/3aa947b0c70b4cf3837ec255bad86abd?Signature=7vcrlECjUVCl5eraMMyDPwfS5CVjqYzJhVYMLcQHxAF%2BpKZCrvs0agI7hndDzDWULuX4%2Bt6MH1I8q6nYZlKYAg%3D%3D&KeyID=52462340",
+     "documentOf": "lot",
+     "dateModified": "2026-10-09T13:32:12.769000+03:00",
+     "language": "uk"
+    },
+    {
+     "confidentiality": "public",
+     "documentType": "eligibilityDocuments",
+     "relatedItem": "7d2484ab8d954e94a9f3f480c1ed1fd7",
+     "id": "33c10fdf92224a2f8f86689c1fd597e0",
+     "datePublished": "2026-10-09T13:32:12.769000+03:00",
+     "hash": "md5:f57cbeb1a5b306123e9af6b0d0de45d6",
+     "title": "Довідка фіз ос 24.09.26.zip",
+     "format": "application/zip",
+     "url": "https://public-docs.prozorro.gov.ua/get/95a81db526054ef2a46f9ef08e876cf7?Signature=KBsCFBmQzSEnHHIba9Qe8s25TcPlaXdDuNOQjLsjGycYRppSuEzZXiQAREyoW0CXdhBFafSI2jbDbkfD%2BbMsAg%3D%3D&KeyID=52462340",
+     "documentOf": "lot",
+     "dateModified": "2026-10-09T13:32:12.769000+03:00",
+     "language": "uk"
+    },
+    {
+     "confidentiality": "public",
+     "documentType": "eligibilityDocuments",
+     "relatedItem": "7d2484ab8d954e94a9f3f480c1ed1fd7",
+     "id": "1ddcc49236894ce98f072ba1c4d00dea",
+     "datePublished": "2026-10-09T13:32:12.769000+03:00",
+     "hash": "md5:b5491111d87c5a4711e189e813e87dbe",
+     "title": "Довідка фіз ос 24.09.26.zip.p7s",
+     "format": "application/pkcs7-signature",
+     "url": "https://public-docs.prozorro.gov.ua/get/2a87d19d71cb4d42a024f7468feb44db?Signature=7wJHHs5Qt4BlJaWLWIMTD17ZiW%2BvZPBZ%2FOLUM4QiDKK59jF9JbkQXr7WyriLcHaBOICpk5gQmVSfnIKu9QKADA%3D%3D&KeyID=52462340",
+     "documentOf": "lot",
+     "dateModified": "2026-10-09T13:32:12.769000+03:00",
+     "language": "uk"
+    },
+    {
+     "confidentiality": "public",
+     "documentType": "eligibilityDocuments",
+     "relatedItem": "7d2484ab8d954e94a9f3f480c1ed1fd7",
+     "id": "73f51c804d164db583cd42c5f737f038",
+     "datePublished": "2026-10-09T13:32:12.769000+03:00",
+     "hash": "md5:3e8c81cb536859cbb1964125aea0a07a",
+     "title": "Довідка юр ос 24.09.26.zip",
+     "format": "application/zip",
+     "url": "https://public-docs.prozorro.gov.ua/get/137789f91d2e4503b1014e43d791b447?Signature=%2FRyOjWLHUAf3w3KaBFtwMA5VcwvaVEO%2BuOiRtXu%2FYQyi8LrbMOtimW%2BdUAe083Y7Kpuv8x%2Ff93HKqXmcAeJUDg%3D%3D&KeyID=52462340",
+     "documentOf": "lot",
+     "dateModified": "2026-10-09T13:32:12.769000+03:00",
+     "language": "uk"
+    },
+    {
+     "confidentiality": "public",
+     "documentType": "eligibilityDocuments",
+     "relatedItem": "7d2484ab8d954e94a9f3f480c1ed1fd7",
+     "id": "4dd0dbc12bad4bf9b792de39af2e392e",
+     "datePublished": "2026-10-09T13:32:12.769000+03:00",
+     "hash": "md5:5ed1e3d81f6cab7acd75335771265af5",
+     "title": "Довідка юр ос 24.09.26.zip.p7s",
+     "format": "application/pkcs7-signature",
+     "url": "https://public-docs.prozorro.gov.ua/get/e0008d433cf44f26bb205b00921bf3b2?Signature=n%2BiSLmBJclFCKhItR2sfBhj%2FH73fbl6sVOVHav0NpeJxcKnasC0TFRKbAfeE%2BqRtI%2B6EoFpKka3Hqyz0AP%2FJAg%3D%3D&KeyID=52462340",
+     "documentOf": "lot",
+     "dateModified": "2026-10-09T13:32:12.769000+03:00",
+     "language": "uk"
+    },
+    {
+     "confidentiality": "public",
+     "documentType": "eligibilityDocuments",
+     "relatedItem": "7d2484ab8d954e94a9f3f480c1ed1fd7",
+     "id": "4584b791f6e04ce092593586f452383e",
+     "datePublished": "2026-10-09T13:32:12.769000+03:00",
+     "hash": "md5:a35801bd464cd334d15268a239531308",
+     "title": "протокол 4.pdf",
+     "format": "application/pdf",
+     "url": "https://public-docs.prozorro.gov.ua/get/6c56cc4bd3e34815bd79eef89aa2c8eb?Signature=RED%2FJQUzpWS50%2FFZS8QfVDoFVv3Lx3CriIc1B4C2gzPyDOxAVTuXb33I9CodS1ThFTG0iMsuOsF9CPR59FThBA%3D%3D&KeyID=52462340",
+     "documentOf": "lot",
+     "dateModified": "2026-10-09T13:32:12.769000+03:00",
+     "language": "uk"
+    },
+    {
+     "confidentiality": "public",
+     "documentType": "eligibilityDocuments",
+     "relatedItem": "7d2484ab8d954e94a9f3f480c1ed1fd7",
+     "id": "8fc02db7365c4374adb0837961e85f55",
+     "datePublished": "2026-10-09T13:32:12.769000+03:00",
+     "hash": "md5:f9abeaf32a7477ccb1e9e0a67b0d5f1f",
+     "title": "протокол 4.pdf.p7s",
+     "format": "application/pkcs7-signature",
+     "url": "https://public-docs.prozorro.gov.ua/get/3c2fa0f59d75449e8705769f1acae28e?Signature=aMkIWZOVVzZmSTj4XGQSBQtgEe%2F3TYyCEMphxFjpkqUQZ0Hh3B%2BT4TQfQ3DNnJkrdjAUB2qlr1T0CQ8oBPdsAQ%3D%3D&KeyID=52462340",
+     "documentOf": "lot",
+     "dateModified": "2026-10-09T13:32:12.769000+03:00",
+     "language": "uk"
+    },
+    {
+     "confidentiality": "public",
+     "documentType": "eligibilityDocuments",
+     "relatedItem": "7d2484ab8d954e94a9f3f480c1ed1fd7",
+     "id": "e155ef5f7343482f8effb5f69c0ffc78",
+     "datePublished": "2026-10-09T13:32:12.769000+03:00",
+     "hash": "md5:dec89cfe565cb3d1f7b002c4291a23cc",
+     "title": "Рішення Наказ для тендеру.pdf",
+     "format": "application/pdf",
+     "url": "https://public-docs.prozorro.gov.ua/get/f2d46a16249540a6be9bec0f831a2cf0?Signature=LMvIbkTCcHGr6ZT3hGVGQ7Hw4gLJUXNTg1DB%2Fz%2BS41D4aGcs2BgW2KHA36bbM2o5R6yJjGzLh%2F2JQmb0N%2BXMDQ%3D%3D&KeyID=52462340",
+     "documentOf": "lot",
+     "dateModified": "2026-10-09T13:32:12.769000+03:00",
+     "language": "uk"
+    },
+    {
+     "confidentiality": "public",
+     "documentType": "eligibilityDocuments",
+     "relatedItem": "7d2484ab8d954e94a9f3f480c1ed1fd7",
+     "id": "c70a854b39224645913f4990a84650f9",
+     "datePublished": "2026-10-09T13:32:12.769000+03:00",
+     "hash": "md5:ddc37c48e6c950902aec7d881da75387",
+     "title": "Рішення Наказ для тендеру.pdf.p7s",
+     "format": "application/pkcs7-signature",
+     "url": "https://public-docs.prozorro.gov.ua/get/6ad94fef51a84de58463b5939235bd3c?Signature=tvSkZU9e9pgwBwJFV7jzsZ5z8N%2B7dGZIdQ%2B9G0EsObaMTVnC09BsHTZCVxF6ienSQMmyDMR9UY1lD%2F2YSesNAA%3D%3D&KeyID=52462340",
+     "documentOf": "lot",
+     "dateModified": "2026-10-09T13:32:12.769000+03:00",
+     "language": "uk"
+    },
+    {
+     "confidentiality": "public",
+     "documentType": "eligibilityDocuments",
+     "relatedItem": "7d2484ab8d954e94a9f3f480c1ed1fd7",
+     "id": "727fa7405e6c418e9b0d2a7352d2b44c",
+     "datePublished": "2026-10-09T13:32:12.769000+03:00",
+     "hash": "md5:d767799a79c89b2548ff37a3846fb514",
+     "title": "схемат зобр структ власн.pdf",
+     "format": "application/pdf",
+     "url": "https://public-docs.prozorro.gov.ua/get/8dbd72d1ea464c999a96dda954c04b3d?Signature=taNtpwR%2FHpKfJf3Hi6MmsITG%2Bfpq4dwmc5ZC04LNT4zK4BKHyad6adP6SQrFhtEhdewgadvaU%2B5rnGrp4PWtBA%3D%3D&KeyID=52462340",
+     "documentOf": "lot",
+     "dateModified": "2026-10-09T13:32:12.769000+03:00",
+     "language": "uk"
+    },
+    {
+     "confidentiality": "public",
+     "documentType": "eligibilityDocuments",
+     "relatedItem": "7d2484ab8d954e94a9f3f480c1ed1fd7",
+     "id": "55137cc7303f47b8954a8dd75d8872c1",
+     "datePublished": "2026-10-09T13:32:12.769000+03:00",
+     "hash": "md5:01ba5904ec2aea7bac815a9c7cefb308",
+     "title": "схемат зобр структ власн.pdf.p7s",
+     "format": "application/pkcs7-signature",
+     "url": "https://public-docs.prozorro.gov.ua/get/f6948287540d47e2810e5f9184d5e99c?Signature=glfYUVKuoWypWK37tAgJM4wvuqQh4SDCgj6QJxXdIjuhG%2F8rDmoG%2FsPs4Z2gP9VPyqQUR7crx%2Bs4JDk4yFRMCg%3D%3D&KeyID=52462340",
+     "documentOf": "lot",
+     "dateModified": "2026-10-09T13:32:12.769000+03:00",
+     "language": "uk"
+    },
+    {
+     "confidentiality": "public",
+     "documentType": "eligibilityDocuments",
+     "relatedItem": "7d2484ab8d954e94a9f3f480c1ed1fd7",
+     "id": "34e9901b53b94a219727451c6f3bc52a",
+     "datePublished": "2026-10-09T13:32:12.769000+03:00",
+     "hash": "md5:bdbecafb315dc2a953405a36faa2716a",
+     "title": "тех специф.pdf",
+     "format": "application/pdf",
+     "url": "https://public-docs.prozorro.gov.ua/get/9769e04568bf48e488f1d4e1df44276c?Signature=KAfig52PWkFqQ0iwaxDZbL%2BUnKDrq8pS6FDrHwDY76Q6%2B1XUOYMb%2BfgnNzMzchzuOF0fGvQAnbOrdl6q5QyXCg%3D%3D&KeyID=52462340",
+     "documentOf": "lot",
+     "dateModified": "2026-10-09T13:32:12.769000+03:00",
+     "language": "uk"
+    },
+    {
+     "confidentiality": "public",
+     "documentType": "eligibilityDocuments",
+     "relatedItem": "7d2484ab8d954e94a9f3f480c1ed1fd7",
+     "id": "ce0a799f8d634c6da6b1bb6ab117a2d0",
+     "datePublished": "2026-10-09T13:32:12.769000+03:00",
+     "hash": "md5:8aa7dc8fd5ce7a995ee225979253ce17",
+     "title": "тех специф.pdf.p7s",
+     "format": "application/pkcs7-signature",
+     "url": "https://public-docs.prozorro.gov.ua/get/568b4cbea45b44608764b1c3496ac19f?Signature=FvkWgP6lNCwkkZZY44%2Facn7ydDW65rLT5kqfBPALATGExjnsrr74kI6wSuVQQ6PJFKR8KAm%2F1nuJbhk1cQ%2FNDQ%3D%3D&KeyID=52462340",
+     "documentOf": "lot",
+     "dateModified": "2026-10-09T13:32:12.769000+03:00",
+     "language": "uk"
+    },
+    {
+     "confidentiality": "public",
+     "documentType": "eligibilityDocuments",
+     "relatedItem": "7d2484ab8d954e94a9f3f480c1ed1fd7",
+     "id": "d7bc97d25a724e77a4d2522b04e75785",
+     "datePublished": "2026-10-09T13:32:12.769000+03:00",
+     "hash": "md5:18260416249ed07299c5f0a52dcbae93",
+     "title": "Фінансова звітність за 2025 рік.pdf",
+     "format": "application/pdf",
+     "url": "https://public-docs.prozorro.gov.ua/get/84edbb7e7ffa45f2b2b9fce57deec00a?Signature=KSARYk0i2k3iYx%2B6ecLeQTW%2Ff3YdE185dDg2gMFAE65K5R54hhtZR%2B2Q5TihCiN9bVeZSR%2FEVuLHb12JyfvWDA%3D%3D&KeyID=52462340",
+     "documentOf": "lot",
+     "dateModified": "2026-10-09T13:32:12.769000+03:00",
+     "language": "uk"
+    },
+    {
+     "confidentiality": "public",
+     "documentType": "eligibilityDocuments",
+     "relatedItem": "7d2484ab8d954e94a9f3f480c1ed1fd7",
+     "id": "425f8f4532b54e6e9fd6a3aa180faf7c",
+     "datePublished": "2026-10-09T13:32:12.769000+03:00",
+     "hash": "md5:d885af1c0d9995deed25b3ded97f9e43",
+     "title": "Фінансова звітність за 2025 рік.pdf.p7s",
+     "format": "application/pkcs7-signature",
+     "url": "https://public-docs.prozorro.gov.ua/get/1f0e4d559e3f4f878009cacc69cf1bf8?Signature=9n1xzYPSGxdO2owBALmjPzfQwyO9Dok6lfbi1X53cLhzDNJj2OzniN8%2FDBEB8sadoDasvvUlZSTnSJ%2BvKrTMDg%3D%3D&KeyID=52462340",
+     "documentOf": "lot",
+     "dateModified": "2026-10-09T13:32:12.769000+03:00",
+     "language": "uk"
+    }
+   ],
+   "submissionDate": "2026-10-09T13:32:39.086845+03:00"
+  }
+ ],
+ "awardPeriod": {
+  "startDate": "2026-10-10T00:00:06.642149+03:00"
+ },
+ "awards": [
+  {
+   "id": "14c0a1dd5a1f40fdaa5546731b1b4ac2",
+   "status": "pending",
+   "date": "2026-10-10T00:00:06.642149+03:00",
+   "value": {
+    "amount": 488286.0,
+    "currency": "UAH",
+    "valueAddedTaxIncluded": false
+   },
+   "suppliers": [
+    {
+     "name": "ТОВ АЛЮР",
+     "identifier": {
+      "scheme": "UA-EDR",
+      "id": "19097605",
+      "legalName": "ТОВ АЛЮР"
+     },
+     "address": {
+      "streetAddress": "Вул Микитинська буд.55 кв 66",
+      "locality": "Нікополь",
+      "region": "Дніпропетровська область",
+      "postalCode": "53211",
+      "countryName": "Україна"
+     },
+     "scale": "sme"
+    }
+   ],
+   "bid_id": "f68adc867ea54db28e6e48ed28ed0baf",
+   "lotID": "18b3f9fea812476a994604397041d0f2",
+   "period": {
+    "startDate": "2026-10-10T00:00:06.642149+03:00",
+    "endDate": "2026-10-17T00:00:00+03:00"
+   }
+  },
+  {
+   "id": "882782959fe54d7ca6c4636f149bb497",
+   "status": "pending",
+   "date": "2026-10-10T00:00:06.642149+03:00",
+   "value": {
+    "amount": 220585.2,
+    "currency": "UAH",
+    "valueAddedTaxIncluded": false
+   },
+   "suppliers": [
+    {
+     "name": "ТОВАРИСТВО З ОБМЕЖЕНОЮ ВІДПОВІДАЛЬНІСТЮ \"ОХОРОНА ПРАЦІ\"",
+     "identifier": {
+      "scheme": "UA-EDR",
+      "id": "44607446",
+      "legalName": "ТОВАРИСТВО З ОБМЕЖЕНОЮ ВІДПОВІДАЛЬНІСТЮ \"ОХОРОНА ПРАЦІ\""
+     },
+     "address": {
+      "streetAddress": "вул.Бойчука Михайла, будинок 30-А, квартира 59",
+      "locality": "Київ",
+      "region": "Київська область",
+      "postalCode": "01133",
+      "countryName": "Україна"
+     },
+     "scale": "sme"
+    }
+   ],
+   "bid_id": "cfce06a2bf9f4abc9fd113fc43bfcf60",
+   "lotID": "7d2484ab8d954e94a9f3f480c1ed1fd7",
+   "period": {
+    "startDate": "2026-10-10T00:00:06.642149+03:00",
+    "endDate": "2026-10-17T00:00:00+03:00"
+   }
+  }
+ ],
+ "id": "c960d76c7c544d1fa6840e5ca59f5a86"
+}

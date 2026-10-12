@@ -1,0 +1,253 @@
+{
+ "description": "",
+ "date": "2026-10-09T22:39:08.216783+03:00",
+ "dateModified": "2026-10-09T22:39:08.216783+03:00",
+ "dateCreated": "2026-10-09T22:37:59.283668+03:00",
+ "tenderID": "UA-2026-10-09-013681-a",
+ "documents": [
+  {
+   "confidentiality": "public",
+   "documentType": "notice",
+   "description": "SHA1:abf9f357a6309283c61be323e865047dcdeb9ea6;SHA2-384:72b210567ef31d58f8a70ae91db1e52fd44fc9ba30b5df4f2d06f087fccd80308b91d45a6ca2fb136eb12ed4973fd54b;Antivirus: ESET Antivirus",
+   "id": "085edf54bd4c437b975c1c356833e427",
+   "datePublished": "2026-10-09T22:39:04.098738+03:00",
+   "hash": "md5:58cd5c041fa540fb63def479cd282aae",
+   "title": "sign.p7s",
+   "format": "application/pkcs7-signature",
+   "url": "https://public-docs.prozorro.gov.ua/get/2c2c57f70377499caecfe7b5676475b0?Signature=i%2FIgFZlMmrjABOzMDsU6KbuB8XCxhD1xU3jzXziO8i%2Bm%2BOnzUPgjDeL4SsEl%2F6noIYwwfh7XNQ0cxnHwaCV8DQ%3D%3D&KeyID=52462340",
+   "documentOf": "tender",
+   "dateModified": "2026-10-09T22:39:04.315402+03:00",
+   "author": "tender_owner",
+   "language": "uk"
+  }
+ ],
+ "status": "complete",
+ "owner": "prom.ua",
+ "title": "Послуги з надання доступу в режимі он-лайн до електронних баз наукової та науково-технічної інформації,\nінформаційних ресурсів",
+ "mainProcurementCategory": "services",
+ "procurementMethod": "limited",
+ "plans": [
+  {
+   "id": "1b6756e41e5448efb094d637f2e7a906"
+  }
+ ],
+ "contractChangeRationaleTypes": {
+  "durationExtension": {
+   "description_en": "Extension of the period of the procurement contract duration and the term of obligations fulfilment regarding the transfer of goods, implementation of works and provision of services in case of documented objective circumstances that led to such extension, including circumstances of force majeure, delays in funding of procuring entitys expenditures, provided that such changes will not increase the sum of money specified in the procurement contract",
+   "title_en": "Clause 4, Part 5, Article 41",
+   "description_uk": "Продовження строку дії договору про закупівлю та строку виконання зобов’язань щодо передачі товару, виконання робіт, надання послуг у разі виникнення документально підтверджених об’єктивних обставин, що спричинили таке продовження, у тому числі обставин непереборної сили, затримки фінансування витрат замовника, за умови що такі зміни не призведуть до збільшення суми, визначеної в договорі про закупівлю",
+   "title_uk": "Пункт 4 частини 5 статті 41",
+   "uri": "https://zakon.rada.gov.ua/laws/show/922-19/ed20241023#n1760",
+   "scheme": "LAW922"
+  },
+  "fiscalYearExtension": {
+   "description_en": "Еffect of the procurement contract may be extended for a period sufficient for conduction of the procurement procedure/simplified procurement at the beginning of the next year in volume that does not exceed 20% of the sum specified in the initial procurement contract concluded in the previous year, if expenditures for achieving this goal are approved in the prescribed manner",
+   "title_en": "Part 6 of Article 41",
+   "description_uk": "Дія договору про закупівлю може бути продовжена на строк, достатній для проведення процедури закупівлі/спрощеної закупівлі на початку наступного року в обсязі, що не перевищує 20 відсотків суми, визначеної в початковому договорі про закупівлю, укладеному в попередньому році, якщо видатки на досягнення цієї цілі затверджено в установленому порядку",
+   "title_uk": "Частина 6 статті 41",
+   "uri": "https://zakon.rada.gov.ua/laws/show/922-19/ed20241023#n1760",
+   "scheme": "LAW922"
+  },
+  "priceClarification": {
+   "description_en": "Drawing up a contract price, specified in accordance with the approved project documentation for the purchase contract, specified in paragraph three of part one of this article",
+   "title_en": "Clause 2, Part 7, Article 41",
+   "description_uk": "Складання договірної ціни, уточненої відповідно до затвердженої проектної документації до договору про закупівлю, зазначеного в абзаці третьому частини першої цієї статті",
+   "title_uk": "Пункт 2 частини 7 статті 41",
+   "uri": "https://zakon.rada.gov.ua/laws/show/922-19/ed20241023#n1760",
+   "scheme": "LAW922"
+  },
+  "itemPriceVariation": {
+   "description_en": "An increase in the price per unit of goods by up to 10 percent in proportion to the increase in the market price of such goods in the event of fluctuations in the market price of such goods, provided that such a change does not lead to an increase in the amount specified in the procurement contract; - no more than once every 90 days from the date of signing the procurement contract/making changes to such a contract regarding an increase in the price per unit of goods. The restriction on the timing of changes in the price per unit of goods does not apply in cases of changes in the terms of the contract for the procurement of gasoline and diesel fuel, natural gas, and electricity",
+   "title_en": "Clause 2, Part 5, Article 41",
+   "description_uk": "Збільшення ціни за одиницю товару до 10 відсотків пропорційно збільшенню ціни такого товару на ринку у разі коливання ціни такого товару на ринку за умови, що така зміна не призведе до збільшення суми, визначеної в договорі про закупівлю, - не частіше ніж один раз на 90 днів з моменту підписання договору про закупівлю/внесення змін до такого договору щодо збільшення ціни за одиницю товару. Обмеження щодо строків зміни ціни за одиницю товару не застосовується у випадках зміни умов договору про закупівлю бензину та дизельного пального, природного газу та електричної енергії",
+   "title_uk": "Пункт 2 частини 5 статті 41",
+   "uri": "https://zakon.rada.gov.ua/laws/show/922-19/ed20241023#n1760",
+   "scheme": "LAW922"
+  },
+  "priceReduction": {
+   "description_en": "Аpproval of price changes in the procurement contract in the direction of reduction (without changing the quantity (volume) and quality of goods, works and services), including in case of fluctuations in the price of goods on the market",
+   "title_en": "Clause 5, Part 5, Article 41",
+   "description_uk": "Погодження зміни ціни в договорі про закупівлю в бік зменшення (без зміни кількості (обсягу) та якості товарів, робіт і послуг), у тому числі у разі коливання ціни товару на ринку",
+   "title_uk": "Пункт 5 частини 5 статті 41",
+   "uri": "https://zakon.rada.gov.ua/laws/show/922-19/ed20241023#n1760",
+   "scheme": "LAW922"
+  },
+  "qualityImprovement": {
+   "description_en": "Іmprovement of the item's quality, provided that such improvement will not increase the sum of money specified in the procurement contract",
+   "title_en": "Clause 3, Part 5, Article 41",
+   "description_uk": "Покращення якості предмета закупівлі, за умови що таке покращення не призведе до збільшення суми, визначеної в договорі про закупівлю",
+   "title_uk": "Пункт 3 частини 5 статті 41",
+   "uri": "https://zakon.rada.gov.ua/laws/show/922-19/ed20241023#n1760",
+   "scheme": "LAW922"
+  },
+  "taxRate": {
+   "description_en": "Changes in the price in the purchase contract due to changes in tax and duty rates and/or changes in the conditions for granting tax benefits - in proportion to the change in such rates and/or tax benefits",
+   "title_en": "Clause 6, Part 5, Article 41",
+   "description_uk": "Зміни ціни в договорі про закупівлю у зв’язку зі зміною ставок податків і зборів та/або зміною умов щодо надання пільг з оподаткування - пропорційно до зміни таких ставок та/або пільг з оподаткування",
+   "title_uk": "Пункт 6 частини 5 статті 41",
+   "uri": "https://zakon.rada.gov.ua/laws/show/922-19/ed20241023#n1760",
+   "scheme": "LAW922"
+  },
+  "thirdParty": {
+   "description_en": "Changes in the consumer price index established in accordance with the legislation by state statistics bodies, changes in foreign currency exchange rates, changes in stock market quotes or Platts, ARGUS indicators of regulated prices (tariffs) and standards applied in the procurement contract, if the procurement contract establishes the procedure for changing the price",
+   "title_en": "Clause 7, Part 5, Article 41",
+   "description_uk": "Зміни встановленого згідно із законодавством органами державної статистики індексу споживчих цін, зміни курсу іноземної валюти, зміни біржових котирувань або показників Platts, ARGUS регульованих цін (тарифів) і нормативів, що застосовуються в договорі про закупівлю, у разі встановлення в договорі про закупівлю порядку зміни ціни",
+   "title_uk": "Пункт 7 частини 5 статті 41",
+   "uri": "https://zakon.rada.gov.ua/laws/show/922-19/ed20241023#n1760",
+   "scheme": "LAW922"
+  },
+  "volumeCuts": {
+   "description_en": "Reduction of the procurement's volume, particularly taking into account the actual expenditures of the procuring entity",
+   "title_en": "Clause 1, Part 5, Article 41",
+   "description_uk": "Зменшення обсягів закупівлі, зокрема з урахуванням фактичного обсягу видатків замовника",
+   "title_uk": "Пункт 1 частини 5 статті 41",
+   "uri": "https://zakon.rada.gov.ua/laws/show/922-19/ed20241023#n1760",
+   "scheme": "LAW922"
+  }
+ },
+ "items": [
+  {
+   "id": "8f7f8b0b87bc408fb14e225bcf054a29",
+   "description": "Експертус Кадри STANDARD ",
+   "unit": {
+    "name": "послуга",
+    "code": "E48"
+   },
+   "quantity": 1.0,
+   "classification": {
+    "description": "Послуги, пов’язані з базами даних",
+    "scheme": "ДК021",
+    "id": "72320000-4"
+   },
+   "deliveryDate": {
+    "endDate": "2026-12-31T00:00:00+02:00"
+   },
+   "deliveryAddress": {
+    "streetAddress": "Сікорського Ігоря авіаконструктора, 8",
+    "locality": "м. Київ",
+    "region": "м. Київ",
+    "postalCode": "04112",
+    "countryName": "Україна"
+   }
+  },
+  {
+   "id": "ddde7a2155f447748d483651c8714995",
+   "description": "Експертус Публічні закупівлі STANDARD ",
+   "unit": {
+    "name": "послуга",
+    "code": "E48"
+   },
+   "quantity": 1.0,
+   "classification": {
+    "description": "Послуги, пов’язані з базами даних",
+    "scheme": "ДК021",
+    "id": "72320000-4"
+   },
+   "deliveryDate": {
+    "endDate": "2026-12-31T00:00:00+02:00"
+   },
+   "deliveryAddress": {
+    "streetAddress": "Сікорського Ігоря авіаконструктора, 8",
+    "locality": "м. Київ",
+    "region": "м. Київ",
+    "postalCode": "04112",
+    "countryName": "Україна"
+   }
+  },
+  {
+   "id": "9a3bc14f1fd54db5948d220ef16cd820",
+   "description": " Експертус Головбух",
+   "unit": {
+    "name": "послуга",
+    "code": "E48"
+   },
+   "quantity": 1.0,
+   "classification": {
+    "description": "Послуги, пов’язані з базами даних",
+    "scheme": "ДК021",
+    "id": "72320000-4"
+   },
+   "deliveryDate": {
+    "endDate": "2026-12-31T00:00:00+02:00"
+   },
+   "deliveryAddress": {
+    "streetAddress": "Сікорського Ігоря авіаконструктора, 8",
+    "locality": "м. Київ",
+    "region": "м. Київ",
+    "postalCode": "04112",
+    "countryName": "Україна"
+   }
+  }
+ ],
+ "procurementMethodType": "reporting",
+ "procuringEntity": {
+  "name": "ДЕРЖАВНА УСТАНОВА \"НАЦІОНАЛЬНА ЛАБОРАТОРІЯ АНТИДОПІНГОВОГО КОНТРОЛЮ»",
+  "identifier": {
+   "scheme": "UA-EDR",
+   "id": "44908969",
+   "legalName": "ДЕРЖАВНА УСТАНОВА \"НАЦІОНАЛЬНА ЛАБОРАТОРІЯ АНТИДОПІНГОВОГО КОНТРОЛЮ»"
+  },
+  "address": {
+   "streetAddress": "вул.Сікорського Ігоря авіаконструктора будинок 8",
+   "locality": "м. Київ",
+   "region": "м. Київ",
+   "postalCode": "04112",
+   "countryName": "Україна"
+  },
+  "kind": "general"
+ },
+ "value": {
+  "amount": 63000.0,
+  "currency": "UAH",
+  "valueAddedTaxIncluded": false
+ },
+ "awards": [
+  {
+   "id": "b57348c584d64516b08fd522abc30fa1",
+   "status": "active",
+   "date": "2026-10-09T22:39:04.947147+03:00",
+   "qualified": true,
+   "suppliers": [
+    {
+     "name": "Москалюк Юлія Олександрівна",
+     "identifier": {
+      "scheme": "UA-EDR",
+      "id": "3372514762",
+      "legalName": "Москалюк Юлія Олександрівна"
+     },
+     "address": {
+      "streetAddress": "Житомирський р-н село Громада вул.Перемоги будинок 13",
+      "locality": "",
+      "region": "Житомирська область",
+      "postalCode": "13101",
+      "countryName": "Україна"
+     },
+     "scale": "sme"
+    }
+   ],
+   "value": {
+    "amount": 63000.0,
+    "currency": "UAH",
+    "valueAddedTaxIncluded": false
+   }
+  }
+ ],
+ "contracts": [
+  {
+   "id": "59039fa5c14442ee8098441e326e2f93",
+   "status": "active",
+   "awardID": "b57348c584d64516b08fd522abc30fa1",
+   "date": "2026-10-09T22:39:08.216783+03:00",
+   "contractID": "UA-2026-10-09-013681-a-a1",
+   "title": "Послуги з надання доступу в режимі он-лайн до електронних баз наукової та науково-технічної інформації,\nінформаційних ресурсів",
+   "description": "",
+   "value": {
+    "amount": 63000.0,
+    "currency": "UAH",
+    "valueAddedTaxIncluded": false,
+    "amountNet": 63000.0
+   }
+  }
+ ],
+ "id": "4fbe277d630149c0be1bd789e0fe1d9f"
+}

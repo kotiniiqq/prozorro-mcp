@@ -1,0 +1,171 @@
+{
+ "status": "scheduled",
+ "procuringEntity": {
+  "id": "707d6e48806f41b19aa0baa0dde78cca",
+  "name": "ШУБКІВСЬКИЙ ЛІЦЕЙ БІЛОКРИНИЦЬКОЇ СІЛЬСЬКОЇ РАДИ РІВНЕНСЬКОГО РАЙОНУ РІВНЕНСЬКОЇ ОБЛАСТІ",
+  "identifier": {
+   "scheme": "UA-EDR",
+   "id": "25315851",
+   "legalName": "ШУБКІВСЬКИЙ ЛІЦЕЙ БІЛОКРИНИЦЬКОЇ СІЛЬСЬКОЇ РАДИ РІВНЕНСЬКОГО РАЙОНУ РІВНЕНСЬКОЇ ОБЛАСТІ"
+  },
+  "address": {
+   "streetAddress": "ВУЛИЦЯ НЕЗАЛЕЖНОСТІ, будинок 24",
+   "locality": "Рівненський, село Шубків",
+   "region": "Рівненська область",
+   "postalCode": "35325",
+   "countryName": "Україна"
+  },
+  "kind": "general"
+ },
+ "tender": {
+  "procurementMethod": "limited",
+  "procurementMethodType": "reporting",
+  "tenderPeriod": {
+   "startDate": "2026-09-01T03:00:00+03:00"
+  }
+ },
+ "budget": {
+  "id": "15870000-7",
+  "description": "Продукти харчування  (Перець чорний, куркума, коріандр, зіра)\n",
+  "amount": 837.0,
+  "currency": "UAH",
+  "period": {
+   "startDate": "2026-01-01T00:00:00+02:00",
+   "endDate": "2026-12-31T23:59:59.999999+02:00"
+  },
+  "notes": "",
+  "breakdown": [
+   {
+    "id": "be3ff2d9204044f6afb744b37c9ca990",
+    "title": "local",
+    "description": "",
+    "value": {
+     "amount": 837.0,
+     "currency": "UAH"
+    },
+    "address": {
+     "countryName": "Україна",
+     "addressDetails": [
+      {
+       "id": "UA56060050110023332",
+       "description": "Шубків",
+       "scheme": "КАТОТТГ"
+      }
+     ]
+    },
+    "classification": {
+     "id": "1702",
+     "description": "Забезпечення харчуванням учнів закладів загальної  середньої освіти за рахунок субвенції з державного  бюджету місцевим бюджетам",
+     "scheme": "ТПКВКМБ"
+    }
+   }
+  ]
+ },
+ "classification": {
+  "description": "Заправки та приправи",
+  "scheme": "ДК021",
+  "id": "15870000-7"
+ },
+ "additionalClassifications": [
+  {
+   "scheme": "КЕКВ",
+   "id": "2230",
+   "description": "Продукти харчування"
+  }
+ ],
+ "planID": "UA-P-2026-10-09-016170-a",
+ "items": [
+  {
+   "id": "4cf8d5aa37374ddda3bfefac991c05ca",
+   "classification": {
+    "description": "Заправки та приправи",
+    "scheme": "ДК021",
+    "id": "15870000-7"
+   },
+   "unit": {
+    "name": "кілограм",
+    "code": "KGM"
+   },
+   "quantity": 0.5,
+   "description": "Перець чорний"
+  },
+  {
+   "id": "381cdeeabcc74e2fb4f6750a25c08226",
+   "classification": {
+    "description": "Заправки та приправи",
+    "scheme": "ДК021",
+    "id": "15870000-7"
+   },
+   "unit": {
+    "name": "кілограм",
+    "code": "KGM"
+   },
+   "quantity": 0.5,
+   "description": "Куркума"
+  },
+  {
+   "id": "80c0ad15bd6740c982100ebe416910e3",
+   "classification": {
+    "description": "Заправки та приправи",
+    "scheme": "ДК021",
+    "id": "15870000-7"
+   },
+   "unit": {
+    "name": "кілограм",
+    "code": "KGM"
+   },
+   "quantity": 0.2,
+   "description": "Коріандр"
+  },
+  {
+   "id": "99f17209e1e44700947af72989481e60",
+   "classification": {
+    "description": "Заправки та приправи",
+    "scheme": "ДК021",
+    "id": "15870000-7"
+   },
+   "unit": {
+    "name": "кілограм",
+    "code": "KGM"
+   },
+   "quantity": 0.2,
+   "description": "Зіра"
+  }
+ ],
+ "buyers": [
+  {
+   "id": "0d1c76ef21a64d15af1d34dc905a1dca",
+   "name": "ШУБКІВСЬКИЙ ЛІЦЕЙ БІЛОКРИНИЦЬКОЇ СІЛЬСЬКОЇ РАДИ РІВНЕНСЬКОГО РАЙОНУ РІВНЕНСЬКОЇ ОБЛАСТІ",
+   "identifier": {
+    "scheme": "UA-EDR",
+    "id": "25315851",
+    "legalName": "ШУБКІВСЬКИЙ ЛІЦЕЙ БІЛОКРИНИЦЬКОЇ СІЛЬСЬКОЇ РАДИ РІВНЕНСЬКОГО РАЙОНУ РІВНЕНСЬКОЇ ОБЛАСТІ"
+   },
+   "address": {
+    "streetAddress": "ВУЛИЦЯ НЕЗАЛЕЖНОСТІ, будинок 24",
+    "locality": "Рівненський, село Шубків",
+    "region": "Рівненська область",
+    "postalCode": "35325",
+    "countryName": "Україна"
+   },
+   "kind": "general"
+  }
+ ],
+ "documents": [
+  {
+   "id": "9be2216196fc4c06b09b6b2e4c845829",
+   "datePublished": "2026-10-09T22:38:52.656629+03:00",
+   "hash": "md5:882dc84d1a33d6fb3036d7f3e1257f59",
+   "title": "sign.p7s",
+   "format": "application/pkcs7-signature",
+   "url": "https://public-api.prozorro.gov.ua/api/2.5/plans/d860a2ac29cd4d42b30fe3efc1cad3ec/documents/9be2216196fc4c06b09b6b2e4c845829?download=714db7193ff448118e0774d9c0bbd682",
+   "dateModified": "2026-10-09T22:38:52.656629+03:00",
+   "language": "uk"
+  }
+ ],
+ "owner": "prom.ua",
+ "dateCreated": "2026-10-09T22:38:13.314293+03:00",
+ "dateModified": "2026-10-09T22:38:52.858052+03:00",
+ "datePublished": "2026-10-09T22:38:13.314293+03:00",
+ "id": "d860a2ac29cd4d42b30fe3efc1cad3ec"
+}
