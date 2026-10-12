@@ -171,3 +171,21 @@ def test_parse_since_relative_and_absolute():
     assert parse_since(None, now) is None
     with pytest.raises(ValueError):
         parse_since("last tuesday", now)
+
+
+def test_open_means_deadline_not_passed_as_of_the_data(store):
+    put(store,
+        make_tender(id="stale", status="active.tendering", created="2026-09-01T10:00:00+03:00", tender_days=10),
+        make_tender(id="live", status="active.tendering", tender_days=5))
+    res = search_tenders(store)
+    assert [r["tender_id"] for r in res["tenders"]] == [store.get_raw_tender("live")["tenderID"]]
+    assert res["as_of"] == "2026-10-01T00:00:00+03:00"
+
+
+def test_upcoming_plans_skip_long_past_planned_starts_by_default(store):
+    put(store, make_plan(id="pold", tender_start="2025-07-01T00:00:00+03:00"),
+        make_plan(id="precent", tender_start="2026-09-15T00:00:00+03:00"),
+        make_plan(id="pnext", tender_start="2026-11-01T00:00:00+02:00"))
+    got = {r["planned_tender_start"][:7] for r in upcoming_plans(store)["plans"]}
+    assert got == {"2026-09", "2026-11"}
+    assert upcoming_plans(store, start_from="2025-01-01")["total"] == 3

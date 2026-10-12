@@ -1,7 +1,9 @@
 """Finding things: tenders, one tender in full, upcoming plans, buyers and suppliers by name."""
+from datetime import datetime, timedelta
+
 from ..models import COMPETITIVE, OPEN_STATUSES, tender_url
 from ..store import Store
-from .common import NotFound, clamp_limit, money_text, paging
+from .common import NotFound, as_of, clamp_limit, money_text, paging
 
 
 def _words(query: str | None) -> list[str]:
@@ -29,9 +31,12 @@ def search_tenders(store: Store, query: str | None = None, cpv: list[str] | None
                    amount_max: float | None = None, deadline_after: str | None = None,
                    published_since: str | None = None, limit: int | None = None) -> dict:
     where, params = ["t.missing = 0"], []
+    moment = as_of(store)
     if status == "open":
-        where.append(f"t.status IN ({','.join('?' * len(OPEN_STATUSES))})")
-        params.extend(OPEN_STATUSES)
+        # Prozorro switches statuses with a delay: also require that the deadline has not passed
+        where.append(f"t.status IN ({','.join('?' * len(OPEN_STATUSES))}) "
+                     "AND julianday(t.tender_end) >= julianday(?)")
+        params.extend([*OPEN_STATUSES, moment])
     elif status and status != "any":
         where.append("t.status = ?")
         params.append(status)
@@ -64,7 +69,7 @@ def search_tenders(store: Store, query: str | None = None, cpv: list[str] | None
     limit = clamp_limit(limit)
     rows = store.conn.execute(f"SELECT * FROM tenders t WHERE {sql_where} ORDER BY {order} LIMIT ?",
                               [*params, limit]).fetchall()
-    return {**paging(total, len(rows)), "tenders": [tender_row(r) for r in rows]}
+    return {**paging(total, len(rows)), "as_of": moment, "tenders": [tender_row(r) for r in rows]}
 
 
 def get_tender(store: Store, key: str) -> dict:
@@ -101,6 +106,9 @@ def upcoming_plans(store: Store, query: str | None = None, cpv: list[str] | None
                    budget_max: float | None = None, start_from: str | None = None,
                    limit: int | None = None) -> dict:
     where, params = ["tender_id IS NULL", "status = 'scheduled'"], []
+    if start_from is None:
+        # plans whose start passed long ago and never became tenders are noise
+        start_from = (datetime.fromisoformat(as_of(store)) - timedelta(days=31)).isoformat()
     for w in _words(query):
         where.append("(casefold(description) LIKE ? OR casefold(cpv_name) LIKE ?)")
         params.extend([f"%{w}%", f"%{w}%"])

@@ -14,6 +14,7 @@ from prozorro_mcp.store import Store
 def db(tmp_path):
     path = tmp_path / "cli.db"
     s = Store(path)
+    s.set_state("last_sync", "2026-10-01T00:00:00+03:00")
     s.upsert_tender(make_tender(id="t1", status="active.tendering", title="Борошно пшеничне", amount=12345.5,
                                 created="2026-10-12T09:00:00+03:00"))
     s.upsert_tender(make_tender(id="t2", status="complete", title="Бензин А-95",

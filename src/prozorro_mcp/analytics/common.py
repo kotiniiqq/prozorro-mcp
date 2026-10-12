@@ -81,3 +81,8 @@ def parse_since(value: str | None, now: datetime | None = None) -> str | None:
     except ValueError:
         raise ValueError(f"Cannot read date '{value}'. Use 7d, 24h, 2026-10-01 or an ISO timestamp.") from None
     return value.strip()
+
+
+def as_of(store: Store) -> str:
+    """The moment the local data describes: the last sync (a fresh sync is about now)."""
+    return store.get_state("last_sync") or datetime.now().astimezone().isoformat()
