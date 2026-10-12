@@ -86,7 +86,7 @@ def test_full_cpv_code_becomes_its_prefix():
 def test_cpv_words_find_code_families_most_general_first():
     assert resolve_cpv("реактиви")[0] == "33696"
     assert resolve_cpv("бензин")[0] == "09132"
-    assert resolve_cpv("борошно")[0] == "15612"
+    assert resolve_cpv("борошно")[0] == "1561"  # parent "борошномельно-круп'яна продукція" is what buyers use
 
 
 def test_cpv_words_collapse_children_under_parent():
@@ -127,3 +127,15 @@ def test_prefix_name_names_a_cpv_prefix():
     assert prefix_name("09132") == "Бензин"
     assert prefix_name("15") is not None
     assert prefix_name("999999") is None
+
+
+def test_cpv_words_include_ancestors_that_mention_the_word():
+    # real tenders classify flour at 15610000; the query-named child 15612 alone would miss them
+    assert "1561" in resolve_cpv("борошно")
+    assert "0922" not in resolve_cpv("бензин")  # vaseline mentions petrol but is not an ancestor
+
+
+def test_cpv_words_do_not_widen_past_the_nearest_parent_or_an_exact_category():
+    assert resolve_cpv("борошно")[0] == "1561" and "156" not in resolve_cpv("борошно")
+    assert "09" not in resolve_cpv("паливо")  # "Паливо" is a category itself; 09 includes electricity
+    assert resolve_cpv("паливо")[0] == "091"

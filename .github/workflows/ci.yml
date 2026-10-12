@@ -1,0 +1,37 @@
+name: ci
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ["3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: pip install -e ".[dev]"
+      - run: ruff check .
+      - run: pytest -q
+      - name: Evals (no keys, no network)
+        run: prozorro-mcp eval --suite all
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install build
+      - run: python -m build --wheel
+      - name: Wheel carries the demo snapshot, classifiers and eval cases
+        run: |
+          unzip -l dist/*.whl | tee files.txt
+          grep -q "prozorro_mcp/data/demo.jsonl.gz" files.txt
+          grep -q "prozorro_mcp/data/dk021_uk.json" files.txt
+          grep -q "prozorro_mcp/data/evals/flags.jsonl" files.txt
+      - name: Installed wheel answers from the demo
+        run: |
+          python -m venv /tmp/w && /tmp/w/bin/pip install dist/*.whl
+          cd /tmp && /tmp/w/bin/prozorro-mcp search --demo --status any --limit 3

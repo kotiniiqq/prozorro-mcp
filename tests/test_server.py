@@ -71,7 +71,7 @@ def test_search_resolves_region_and_cpv_words(filled):
     assert not res.is_error
     data = payload(res)
     assert data["total"] == 1 and data["filters"]["region"] == "Львівська область"
-    assert data["filters"]["cpv"][0]["prefix"] == "15612"
+    assert data["filters"]["cpv"][0]["prefix"] == "1561"
 
 
 def test_unknown_region_is_a_readable_error(filled):

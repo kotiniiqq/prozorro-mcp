@@ -130,7 +130,17 @@ def resolve_cpv(text: str) -> list[str]:
         rank = 0 if _clean(_dk021()[code]).startswith(stems[0]) else 1
         best[_prefix(code)] = min(rank, best.get(_prefix(code), 1))
     if 0 in best.values():
-        best = {p: r for p, r in best.items() if r == 0}
+        named = [p for p, r in best.items() if r == 0]
+        keep = set(named)
+        exact = any(_clean(_dk021()[c]) == raw for c in matched)
+        if not exact:
+            # buyers often classify at the parent level ("Продукція борошномельно-..." for flour): add the
+            # nearest ancestor that mentions the word, never a wider one
+            for q in named:
+                parents = [p for p in best if p != q and q.startswith(p)]
+                if parents:
+                    keep.add(max(parents, key=len))
+        best = {p: 0 for p in keep}
     chosen: list[str] = []
     for p in sorted(best, key=lambda p: (best[p], len(p), p)):
         if not any(p.startswith(c) for c in chosen):
