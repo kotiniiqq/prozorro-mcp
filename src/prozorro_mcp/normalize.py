@@ -136,3 +136,11 @@ def resolve_cpv(text: str) -> list[str]:
         if not any(p.startswith(c) for c in chosen):
             chosen.append(p)
     return chosen[:10]
+
+
+def prefix_name(prefix: str) -> str | None:
+    """Name of the ДК 021 category a prefix stands for (the code whose digits are the prefix + zeros)."""
+    for code, name in _dk021().items():
+        if _prefix(code) == prefix:
+            return name
+    return None

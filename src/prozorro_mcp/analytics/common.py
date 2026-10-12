@@ -1,4 +1,7 @@
 """Shared helpers: money and paging formats, coverage of the local data and hints when it falls short."""
+import re
+from datetime import datetime, timedelta
+
 from ..store import Store
 from ..sync import get_coverage
 
@@ -61,3 +64,20 @@ def coverage_hint(store: Store, region: str | None = None, since: str | None = N
             return (f"Local data starts at {cov.since[:10]}; for earlier dates run: "
                     f"prozorro-mcp sync --days <more than {cov.days}>")
     return None
+
+
+def parse_since(value: str | None, now: datetime | None = None) -> str | None:
+    """'7d', '24h', '2026-10-01' or a full ISO timestamp -> a value SQLite's julianday() understands."""
+    if not value:
+        return None
+    text = value.strip().lower()
+    m = re.fullmatch(r"(\d+)\s*([dh])", text)
+    if m:
+        now = now or datetime.now().astimezone()
+        delta = timedelta(days=int(m[1])) if m[2] == "d" else timedelta(hours=int(m[1]))
+        return (now - delta).isoformat()
+    try:
+        datetime.fromisoformat(value.strip())
+    except ValueError:
+        raise ValueError(f"Cannot read date '{value}'. Use 7d, 24h, 2026-10-01 or an ISO timestamp.") from None
+    return value.strip()

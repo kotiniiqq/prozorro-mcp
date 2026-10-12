@@ -158,3 +158,16 @@ def test_real_tender_fixture_reads_back_in_full(store):
     assert len(amounts) == len(raw["bids"]) and amounts == sorted(amounts)
     assert res["awards"] and res["awards"][0]["status"] == "active"
     assert all(d["url"].startswith("https://") for d in res["documents"])
+
+
+def test_parse_since_relative_and_absolute():
+    from datetime import datetime
+
+    from prozorro_mcp.analytics.common import parse_since
+    now = datetime.fromisoformat("2026-10-12T12:00:00+03:00")
+    assert parse_since("7d", now) == "2026-10-05T12:00:00+03:00"
+    assert parse_since("24h", now) == "2026-10-11T12:00:00+03:00"
+    assert parse_since("2026-10-01", now) == "2026-10-01"
+    assert parse_since(None, now) is None
+    with pytest.raises(ValueError):
+        parse_since("last tuesday", now)

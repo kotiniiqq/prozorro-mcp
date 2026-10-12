@@ -120,3 +120,10 @@ def test_cpv_words_prefer_categories_named_by_the_query():
 def test_no_region_marker_for_hidden_addresses(text):
     from prozorro_mcp.normalize import NO_REGION
     assert resolve_region(text) == NO_REGION
+
+
+def test_prefix_name_names_a_cpv_prefix():
+    from prozorro_mcp.normalize import prefix_name
+    assert prefix_name("09132") == "Бензин"
+    assert prefix_name("15") is not None
+    assert prefix_name("999999") is None
