@@ -19,6 +19,9 @@ def _load(name: str):
 ALL_REGIONS: list[str] = _load("ua_regions.json")
 
 KYIV_CITY, KYIV_OBLAST = "м. Київ", "Київська область"
+# tenders whose buyer address is hidden (mostly military units) have no region in Prozorro
+NO_REGION = "Без регіону"
+_NO_REGION_WORDS = {"без регіону", "без региона", "none", "no region", "hidden", "без адреси"}
 
 # stem (start of a normalized word) -> Prozorro region name; Ukrainian, Russian, English, main city
 _STEMS = {
@@ -66,6 +69,8 @@ def resolve_region(text: str) -> str:
     raw = _clean(text)
     if not raw:
         raise UnknownInput("Region is empty.", ALL_REGIONS)
+    if raw in _NO_REGION_WORDS:
+        return NO_REGION
     for region in ALL_REGIONS:
         if raw == region.casefold():
             return region

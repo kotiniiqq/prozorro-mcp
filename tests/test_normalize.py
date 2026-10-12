@@ -114,3 +114,9 @@ def test_cpv_words_prefer_categories_named_by_the_query():
     for p in resolve_cpv("бензин"):
         names = [n for c, n in _dk021().items() if c.split("-")[0].startswith(p)]
         assert any(n.lower().startswith("бензин") for n in names), p
+
+
+@pytest.mark.parametrize("text", ["Без регіону", "без региона", "none", "no region", "hidden"])
+def test_no_region_marker_for_hidden_addresses(text):
+    from prozorro_mcp.normalize import NO_REGION
+    assert resolve_region(text) == NO_REGION
