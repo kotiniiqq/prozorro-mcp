@@ -49,7 +49,7 @@ def make_tender(*, id=None, method="aboveThreshold", status="complete", title="�
                              "suppliers": [_party(e, nm)],
                              "value": {"amount": award_amount if award_amount is not None else a,
                                        "currency": "UAH"}}]
-    elif winner is not None and award_amount is not None:
+    elif not bids and award_amount is not None:
         tender["awards"] = [{"id": "a0", "status": "active", "date": created,
                              "suppliers": [_party("99999999", "ТОВ Постачальник")],
                              "value": {"amount": award_amount, "currency": "UAH"}}]
