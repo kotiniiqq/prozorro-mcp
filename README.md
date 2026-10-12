@@ -84,7 +84,8 @@ uvx --from git+https://github.com/kotiniiqq/prozorro-mcp prozorro-mcp sync --reg
   `--region` for several. Military units hide their address by law, so their tenders have no region.
   Add them with `--region "без регіону"`.
 - **First sync** walks the change feed back over the period and downloads every matching tender. A busy
-  oblast takes about 15–20 minutes per week of data, mostly waiting on the public API, which is used
+  oblast takes about 20 minutes per week of data (Lviv: about 5,500 tenders and as many plans, roughly
+  350 MB on disk), mostly waiting on the public API, which is used
   politely with 5 requests at a time and retries. `--cpv 33` (or `--cpv реактиви`) keeps only your
   categories.
 - **Next runs** (`prozorro-mcp sync` with no options) fetch only what changed since the last run.

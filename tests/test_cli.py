@@ -109,3 +109,23 @@ def test_eval_command_prints_metrics_and_writes_results(tmp_path, capsys):
 
 def test_eval_unknown_suite_exits_2(capsys):
     assert run(["eval", "--suite", "vibes"], capsys)[0] == 2
+
+
+def test_unsynced_region_prints_the_sync_command(db, capsys):
+    import json as _json
+    s = Store(db)
+    s.set_state("coverage", _json.dumps({"regions": ["Львівська область"], "days": 7, "cpv": [],
+                                         "since": "2026-09-01T00:00:00+00:00"}, ensure_ascii=False))
+    s.close()
+    for cmd in (["search", "--region", "Одеса"], ["plans", "--region", "Одеса"],
+                ["flags", "--region", "Одеса"]):
+        code, _, err = run(["--db", db, *cmd], capsys)
+        assert code == 0 and 'prozorro-mcp sync --region "Одеська область"' in err, cmd
+
+
+def test_progress_line_drops_eta_when_done(capsys):
+    from prozorro_mcp.sync import SyncProgress
+    cli._print_progress(SyncProgress("tenders", 10, 1.0, 0.4))
+    assert "left" not in capsys.readouterr().err
+    cli._print_progress(SyncProgress("tenders", 10, 0.5, 120.0))
+    assert "~2 min left" in capsys.readouterr().err

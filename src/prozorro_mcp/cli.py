@@ -8,7 +8,7 @@ from pathlib import Path
 
 from .analytics import flags as flags_mod
 from .analytics import search, watch
-from .analytics.common import NotFound, coverage_info, parse_since
+from .analytics.common import NotFound, coverage_hint, coverage_info, parse_since
 from .api import APIError, ProzorroAPI
 from .normalize import UnknownInput, resolve_cpv, resolve_region
 from .output import render
@@ -59,12 +59,21 @@ def _short(row: dict) -> dict:
 TENDER_COLS = ["tender_id", "deadline", "amount_text", "buyer", "title", "url"]
 
 
+def _hint(store, region=None, since=None, empty=False) -> None:
+    """Same rule as the MCP tools: say which sync command is missing instead of a bare empty result."""
+    hint = coverage_hint(store, region=region, since=since) or (coverage_hint(store) if empty else None)
+    if hint:
+        print(hint, file=sys.stderr)
+
+
 def cmd_search(args, store):
-    res = search.search_tenders(store, query=args.query, cpv=_cpv(args.cpv), region=_region(args.region),
+    region, since = _region(args.region), parse_since(args.since)
+    res = search.search_tenders(store, query=args.query, cpv=_cpv(args.cpv), region=region,
                                 status=args.status, amount_min=args.amount_min, amount_max=args.amount_max,
                                 deadline_after=parse_since(args.deadline_after),
-                                published_since=parse_since(args.since), limit=args.limit)
+                                published_since=since, limit=args.limit)
     _emit(args, [_short(r) for r in res["tenders"]], TENDER_COLS)
+    _hint(store, region, since, empty=res["total"] == 0)
     if res.get("note") and args.format == "table" and not args.out:
         print(res["note"], file=sys.stderr)
 
@@ -78,20 +87,24 @@ def cmd_digest(args, store):
 
 
 def cmd_flags(args, store):
-    res = flags_mod.red_flags(store, buyer=args.buyer, cpv=_cpv(args.cpv), region=_region(args.region),
-                              since=parse_since(args.since), kinds=args.kind or None, limit=args.limit)
+    region, since = _region(args.region), parse_since(args.since)
+    res = flags_mod.red_flags(store, buyer=args.buyer, cpv=_cpv(args.cpv), region=region,
+                              since=since, kinds=args.kind or None, limit=args.limit)
     _emit(args, res["flags"], ["kind", "tender_id", "buyer", "amount_text", "evidence", "url"])
+    _hint(store, region, since)
     if args.format == "table" and not args.out:
         counts = ", ".join(f"{k}: {v}" for k, v in res["counts"].items())
         print(f"{counts}\n{res['note']}", file=sys.stderr)
 
 
 def cmd_plans(args, store):
-    res = search.upcoming_plans(store, query=args.query, cpv=_cpv(args.cpv), region=_region(args.region),
+    region = _region(args.region)
+    res = search.upcoming_plans(store, query=args.query, cpv=_cpv(args.cpv), region=region,
                                 budget_min=args.budget_min, budget_max=args.budget_max,
                                 start_from=parse_since(args.start_from), limit=args.limit)
     _emit(args, [_short(r) for r in res["plans"]],
           ["planned_tender_start", "budget_text", "buyer", "description", "cpv", "url"])
+    _hint(store, region, empty=res["total"] == 0)
 
 
 def cmd_status(args, store):
@@ -112,7 +125,8 @@ def cmd_watch(args, store):
 
 
 def _print_progress(p: SyncProgress) -> None:
-    eta = f", ~{max(1, round(p.eta_seconds / 60))} min left" if p.eta_seconds else ""
+    running = p.fraction < 0.995 and p.eta_seconds
+    eta = f", ~{max(1, round(p.eta_seconds / 60))} min left" if running else ""
     print(f"\r[{p.kind}] {p.done} fetched, {p.fraction:.0%} of the period{eta}   ", end="", file=sys.stderr,
           flush=True)
 
