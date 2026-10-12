@@ -97,6 +97,7 @@ async def run_sync(api, store: Store, regions: list[str] | None = None, days: in
     wanted = set(cov.regions)
     for kind in ("tenders", "plans") if plans else ("tenders",):
         await _sync_kind(api, store, kind, wanted, cov.cpv, start, report, progress, now)
+    store.set_state("last_sync", datetime.fromtimestamp(now(), UTC).isoformat())
     return report
 
 
