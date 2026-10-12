@@ -1,6 +1,6 @@
 """MCP server: 11 read-only tools over the local Prozorro data.
 
-    claude mcp add prozorro -- uvx prozorro-mcp serve
+    claude mcp add prozorro -- prozorro-mcp serve      # after: uv tool install git+https://github.com/kotiniiqq/prozorro-mcp
 """
 from functools import wraps
 from typing import Literal

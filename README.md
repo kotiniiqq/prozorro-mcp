@@ -192,7 +192,7 @@ read-only. Add rate limits at the proxy before exposing it.
 
 ```bash
 python -m venv .venv && .venv/bin/pip install -e ".[dev]"    # Windows: .venv\Scripts\pip
-pytest -q          # 173 tests, no network: recorded API responses and built tenders
+pytest -q          # 177 tests, no network: recorded API responses and built tenders
 ruff check .
 python scripts/capture_fixtures.py    # refresh the recorded API responses
 python scripts/build_demo.py          # rebuild the demo snapshot (live sync, about 20 minutes)

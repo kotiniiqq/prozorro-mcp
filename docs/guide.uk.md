@@ -163,7 +163,7 @@ call prozorro-mcp --format csv --out "%USERPROFILE%\Desktop\prozorro-dobirka.csv
 Потім у PowerShell:
 
 ```powershell
-schtasks /Create /SC DAILY /ST 08:00 /TN "Prozorro dobirka" /TR "%USERPROFILE%\prozorro-ranok.bat"
+schtasks /Create /SC DAILY /ST 08:00 /TN "Prozorro dobirka" /TR "$env:USERPROFILE\prozorro-ranok.bat"
 ```
 
 Щоранку о 8:00 на робочому столі з'являтиметься свіжий файл `prozorro-dobirka.csv`. Вимкнути:
