@@ -86,7 +86,7 @@ def test_full_cpv_code_becomes_its_prefix():
 def test_cpv_words_find_code_families_most_general_first():
     assert resolve_cpv("реактиви")[0] == "33696"
     assert resolve_cpv("бензин")[0] == "09132"
-    assert "1561" in resolve_cpv("борошно") or "156" in resolve_cpv("борошно")
+    assert resolve_cpv("борошно")[0] == "15612"
 
 
 def test_cpv_words_collapse_children_under_parent():
@@ -106,3 +106,11 @@ def test_cpv_unknown_word_raises():
 def test_cpv_name():
     assert cpv_name("09132000-3") == "Бензин"
     assert cpv_name("00000000-0") is None
+
+
+def test_cpv_words_prefer_categories_named_by_the_query():
+    # "бензин" must not pull in engine filters or vaseline just because their names mention petrol
+    from prozorro_mcp.normalize import _dk021
+    for p in resolve_cpv("бензин"):
+        names = [n for c, n in _dk021().items() if c.split("-")[0].startswith(p)]
+        assert any(n.lower().startswith("бензин") for n in names), p

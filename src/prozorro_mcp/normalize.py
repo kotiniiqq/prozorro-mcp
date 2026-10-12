@@ -115,7 +115,7 @@ def resolve_cpv(text: str) -> list[str]:
     words = re.findall(r"[\w'-]+", raw)
     if not words:
         raise UnknownInput(f"Unknown CPV '{text}'. Give a ДК 021 code (e.g. 15 or 09132000-3) or words.")
-    stems = [w[:-2] if len(w) > 5 else w for w in words]
+    stems = [w[:-2] if len(w) > 6 else w for w in words]
     matched = [code for code, name in _dk021().items() if all(s in _clean(name) for s in stems)]
     if not matched:
         raise UnknownInput(f"No ДК 021 category matches '{text}'. Try another word or a code prefix.")
@@ -124,6 +124,8 @@ def resolve_cpv(text: str) -> list[str]:
     for code in matched:
         rank = 0 if _clean(_dk021()[code]).startswith(stems[0]) else 1
         best[_prefix(code)] = min(rank, best.get(_prefix(code), 1))
+    if 0 in best.values():
+        best = {p: r for p, r in best.items() if r == 0}
     chosen: list[str] = []
     for p in sorted(best, key=lambda p: (best[p], len(p), p)):
         if not any(p.startswith(c) for c in chosen):
