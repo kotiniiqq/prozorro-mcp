@@ -34,8 +34,8 @@ SYNC_INSTRUCTIONS = (
 ASK_FIRST = ("This data is not downloaded. Tell the user what is missing and ask the user whether to "
              "download it (say roughly how long it takes); call sync_data only if they agree.")
 NO_DATA = ("No Prozorro data has been downloaded yet. Ask the user which oblast(s) to download and how many "
-           "days back (7 is a good start; a busy oblast takes about 20 minutes per week of data), then call "
-           "sync_data with what they chose.")
+           "days back (7 is a good start; a busy oblast takes about 20 minutes per week of data); do not pick it "
+           "yourself. Then call sync_data with what they chose.")
 
 # The tools only read the local database: nothing is changed and nothing outside the machine is called.
 READ_ONLY = ToolAnnotations(read_only_hint=True, destructive_hint=False, idempotent_hint=True,
@@ -128,8 +128,9 @@ def build_server(store: Store, syncer=None) -> MCPServer:
         @server.tool(
             annotations=SYNC,
             description="Download Prozorro tenders and plans for regions (any spelling) into the local "
-                        "data, in the background. Call it only after the user agreed to the download. days: "
-                        "how far back (default 7, or the current period); cpv: categories to download, "
+                        "data, in the background. Call it only after the user agreed to the download. "
+                        "days: how far back; the user chooses it for the first download, later downloads "
+                        "keep the synced period unless the user asks for another. cpv: categories to download, "
                         "added to those already synced (nothing changes when all categories are synced). "
                         "Without arguments it fetches what changed since the last sync. Regions are added "
                         "to what is already synced; a new region, category or period walks the whole period "
@@ -140,6 +141,9 @@ def build_server(store: Store, syncer=None) -> MCPServer:
             resolved = [resolve_region(r) for r in regions] if regions else None
             prefixes, _ = _cpv(cpv)
             current = get_coverage(store)
+            if current is None and days is None:
+                raise ValueError("Ask the user how many days back to download (for example 7; a busy oblast "
+                                 "takes about 20 minutes per week) and pass it as days. Do not pick it yourself.")
             if prefixes and current is not None:
                 # add categories to what is synced; a sync of all categories is never narrowed
                 prefixes = sorted(set(prefixes) | set(current.cpv)) if current.cpv else None

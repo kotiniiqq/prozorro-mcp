@@ -260,3 +260,23 @@ def test_missing_data_with_a_syncer_says_to_ask_before_downloading(filled):
     assert "coverage_hint" in data
     assert "ask the user" in data["next_step"] and "sync_data" in data["next_step"]
     assert "next_step" not in payload(call(filled, "search_tenders", {"region": "Рівне"}))  # CLI-only server
+
+
+def test_the_first_download_needs_days_chosen_by_the_user(store):
+    fake = FakeSyncer()
+    res = call_with(store, fake, "sync_data", {"regions": ["Волинь"]})
+    assert res.is_error and "how many days" in res.content[0].text and fake.calls == []
+    call_with(store, fake, "sync_data", {"regions": ["Волинь"], "days": 3})
+    assert fake.calls[0][1] == 3
+
+
+def test_later_downloads_keep_the_synced_period_without_asking(filled):
+    fake = FakeSyncer()
+    assert not call_with(filled, fake, "sync_data", {"regions": ["Рівне"]}).is_error
+    assert fake.calls[0][1] is None
+
+
+def test_texts_say_the_user_chooses_the_period(store):
+    tool = {t.name: t for t in list_tools_with(store, FakeSyncer())}["sync_data"]
+    assert "the user chooses" in tool.description
+    assert "do not pick it yourself" in payload(call_with(store, IdleSyncer(), "search_tenders", {}))["message"]
