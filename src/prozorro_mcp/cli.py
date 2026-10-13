@@ -219,14 +219,12 @@ def cmd_serve(args, store):
     syncer = None
     if not args.demo:
         from .background import BackgroundSync
-        from .demo import LiveOrDemo
         regions = _settings_regions(args.region)
         if not args.http:
             # over HTTP anyone who reaches the endpoint could start downloads, so sync stays local
             syncer = BackgroundSync(store.path, api_factory=_api_factory, now=_now)
             if args.sync_on_start:
                 syncer.start(regions, args.days)
-        store = LiveOrDemo(store)
     server = server_mod.build_server(store, syncer)
     if args.http:
         print(f"MCP over streamable HTTP on http://{args.host}:{args.port}/mcp", file=sys.stderr)

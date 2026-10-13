@@ -33,8 +33,9 @@ and open it (or drag it into Settings → Extensions). Claude Desktop installs P
 itself, so there is nothing else to install and no config to edit. In the install dialog, type your
 oblasts (for example `Львівська, Волинська`) and the days of history.
 
-It answers from the bundled demo right away, while your regions download in the background. Every
-start fetches what changed since the last one. To add a region later, ask Claude: *"download Volyn oblast
+Your regions download in the background; until the first download finishes, Claude says the data is
+not ready and shows the progress. If you leave the settings empty, Claude asks which oblast and how
+many days to download. Every start fetches what changed since the last one. To add a region later, ask Claude: *"download Volyn oblast
 for the last two weeks"*.
 
 ## Connect it to other AI clients
@@ -101,8 +102,9 @@ uvx prozorro-mcp sync --region Львівська --days 7
 - **Next runs** (`prozorro-mcp sync` with no options) fetch only what changed since the last run.
   Ctrl+C is safe: run the command again and it continues from where it stopped.
 - **From the server**: `prozorro-mcp serve --sync-on-start` fetches what changed in the background when the
-  client starts it (add `--region` and `--days` to widen the coverage). Until the first sync finishes,
-  the tools answer from the demo and every result says so in `data_source`.
+  client starts it (add `--region` and `--days` to widen the coverage). Before the first sync, the data
+  tools return `no_data` with a request to ask the user for an oblast and a period; during a sync,
+  results carry `sync_in_progress`.
 - **Status**: `prozorro-mcp status` shows what is covered. Data lives in `~/.prozorro-mcp/data.db`; set
   `PROZORRO_MCP_DB` to move it.
 

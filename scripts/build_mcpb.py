@@ -58,8 +58,8 @@ def manifest(version: str) -> dict:
         "long_description": (
             "Ask about Prozorro in plain words: open tenders in your oblast, what buyers plan to purchase, "
             "who wins and at what price, your competitors, red flags. Every number is computed by code from "
-            "the official data.\n\nOn first start it answers from a bundled demo (Lviv oblast, one week) "
-            "while your regions download in the background; ask Claude to sync more regions any time. No "
+            "the official data.\n\nYour regions download in the background (leave the settings empty and "
+            "Claude asks which oblast and period you need); ask Claude to sync more regions any time. No "
             "keys or accounts. Data is kept in ~/.prozorro-mcp and is shared with the prozorro-mcp CLI."),
         "author": {"name": "Kyrylo Kalashnyk", "url": "https://github.com/kotiniiqq"},
         "repository": {"type": "git", "url": "https://github.com/kotiniiqq/prozorro-mcp"},

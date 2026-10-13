@@ -7,7 +7,6 @@ from factories import make_plan, make_tender
 from mcp.client import Client
 
 from prozorro_mcp.server import build_server
-from prozorro_mcp.store import Store
 from prozorro_mcp.sync import Coverage
 
 TOOLS = ["buyer_profile", "competitors", "coverage", "find_entity", "get_tender", "market_overview",
@@ -174,13 +173,40 @@ def test_coverage_shows_the_sync_status(filled):
     assert payload(call_with(filled, FakeSyncer(), "coverage"))["sync"]["state"] == "running"
 
 
-def test_until_the_first_sync_finishes_answers_come_from_the_demo_and_say_so(tmp_path, filled):
-    from prozorro_mcp.demo import LiveOrDemo
-    live = Store(tmp_path / "live.db")
-    both = LiveOrDemo(live, demo_factory=lambda: filled)
-    data = payload(call_with(both, None, "search_tenders", {"status": "any"}))
-    assert data["total"] == 3 and "demo" in data["data_source"]
-    live.set_state("last_sync", "2026-10-12T00:00:00+00:00")
-    data = payload(call_with(both, None, "search_tenders", {"status": "any"}))
-    assert data["total"] == 0 and "data_source" not in data
-    live.close()
+class RunningSyncer(FakeSyncer):
+    def status(self):
+        return {"state": "running", "fraction": 0.25, "eta_minutes": 12.0}
+
+
+class IdleSyncer(FakeSyncer):
+    def status(self):
+        return {"state": "idle"}
+
+
+def test_before_any_sync_data_tools_ask_for_a_region_and_days_instead_of_answering(store):
+    res = call_with(store, IdleSyncer(), "search_tenders", {"query": "борошно"})
+    assert not res.is_error
+    data = payload(res)
+    assert data["no_data"] is True and "sync_data" in data["message"] and "days" in data["message"]
+    assert "tenders" not in data
+    assert payload(call_with(store, IdleSyncer(), "find_entity", {"name": "альфа"}))["no_data"] is True
+
+
+def test_coverage_still_answers_before_any_sync(store):
+    data = payload(call_with(store, IdleSyncer(), "coverage"))
+    assert data["regions"] == [] and data["sync"]["state"] == "idle" and "no_data" not in data
+
+
+def test_while_the_first_sync_runs_the_message_says_it_is_downloading(store):
+    data = payload(call_with(store, RunningSyncer(), "search_tenders", {}))
+    assert data["no_data"] is True and "25%" in data["message"] and "coverage" in data["message"]
+
+
+def test_during_a_sync_results_carry_its_progress(filled):
+    data = payload(call_with(filled, RunningSyncer(), "search_tenders", {"status": "any"}))
+    assert data["total"] == 3 and data["sync_in_progress"]["fraction"] == 0.25
+
+
+def test_without_a_syncer_an_empty_store_keeps_the_cli_hint(store):
+    data = payload(call(store, "search_tenders", {}))
+    assert "no_data" not in data and "prozorro-mcp sync" in data["coverage_hint"]

@@ -133,7 +133,7 @@ def test_progress_line_drops_eta_when_done(capsys):
 
 class Captured:
     def __init__(self):
-        self.store = self.syncer = self.transport = self.demo_while_running = None
+        self.store = self.syncer = self.transport = None
 
     def build(self, store, syncer=None):
         self.store, self.syncer = store, syncer
@@ -143,7 +143,6 @@ class Captured:
         self.transport = transport
         if self.syncer is not None:
             self.syncer.wait(10)
-        self.demo_while_running = getattr(self.store, "is_demo", None)
 
 
 @pytest.fixture
@@ -164,13 +163,13 @@ def test_serve_syncs_on_start_the_regions_from_the_settings(tmp_path, capsys, mo
     assert code == 0 and served.transport == "stdio"
     status = served.syncer.status()
     assert status["state"] == "done" and status["regions"] == ["Волинська область", "Львівська область"]
-    assert served.demo_while_running is False  # the finished sync switched it to the live data
+    assert not hasattr(served.store, "is_demo")  # the real database, never the demo
 
 
 def test_serve_with_empty_settings_on_a_fresh_install_starts_nothing(tmp_path, capsys, monkeypatch, served):
     monkeypatch.setattr(cli, "_api_factory", lambda: FakeAPI())
     code, _, _ = run(["--db", str(tmp_path / "e.db"), "serve", "--sync-on-start", "--region", ""], capsys)
-    assert code == 0 and served.syncer.status()["state"] == "idle" and served.demo_while_running
+    assert code == 0 and served.syncer.status()["state"] == "idle"
 
 
 def test_serve_over_http_has_no_sync_tool(tmp_path, capsys, served):

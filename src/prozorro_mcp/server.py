@@ -14,6 +14,7 @@ from .analytics import market, search, watch
 from .analytics.common import NotFound, coverage_hint, coverage_info, parse_since
 from .normalize import UnknownInput, prefix_name, resolve_cpv, resolve_region
 from .store import Store
+from .sync import get_coverage
 
 INSTRUCTIONS = (
     "Ukrainian public procurement (Prozorro) from a local copy of the official open data. Every number comes "
@@ -25,9 +26,12 @@ INSTRUCTIONS = (
 SYNC_INSTRUCTIONS = (
     " Data can be downloaded from here: when a question needs a region or period that is not synced, offer "
     "sync_data (it runs in the background; the first sync of a busy oblast takes about 20 minutes per week) "
-    "instead of the CLI command, and check progress with coverage. If a result has `data_source`, say that "
-    "the answer comes from the demo snapshot."
+    "instead of the CLI command, and check progress with coverage. If a result has `no_data`, ask the user "
+    "which oblast and how many days back to download before anything else."
 )
+NO_DATA = ("No Prozorro data has been downloaded yet. Ask the user which oblast(s) to download and how many "
+           "days back (7 is a good start; a busy oblast takes about 20 minutes per week of data), then call "
+           "sync_data with their answer.")
 
 # The tools only read the local database: nothing is changed and nothing outside the machine is called.
 READ_ONLY = ToolAnnotations(read_only_hint=True, destructive_hint=False, idempotent_hint=True,
@@ -73,14 +77,23 @@ def _with_hint(store: Store, result: dict, region: str | None = None, since: str
 def build_server(store: Store, syncer=None) -> MCPServer:
     server = MCPServer(name="prozorro", instructions=INSTRUCTIONS + (SYNC_INSTRUCTIONS if syncer else ""))
 
-    def sourced(fn):
-        """Mark results that come from the demo snapshot (before the first sync finishes)."""
+    def guarded(fn):
+        """With a syncer: before the first sync say what to ask the user; during a sync show its progress."""
         @wraps(fn)
         def wrapper(*args, **kwargs):
+            if syncer is None:
+                return fn(*args, **kwargs)
+            status = syncer.status()
+            running = status.get("state") == "running"
+            if get_coverage(store) is None:
+                if running:
+                    return {"no_data": True, "message": (
+                        f"The first download is running ({status.get('fraction', 0):.0%} done). Tell the user "
+                        "the data is not ready yet; check progress with coverage.")}
+                return {"no_data": True, "message": NO_DATA}
             result = fn(*args, **kwargs)
-            if getattr(store, "is_demo", False) and isinstance(result, dict):
-                from .demo import DEMO_SOURCE
-                result["data_source"] = DEMO_SOURCE
+            if running and isinstance(result, dict):
+                result["sync_in_progress"] = status
             return result
         return wrapper
 
@@ -88,7 +101,6 @@ def build_server(store: Store, syncer=None) -> MCPServer:
         annotations=READ_ONLY,
         description="What the local data covers: regions, period, CPV filter, counts, last sync, the "
                     "background sync progress if any, and how to add more. Call this first when unsure.")
-    @sourced
     @_errors
     def coverage() -> dict:
         info = coverage_info(store)
@@ -117,7 +129,7 @@ def build_server(store: Store, syncer=None) -> MCPServer:
         annotations=READ_ONLY,
         description="Find buyers and suppliers by part of a name (or an exact EDRPOU code). role: any, "
                     "buyer, supplier.")
-    @sourced
+    @guarded
     @_errors
     def find_entity(name: str, role: Literal["any", "buyer", "supplier"] = "any", limit: int = 10) -> dict:
         return search.find_entity(store, name, role=role, limit=limit)
@@ -128,7 +140,7 @@ def build_server(store: Store, syncer=None) -> MCPServer:
                     "prefix or words; region in any spelling; status: open (default, accepting bids), any, "
                     "or a Prozorro status. Dates as 2026-10-01, 7d or 24h. Returns tender ids, buyers, "
                     "amounts, deadlines and links.")
-    @sourced
+    @guarded
     @_errors
     def search_tenders(query: str | None = None, cpv: str | None = None, region: str | None = None,
                        status: str = "open", amount_min: float | None = None, amount_max: float | None = None,
@@ -148,7 +160,7 @@ def build_server(store: Store, syncer=None) -> MCPServer:
         annotations=READ_ONLY,
         description="One tender in full by its UA-... id: items with quantities and CPV, lots, every bid, "
                     "the winner, and documents with direct links.")
-    @sourced
+    @guarded
     @_errors
     def get_tender(tender_id: str) -> dict:
         return search.get_tender(store, tender_id.strip())
@@ -158,7 +170,7 @@ def build_server(store: Store, syncer=None) -> MCPServer:
         description="Market for a CPV and/or region over a period: number and value of tenders, awarded "
                     "sum, share of competitive procedures, average bidders, unit-price spread "
                     "(P25/median/P75, same CPV and unit), top buyers and winners.")
-    @sourced
+    @guarded
     @_errors
     def market_overview(cpv: str | None = None, region: str | None = None, since: str | None = None,
                         top: int = 5) -> dict:
@@ -174,7 +186,7 @@ def build_server(store: Store, syncer=None) -> MCPServer:
         description="Supplier profile by EDRPOU: wins and their value, main buyers and CPVs, win rate where "
                     "it bid, median discount from the expected value. Use find_entity to get the code from "
                     "a name.")
-    @sourced
+    @guarded
     @_errors
     def supplier_profile(edrpou: str, since: str | None = None) -> dict:
         return market.supplier_profile(store, edrpou.strip(), since=parse_since(since))
@@ -183,7 +195,7 @@ def build_server(store: Store, syncer=None) -> MCPServer:
         annotations=READ_ONLY,
         description="Buyer profile by EDRPOU: what it buys, from whom, procedure mix, share of competitive "
                     "tenders with a single bidder.")
-    @sourced
+    @guarded
     @_errors
     def buyer_profile(edrpou: str, since: str | None = None) -> dict:
         return market.buyer_profile(store, edrpou.strip(), since=parse_since(since))
@@ -192,7 +204,7 @@ def build_server(store: Store, syncer=None) -> MCPServer:
         annotations=READ_ONLY,
         description="Who competes with a company (EDRPOU): bidders met most often in the same tenders, and "
                     "how many of those tenders each side won.")
-    @sourced
+    @guarded
     @_errors
     def competitors(edrpou: str, since: str | None = None, top: int = 10) -> dict:
         return market.competitors(store, edrpou.strip(), since=parse_since(since), top=top)
@@ -201,7 +213,7 @@ def build_server(store: Store, syncer=None) -> MCPServer:
         annotations=READ_ONLY,
         description="Upcoming purchases from annual plans that have no tender yet: see demand before it is "
                     "announced. Filter by words, CPV, region, budget, planned start date.")
-    @sourced
+    @guarded
     @_errors
     def upcoming_plans(query: str | None = None, cpv: str | None = None, region: str | None = None,
                        budget_min: float | None = None, budget_max: float | None = None,
@@ -219,7 +231,7 @@ def build_server(store: Store, syncer=None) -> MCPServer:
                     "single_bidder, supplier_concentration (one supplier > share of a buyer's spend), "
                     "price_above_median (unit price pct above peers), short_tender_period. A flag is a "
                     "reason to look closer, not proof.")
-    @sourced
+    @guarded
     @_errors
     def red_flags(buyer: str | None = None, cpv: str | None = None, region: str | None = None,
                   since: str | None = None, kinds: list[str] | None = None, share: float = 0.5,
@@ -236,7 +248,7 @@ def build_server(store: Store, syncer=None) -> MCPServer:
         annotations=READ_ONLY,
         description="New tenders for the user's saved searches since a moment (default: last 24 hours). "
                     "Saved searches are added with the CLI: prozorro-mcp watch add.")
-    @sourced
+    @guarded
     @_errors
     def watch_digest(since: str | None = None, limit: int = 20) -> dict:
         return watch.watch_digest(store, since=parse_since(since), limit=limit)
