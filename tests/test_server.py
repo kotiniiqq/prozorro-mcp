@@ -248,3 +248,15 @@ def test_sync_data_never_narrows_a_sync_of_all_categories(filled):
     fake = FakeSyncer()
     call_with(filled, fake, "sync_data", {"regions": ["Рівне"], "cpv": "0913"})
     assert fake.calls[0][2] is None
+
+
+def test_sync_data_is_described_as_needing_the_users_consent(store):
+    tool = {t.name: t for t in list_tools_with(store, FakeSyncer())}["sync_data"]
+    assert "only after the user agreed" in tool.description
+
+
+def test_missing_data_with_a_syncer_says_to_ask_before_downloading(filled):
+    data = payload(call_with(filled, IdleSyncer(), "search_tenders", {"region": "Рівне"}))
+    assert "coverage_hint" in data
+    assert "ask the user" in data["next_step"] and "sync_data" in data["next_step"]
+    assert "next_step" not in payload(call(filled, "search_tenders", {"region": "Рівне"}))  # CLI-only server

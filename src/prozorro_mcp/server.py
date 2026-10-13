@@ -24,14 +24,18 @@ INSTRUCTIONS = (
     "look closer, never accusations."
 )
 SYNC_INSTRUCTIONS = (
-    " Data can be downloaded from here: when a question needs a region or period that is not synced, offer "
-    "sync_data (it runs in the background; the first sync of a busy oblast takes about 20 minutes per week) "
-    "instead of the CLI command, and check progress with coverage. If a result has `no_data`, ask the user "
+    " Data can be downloaded from here with sync_data instead of the CLI command, but a download takes "
+    "time (about 20 minutes and 350 MB per week of a busy oblast) and calls the public Prozorro API, so "
+    "never start one on your own: when a question needs a region, category or period that is not synced, "
+    "tell the user what is missing, what you would download and roughly how long it takes, and call "
+    "sync_data only after they agree. Check progress with coverage. If a result has `no_data`, ask the user "
     "which oblast and how many days back to download before anything else."
 )
+ASK_FIRST = ("This data is not downloaded. Tell the user what is missing and ask the user whether to "
+             "download it (say roughly how long it takes); call sync_data only if they agree.")
 NO_DATA = ("No Prozorro data has been downloaded yet. Ask the user which oblast(s) to download and how many "
            "days back (7 is a good start; a busy oblast takes about 20 minutes per week of data), then call "
-           "sync_data with their answer.")
+           "sync_data with what they chose.")
 
 # The tools only read the local database: nothing is changed and nothing outside the machine is called.
 READ_ONLY = ToolAnnotations(read_only_hint=True, destructive_hint=False, idempotent_hint=True,
@@ -99,6 +103,8 @@ def build_server(store: Store, syncer=None) -> MCPServer:
                         "the data is not ready yet; check progress with coverage.")}
                 return {"no_data": True, "message": NO_DATA}
             result = fn(*args, **kwargs)
+            if isinstance(result, dict) and result.get("coverage_hint"):
+                result["next_step"] = ASK_FIRST
             if running and isinstance(result, dict):
                 result["sync_in_progress"] = status
                 result["sync_note"] = _sync_note(status)
@@ -122,11 +128,12 @@ def build_server(store: Store, syncer=None) -> MCPServer:
         @server.tool(
             annotations=SYNC,
             description="Download Prozorro tenders and plans for regions (any spelling) into the local "
-                        "data, in the background. days: how far back (default 7, or the current period); "
-                        "cpv: categories to download, added to those already synced (nothing changes when "
-                        "all categories are synced). Without arguments it fetches what changed since the last "
-                        "sync. Regions are added to what is already synced; a new region, category or period "
-                        "walks the whole period again. Returns at once; check coverage for progress.")
+                        "data, in the background. Call it only after the user agreed to the download. days: "
+                        "how far back (default 7, or the current period); cpv: categories to download, "
+                        "added to those already synced (nothing changes when all categories are synced). "
+                        "Without arguments it fetches what changed since the last sync. Regions are added "
+                        "to what is already synced; a new region, category or period walks the whole period "
+                        "again. Returns at once; check coverage for progress.")
         @_errors
         def sync_data(regions: list[str] | None = None, days: int | None = None,
                       cpv: str | None = None) -> dict:
