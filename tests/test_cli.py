@@ -182,3 +182,15 @@ def test_serve_unknown_region_in_settings_exits_2(tmp_path, capsys, served):
     code, _, err = run(["--db", str(tmp_path / "u.db"), "serve", "--sync-on-start", "--region", "Атлантида"],
                        capsys)
     assert code == 2 and "Атлантида" in err
+
+
+@pytest.mark.parametrize("settings", [
+    ["--region", "", "--days", ""],                                       # fields left empty
+    ["--region", "${user_config.regions}", "--days", "${user_config.days}"],  # not substituted yet
+    ["--days", "7.0"],                                                    # a number field sent as a float
+])
+def test_serve_starts_with_unfilled_extension_settings(tmp_path, capsys, monkeypatch, served, settings):
+    """Claude Desktop starts the server before the user has saved the settings; it must not exit."""
+    monkeypatch.setattr(cli, "_api_factory", lambda: FakeAPI())
+    code, _, err = run(["--db", str(tmp_path / "f.db"), "serve", "--sync-on-start", *settings], capsys)
+    assert code == 0 and served.transport == "stdio", err

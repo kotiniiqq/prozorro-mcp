@@ -193,9 +193,24 @@ def cmd_eval(args, store):
         raise SystemExit(1)
 
 
+def _unset(value: str) -> bool:
+    # Claude Desktop starts the extension before the settings are saved: empty or "${user_config.x}"
+    return not value.strip() or value.strip().startswith("${")
+
+
+def _settings_days(value: str) -> int | None:
+    """--days from a settings form: '', a placeholder, or a number that may arrive as '7.0'."""
+    if _unset(value):
+        return None
+    try:
+        return int(float(value))
+    except ValueError:
+        raise argparse.ArgumentTypeError(f"invalid number of days: '{value}'") from None
+
+
 def _settings_regions(values: list[str] | None) -> list[str] | None:
     """--region may come from a settings form as one comma-separated string, possibly empty."""
-    words = [w.strip() for v in values or [] for w in v.split(",") if w.strip()]
+    words = [w.strip() for v in values or [] if not _unset(v) for w in v.split(",") if w.strip()]
     return [resolve_region(w) for w in words] or None
 
 
@@ -302,7 +317,7 @@ def build_parser() -> argparse.ArgumentParser:
                    help="download what changed in the background when the server starts")
     s.add_argument("--region", action="append",
                    help="with --sync-on-start: regions to add (repeat, or comma-separated)")
-    s.add_argument("--days", type=int, help="with --sync-on-start: how many days back")
+    s.add_argument("--days", type=_settings_days, help="with --sync-on-start: how many days back")
     s.set_defaults(func=cmd_serve)
     return p
 
