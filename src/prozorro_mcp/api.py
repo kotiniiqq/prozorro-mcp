@@ -28,6 +28,7 @@ class APIError(RuntimeError):
 class FeedPage:
     items: list[dict]
     next_offset: str
+    prev_offset: str | None = None  # in a descending read: the ascending offset at the newest item
 
 
 class ProzorroAPI:
@@ -71,8 +72,14 @@ class ProzorroAPI:
                 await self._sleep(BACKOFF[attempt])
         raise APIError(f"Prozorro API failed after {ATTEMPTS} attempts on {path}: {last}")
 
-    async def feed(self, kind: Kind, offset: str | float, opt_fields: str | None = None) -> FeedPage:
-        params = {"limit": "1000", "offset": str(offset)}
+    async def feed(self, kind: Kind, offset: str | float | None, opt_fields: str | None = None,
+                   descending: bool = False) -> FeedPage:
+        """One page of the change feed. descending=True with no offset starts at the newest change."""
+        params = {"limit": "1000"}
+        if offset is not None:
+            params["offset"] = str(offset)
+        if descending:
+            params["descending"] = "1"
         if opt_fields:
             params["opt_fields"] = opt_fields
         resp = await self._request(f"/{kind}", params)
@@ -80,7 +87,9 @@ class ProzorroAPI:
             raise APIError(f"Prozorro feed /{kind} not found")
         body = resp.json()
         next_offset = str((body.get("next_page") or {}).get("offset") or offset)
-        return FeedPage(items=body.get("data") or [], next_offset=next_offset)
+        prev_offset = (body.get("prev_page") or {}).get("offset")
+        return FeedPage(items=body.get("data") or [], next_offset=next_offset,
+                        prev_offset=str(prev_offset) if prev_offset else None)
 
     async def get(self, kind: Kind, id: str) -> dict | None:
         resp = await self._request(f"/{kind}/{id}")

@@ -1,8 +1,10 @@
 """Sync Prozorro change feeds into the local store for the chosen regions, period and CPV.
 
-First run walks the feed from (now - days); later runs resume from the saved cursor. Each feed page
-is stored in one transaction together with the cursor, so an interrupted run loses at most the page
-in flight and the next run continues from there.
+The first run walks the feed backwards, from the newest change to (now - days), so the tenders that are
+open right now arrive in the first minutes; it remembers where the feed stood when it began. Later runs
+go forward from that point and pick up only what changed. Each feed page is stored in one transaction
+together with its cursor, so an interrupted run loses at most the page in flight, and the next run
+continues from there, backwards or forwards.
 """
 import asyncio
 import json
@@ -92,16 +94,92 @@ async def run_sync(api, store: Store, regions: list[str] | None = None, days: in
             store.set_state("coverage", json.dumps(asdict(cov), ensure_ascii=False))
             for kind in ("tenders", "plans"):
                 store.conn.execute("DELETE FROM sync_state WHERE key=?", (f"cursor:{kind}",))
+                store.set_state(f"desc:{kind}", "")
 
     report = SyncReport()
     wanted = set(cov.regions)
     for kind in ("tenders", "plans") if plans else ("tenders",):
-        await _sync_kind(api, store, kind, wanted, cov.cpv, start, report, progress, now)
+        if store.get_state(f"desc:{kind}") is not None or store.get_state(f"cursor:{kind}") is None:
+            await _sync_back(api, store, kind, wanted, cov.cpv, start, report, progress, now)
+        else:
+            await _sync_kind(api, store, kind, wanted, cov.cpv, start, report, progress, now)
     store.set_state("last_sync", datetime.fromtimestamp(now(), UTC).isoformat())
     return report
 
 
+def _wanted_ids(entries, wanted, report) -> list[str]:
+    ids = []
+    for entry in entries:
+        region = _region_of(entry)
+        if not region:
+            if NO_REGION not in wanted:
+                report.hidden_region += 1
+                continue
+        elif region not in wanted:
+            report.skipped_region += 1
+            continue
+        ids.append(entry["id"])
+    return ids
+
+
+def _save(store, kind, ids, docs, cpv, report) -> None:
+    """Store fetched documents; the caller holds the transaction that also moves the cursor."""
+    for doc_id, doc in zip(ids, docs):
+        if doc is None:
+            report.missing += 1
+            if kind == "tenders":
+                store.mark_missing(doc_id)
+            continue
+        if cpv and not any(code.startswith(p) for code in _cpv_codes(doc, kind) for p in cpv):
+            report.skipped_cpv += 1
+            continue
+        if kind == "tenders":
+            store.upsert_tender(doc)
+            report.stored += 1
+        else:
+            store.upsert_plan(doc)
+            report.plans_stored += 1
+
+
+async def _sync_back(api, store, kind, wanted, cpv, start, report, progress, now):
+    """First sync: newest change first, back to the start of the period."""
+    offset = store.get_state(f"desc:{kind}") or None
+    fresh = offset is None
+    began = now()
+    done = 0
+    while True:
+        page = await api.feed(kind, offset, opt_fields="procuringEntity", descending=True)
+        in_period = [e for e in page.items if (_ts(e.get("dateModified")) or start) >= start]
+        finished = (not page.items or len(in_period) < len(page.items)
+                    or page.next_offset == str(offset))
+        ids = _wanted_ids(in_period, wanted, report)
+        docs = await asyncio.gather(*(api.get(kind, i) for i in ids))
+        with store.transaction():
+            _save(store, kind, ids, docs, cpv, report)
+            if fresh:
+                # where the feed stood when this pass began: later runs go forward from here
+                store.set_state(f"cursor:{kind}", page.prev_offset or str(began))
+                fresh = False
+            if finished:
+                store.conn.execute("DELETE FROM sync_state WHERE key=?", (f"desc:{kind}",))
+            else:
+                store.set_state(f"desc:{kind}", page.next_offset)
+        done += len(ids)
+        if progress:
+            last = _ts(page.items[-1].get("dateModified")) if page.items else start
+            span = began - start
+            fraction = 1.0 if finished else (min(max((began - last) / span, 0.0), 1.0) if last and span > 0
+                                             else 0.0)
+            elapsed = now() - began
+            eta = elapsed * (1 - fraction) / fraction if 0 < fraction < 1 else None
+            progress(SyncProgress(kind, done, fraction, eta))
+        if finished:
+            break
+        offset = page.next_offset
+
+
 async def _sync_kind(api, store, kind, wanted, cpv, start, report, progress, now):
+    """Later syncs: forward from the saved cursor."""
     offset = store.get_state(f"cursor:{kind}") or start
     began = now()
     done = 0
@@ -109,34 +187,10 @@ async def _sync_kind(api, store, kind, wanted, cpv, start, report, progress, now
         page = await api.feed(kind, offset, opt_fields="procuringEntity")
         if not page.items:
             break
-        matching = []
-        for entry in page.items:
-            region = _region_of(entry)
-            if not region:
-                if NO_REGION not in wanted:
-                    report.hidden_region += 1
-                    continue
-            elif region not in wanted:
-                report.skipped_region += 1
-                continue
-            matching.append(entry["id"])
+        matching = _wanted_ids(page.items, wanted, report)
         docs = await asyncio.gather(*(api.get(kind, i) for i in matching))
         with store.transaction():
-            for doc_id, doc in zip(matching, docs):
-                if doc is None:
-                    report.missing += 1
-                    if kind == "tenders":
-                        store.mark_missing(doc_id)
-                    continue
-                if cpv and not any(code.startswith(p) for code in _cpv_codes(doc, kind) for p in cpv):
-                    report.skipped_cpv += 1
-                    continue
-                if kind == "tenders":
-                    store.upsert_tender(doc)
-                    report.stored += 1
-                else:
-                    store.upsert_plan(doc)
-                    report.plans_stored += 1
+            _save(store, kind, matching, docs, cpv, report)
             store.set_state(f"cursor:{kind}", page.next_offset)
         done += len(matching)
         if progress:

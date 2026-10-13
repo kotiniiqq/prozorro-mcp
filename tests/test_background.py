@@ -14,11 +14,11 @@ class GatedAPI(FakeAPI):
         super().__init__(*a, **kw)
         self.gate = threading.Event()
 
-    async def feed(self, kind, offset, opt_fields=None):
+    async def feed(self, kind, offset, opt_fields=None, descending=False):
         import asyncio
         while not self.gate.is_set():
             await asyncio.sleep(0.01)
-        return await super().feed(kind, offset, opt_fields)
+        return await super().feed(kind, offset, opt_fields, descending=descending)
 
 
 def syncer(tmp_path, api):

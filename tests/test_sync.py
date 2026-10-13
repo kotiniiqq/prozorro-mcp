@@ -11,15 +11,19 @@ from prozorro_mcp.sync import SyncError, get_coverage, run_sync
 NOW = datetime.fromisoformat("2026-10-12T12:00:00+03:00").timestamp()
 
 
-def entry(doc, region="__from_doc__"):
+RECENT = "2026-10-12T11:00:00+03:00"  # inside any synced period ending at NOW
+
+
+def entry(doc, region="__from_doc__", modified=RECENT):
     if region == "__from_doc__":
         region = (doc.get("procuringEntity", {}).get("address") or {}).get("region", "")
-    return {"id": doc["id"], "dateModified": doc["dateModified"],
-            "procuringEntity": {"address": {"region": region}}}
+    return {"id": doc["id"], "dateModified": modified, "procuringEntity": {"address": {"region": region}}}
 
 
 class FakeAPI:
-    """pages[kind] is a list of pages (lists of feed entries); offsets are page indexes as strings."""
+    """pages[kind] is a list of pages (lists of feed entries), oldest first; ascending offsets are page indexes
+    as strings. Descending reads go from the last page back ("d<index>"); the first one also returns the
+    ascending offset right after the newest page, like Prozorro's prev_page."""
 
     def __init__(self, tenders_pages=(), plans_pages=(), docs=(), fail_on_get=None):
         self.pages = {"tenders": list(tenders_pages), "plans": list(plans_pages)}
@@ -28,10 +32,17 @@ class FakeAPI:
         self.feed_calls = []
         self.get_calls = []
 
-    async def feed(self, kind, offset, opt_fields=None):
+    async def feed(self, kind, offset, opt_fields=None, descending=False):
+        pages = self.pages[kind]
+        if descending:
+            self.feed_calls.append((kind, f"desc:{offset or 'newest'}"))
+            i = len(pages) - 1 if not offset else int(str(offset)[1:])
+            items = list(reversed(pages[i])) if i >= 0 else []
+            return FeedPage(items=items, next_offset=f"d{i - 1}" if items else f"d{i}",
+                            prev_offset=str(len(pages)) if not offset else None)
         self.feed_calls.append((kind, str(offset)))
         i = int(offset) if str(offset).isdigit() and int(offset) < 1000 else 0
-        items = self.pages[kind][i] if i < len(self.pages[kind]) else []
+        items = pages[i] if i < len(pages) else []
         return FeedPage(items=items, next_offset=str(i + 1) if items else str(i))
 
     async def get(self, kind, id):
@@ -65,10 +76,16 @@ def test_first_sync_stores_only_matching_region_and_skips_others_without_fetchin
     assert report.stored == 1 and report.skipped_region == 1
 
 
-def test_first_sync_starts_days_back_from_now(store):
-    api = FakeAPI()
+def test_first_sync_goes_from_the_newest_back_and_stops_at_the_start_of_the_period(store):
+    old, mid, new = make_tender(id="old"), make_tender(id="mid"), make_tender(id="new")
+    api = FakeAPI(tenders_pages=[[entry(old, modified="2026-09-01T10:00:00+03:00")],
+                                 [entry(mid, modified="2026-10-08T10:00:00+03:00")], [entry(new)]],
+                  docs=[old, mid, new])
     sync(api, store, regions=["Львівська область"], days=7, plans=False)
-    assert api.feed_calls[0] == ("tenders", str(NOW - 7 * 86400))
+    assert api.feed_calls[0] == ("tenders", "desc:newest")
+    assert api.get_calls == ["new", "mid"]  # newest first; the one before the period is never fetched
+    assert ids(store) == ["mid", "new"]
+    assert store.get_state("cursor:tenders") == "3" and store.get_state("desc:tenders") is None
     cov = get_coverage(store)
     assert cov.regions == ["Львівська область"] and cov.days == 7
 
@@ -106,13 +123,15 @@ def test_second_run_resumes_from_cursor(store):
 
 def test_failure_mid_sync_keeps_finished_pages_and_resumes_without_duplicates(store):
     a, b, c = make_tender(id="a"), make_tender(id="b"), make_tender(id="c")
-    api = FakeAPI(tenders_pages=[[entry(a)], [entry(b), entry(c)]], docs=[a, b, c], fail_on_get="c")
+    api = FakeAPI(tenders_pages=[[entry(a), entry(b)], [entry(c)]], docs=[a, b, c], fail_on_get="a")
     with pytest.raises(APIError):
         sync(api, store, regions=["Львівська область"], days=7, plans=False)
-    assert ids(store) == ["a"]  # page 2 was not half-stored
-    assert store.get_state("cursor:tenders") == "1"
+    assert ids(store) == ["c"]  # the newest page is kept, the failed one was not half-stored
+    assert store.get_state("desc:tenders") == "d0"
     api.fail_on_get = None
+    api.feed_calls.clear()
     sync(api, store, plans=False)
+    assert api.feed_calls[0] == ("tenders", "desc:d0")  # continues back from where it stopped
     assert ids(store) == ["a", "b", "c"]
     assert store.conn.execute("SELECT count(*) FROM items").fetchone()[0] == 3
 
@@ -135,7 +154,7 @@ def test_adding_a_region_restarts_for_the_union(store):
     sync(api, store, regions=["Львівська область"], days=7, plans=False)
     api.feed_calls.clear()
     sync(api, store, regions=["м. Київ"], plans=False)
-    assert api.feed_calls[0] == ("tenders", str(NOW - 7 * 86400))
+    assert api.feed_calls[0] == ("tenders", "desc:newest")
     assert get_coverage(store).regions == ["Львівська область", "м. Київ"]
     assert ids(store) == ["kyiv", "lviv"]
 
@@ -149,9 +168,9 @@ def test_plans_are_synced_with_the_same_filters(store):
 
 
 def test_progress_is_reported(store):
-    a = make_tender(id="a", created="2026-10-08T12:00:00+03:00")
+    a, b = make_tender(id="a"), make_tender(id="b")
     seen = []
-    api = FakeAPI(tenders_pages=[[entry(a)]], docs=[a])
+    api = FakeAPI(tenders_pages=[[entry(a, modified="2026-10-08T12:00:00+03:00")], [entry(b)]], docs=[a, b])
     sync(api, store, regions=["Львівська область"], days=7, plans=False, progress=seen.append)
-    assert seen and seen[-1].kind == "tenders" and seen[-1].done == 1
-    assert 0 < seen[-1].fraction < 1
+    assert {p.kind for p in seen} == {"tenders"} and len(seen) >= 2 and seen[-1].done == 2
+    assert 0 < seen[0].fraction < 1 and seen[-1].fraction == 1.0

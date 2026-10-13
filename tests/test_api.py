@@ -137,3 +137,18 @@ def test_httpx_does_not_log_every_request():
 
     import prozorro_mcp.api  # noqa: F401
     assert logging.getLogger("httpx").level >= logging.WARNING  # set explicitly, whatever the root level is
+
+
+def test_descending_feed_starts_at_the_newest_and_returns_the_forward_offset():
+    seen = {}
+
+    def handler(request):
+        seen["params"] = dict(request.url.params)
+        return httpx.Response(200, json={"data": [{"id": "a", "dateModified": "x"}],
+                                         "next_page": {"offset": "1791.4.1.old"},
+                                         "prev_page": {"offset": "1791.9.1.new"}})
+
+    api, _ = make_api(handler)
+    page = run(api.feed("tenders", None, descending=True))
+    assert seen["params"]["descending"] == "1" and "offset" not in seen["params"]
+    assert page.next_offset == "1791.4.1.old" and page.prev_offset == "1791.9.1.new"
