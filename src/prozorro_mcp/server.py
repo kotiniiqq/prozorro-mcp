@@ -12,7 +12,7 @@ from mcp.types import ToolAnnotations
 from .analytics import flags as flags_mod
 from .analytics import market, search, watch
 from .analytics.common import NotFound, coverage_hint, coverage_info, parse_since
-from .normalize import UnknownInput, prefix_name, resolve_cpv, resolve_region
+from .normalize import UnknownInput, prefix_name, resolve_cpv_list, resolve_region
 from .store import Store
 from .sync import get_coverage
 
@@ -64,7 +64,7 @@ def _region(text: str | None) -> str | None:
 def _cpv(text: str | None) -> tuple[list[str] | None, list[dict]]:
     if not text:
         return None, []
-    prefixes = resolve_cpv(text)
+    prefixes = resolve_cpv_list(text)
     return prefixes, [{"prefix": p, "name": prefix_name(p)} for p in prefixes]
 
 

@@ -280,3 +280,18 @@ def test_texts_say_the_user_chooses_the_period(store):
     tool = {t.name: t for t in list_tools_with(store, FakeSyncer())}["sync_data"]
     assert "the user chooses" in tool.description
     assert "do not pick it yourself" in payload(call_with(store, IdleSyncer(), "search_tenders", {}))["message"]
+
+
+def test_several_categories_separated_by_commas_are_accepted(store):
+    """Seen in Claude Desktop: sync_data(cpv="09130000,09122000,15")."""
+    from prozorro_mcp.normalize import resolve_cpv
+    fake = FakeSyncer()
+    res = call_with(store, fake, "sync_data", {"regions": ["Волинь"], "days": 3, "cpv": "09130000,09122000,15"})
+    assert not res.is_error, res.content[0].text
+    expected = sorted({p for c in ("09130000", "09122000", "15") for p in resolve_cpv(c)})
+    assert sorted(fake.calls[0][2]) == expected
+
+
+def test_search_accepts_comma_separated_words_for_cpv(filled):
+    data = payload(call(filled, "search_tenders", {"cpv": "борошно, бензин", "status": "any"}))
+    assert {c["prefix"] for c in data["filters"]["cpv"]} >= {"1561", "09132"}

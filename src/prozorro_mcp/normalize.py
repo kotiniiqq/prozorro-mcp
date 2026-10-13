@@ -154,3 +154,13 @@ def prefix_name(prefix: str) -> str | None:
         if _prefix(code) == prefix:
             return name
     return None
+
+
+def resolve_cpv_list(text: str) -> list[str]:
+    """Several codes or words separated by commas or semicolons ("09130000, 15", "борошно; бензин")."""
+    parts = [p.strip() for p in re.split(r"[,;]", text) if p.strip()]
+    if not parts:
+        raise UnknownInput(f"Unknown CPV '{text}'. Give a ДК 021 code (e.g. 15 or 09132000-3) or words.")
+    prefixes = list(dict.fromkeys(p for part in parts for p in resolve_cpv(part)))
+    # a code inside a wider one that is also asked for adds nothing
+    return [p for p in prefixes if not any(p != q and p.startswith(q) for q in prefixes)]

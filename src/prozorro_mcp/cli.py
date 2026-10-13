@@ -10,7 +10,7 @@ from .analytics import flags as flags_mod
 from .analytics import search, watch
 from .analytics.common import NotFound, coverage_hint, coverage_info, parse_since
 from .api import APIError, ProzorroAPI
-from .normalize import UnknownInput, resolve_cpv, resolve_region
+from .normalize import UnknownInput, resolve_cpv_list, resolve_region
 from .output import render
 from .store import Store
 from .sync import SyncError, SyncProgress, run_sync
@@ -35,7 +35,7 @@ def _region(text):
 
 
 def _cpv(text):
-    return resolve_cpv(text) if text else None
+    return resolve_cpv_list(text) if text else None
 
 
 def _emit(args, rows: list[dict], columns: list[str]) -> None:
@@ -134,7 +134,7 @@ def _print_progress(p: SyncProgress) -> None:
 
 def cmd_sync(args, store):
     regions = [resolve_region(r) for r in args.region] if args.region else None
-    cpv = sorted({p for c in args.cpv for p in resolve_cpv(c)}) if args.cpv else None
+    cpv = sorted({p for c in args.cpv for p in resolve_cpv_list(c)}) if args.cpv else None
 
     async def go():
         api = _api_factory()
