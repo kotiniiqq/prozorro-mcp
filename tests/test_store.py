@@ -86,3 +86,27 @@ def test_tender_without_optional_parts_is_stored(store):
 def test_models_helpers():
     assert "aboveThreshold" in COMPETITIVE and "reporting" not in COMPETITIVE
     assert tender_url("UA-2026-10-01-000001-a") == "https://prozorro.gov.ua/tender/UA-2026-10-01-000001-a"
+
+
+def test_several_copies_can_open_a_new_database_at_the_same_moment(tmp_path):
+    """Claude Desktop starts two or three server copies at once on a fresh machine."""
+    import threading
+
+    from prozorro_mcp.store import Store
+    errors = []
+
+    def open_close():
+        try:
+            for _ in range(5):
+                s = Store(tmp_path / "fresh.db")
+                s.set_state("k", "v")
+                s.close()
+        except Exception as exc:  # noqa: BLE001
+            errors.append(exc)
+
+    threads = [threading.Thread(target=open_close) for _ in range(8)]
+    for t in threads:
+        t.start()
+    for t in threads:
+        t.join()
+    assert errors == []

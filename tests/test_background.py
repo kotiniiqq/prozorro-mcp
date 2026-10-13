@@ -72,3 +72,64 @@ def test_first_start_without_regions_explains_what_to_pass(tmp_path):
 
 def test_idle_status_before_anything_ran(tmp_path):
     assert syncer(tmp_path, FakeAPI()).status()["state"] == "idle"
+
+
+# Claude Desktop runs several copies of the server on one database (chat, Cowork, Code).
+
+
+def test_a_second_copy_does_not_start_while_the_first_downloads_and_sees_its_progress(tmp_path):
+    a = make_tender(id="a")
+    api = GatedAPI(tenders_pages=[[entry(a)]], docs=[a])
+    first, second = syncer(tmp_path, api), syncer(tmp_path, FakeAPI())
+    first.start(["Львівська область"], days=3)
+    res = second.start(["Волинська область"], days=3)
+    assert not res["started"] and "already running" in res["message"]
+    assert second.status()["state"] == "running"
+    api.gate.set()
+    assert first.wait(10)
+    status = second.status()
+    assert status["state"] == "done" and status["stored"] == 1
+
+
+def test_a_copy_that_died_mid_download_does_not_block_forever(tmp_path):
+    import json
+    store = Store(tmp_path / "bg.db")
+    store.set_state("coverage", json.dumps({"regions": ["Львівська область"], "days": 3, "cpv": [],
+                                            "since": "2026-10-09T00:00:00+00:00"}))
+    store.set_state("sync_status", json.dumps({"state": "running", "heartbeat": NOW - 3600}))
+    store.close()
+    bg = syncer(tmp_path, FakeAPI())
+    assert bg.status()["state"] == "interrupted"
+    assert bg.start()["started"]
+    assert bg.wait(10) and bg.status()["state"] == "done"
+
+
+def test_two_copies_starting_at_the_same_moment_run_one_download(tmp_path):
+    api = GatedAPI()
+    copies = [syncer(tmp_path, api) for _ in range(4)]
+    results = []
+    threads = [threading.Thread(target=lambda c=c: results.append(c.start(["Львівська область"], days=3)))
+               for c in copies]
+    for t in threads:
+        t.start()
+    for t in threads:
+        t.join()
+    assert sum(r["started"] for r in results) == 1
+    api.gate.set()
+    for c in copies:
+        assert c.wait(10)
+
+
+def test_the_running_copy_keeps_its_heartbeat_fresh(tmp_path):
+    import json
+    import time
+    api = GatedAPI()
+    bg = BackgroundSync(tmp_path / "bg.db", api_factory=lambda: api, heartbeat_seconds=0.05)
+    bg.start(["Львівська область"], days=3)
+    reader = Store(tmp_path / "bg.db")
+    first = json.loads(reader.get_state("sync_status"))["heartbeat"]
+    time.sleep(0.3)
+    later = json.loads(reader.get_state("sync_status"))["heartbeat"]
+    reader.close()
+    api.gate.set()
+    assert bg.wait(10) and later > first

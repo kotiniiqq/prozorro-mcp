@@ -1,6 +1,7 @@
 """SQLite storage: Prozorro tenders and plans normalized into tables, raw JSON kept alongside."""
 import json
 import sqlite3
+import time
 from contextlib import contextmanager
 from pathlib import Path
 
@@ -61,17 +62,30 @@ class Store:
     def __init__(self, path: str | Path):
         self.path = Path(path)
         self.path.parent.mkdir(parents=True, exist_ok=True)
-        self._conn = sqlite3.connect(self.path, check_same_thread=False)
+        # several server copies share one file (Claude Desktop starts two or three at once): wait on locks
+        self._conn = sqlite3.connect(self.path, check_same_thread=False, timeout=30)
         self._conn.row_factory = sqlite3.Row
         # SQLite's LIKE/lower() only fold ASCII; Cyrillic search needs Python's casefold
         self._conn.create_function("casefold", 1, lambda v: v.casefold() if isinstance(v, str) else v,
                                    deterministic=True)
+        self._depth = 0
+        for attempt in range(50):
+            try:
+                self._init_schema()
+                break
+            except sqlite3.OperationalError as exc:
+                # switching a new file to WAL ignores the busy timeout, so retry while another copy does it
+                if "locked" not in str(exc) or attempt == 49:
+                    raise
+                self._conn.rollback()
+                time.sleep(0.1)
+
+    def _init_schema(self) -> None:
         self._conn.execute("PRAGMA journal_mode=WAL")
         self._conn.executescript(SCHEMA)
         if not self._conn.execute("SELECT 1 FROM schema_version").fetchone():
             self._conn.execute("INSERT INTO schema_version VALUES (?)", (SCHEMA_VERSION,))
         self._conn.commit()
-        self._depth = 0
 
     @property
     def conn(self) -> sqlite3.Connection:
