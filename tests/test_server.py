@@ -152,9 +152,9 @@ def test_with_a_syncer_there_is_one_more_tool_and_only_it_writes(store):
     assert all(tools[n].read_only_hint for n in TOOLS)
 
 
-def test_sync_data_resolves_words_and_starts_the_syncer(filled):
-    fake = FakeSyncer()
-    data = payload(call_with(filled, fake, "sync_data", {"regions": ["волынь"], "days": 14, "cpv": "борошно"}))
+def test_sync_data_resolves_words_and_starts_the_syncer(store):
+    fake = FakeSyncer()  # nothing synced yet, so the category is taken as given
+    data = payload(call_with(store, fake, "sync_data", {"regions": ["волынь"], "days": 14, "cpv": "борошно"}))
     from prozorro_mcp.normalize import resolve_cpv
     assert data["started"] and fake.calls == [(["Волинська область"], 14, resolve_cpv("борошно"))]
 
@@ -227,3 +227,24 @@ def test_search_in_a_category_that_was_not_synced_says_so(filled):
                                                              "2026-09-01T00:00:00+00:00")), ensure_ascii=False))
     data = payload(call(filled, "search_tenders", {"cpv": "бензин", "status": "any"}))
     assert data["total"] == 0 and "not synced" in data["coverage_hint"]
+
+
+def _with_cpv_filter(store, cpv):
+    import json as _json
+    from dataclasses import asdict
+    store.set_state("coverage", _json.dumps(asdict(Coverage(["Львівська область"], 7, cpv,
+                                                            "2026-09-01T00:00:00+00:00")), ensure_ascii=False))
+
+
+def test_sync_data_adds_a_category_to_the_synced_ones_instead_of_replacing_them(filled):
+    _with_cpv_filter(filled, ["15"])
+    fake = FakeSyncer()
+    call_with(filled, fake, "sync_data", {"cpv": "0913"})
+    assert fake.calls[0][2] == ["0913", "15"]
+
+
+def test_sync_data_never_narrows_a_sync_of_all_categories(filled):
+    _with_cpv_filter(filled, [])
+    fake = FakeSyncer()
+    call_with(filled, fake, "sync_data", {"regions": ["Рівне"], "cpv": "0913"})
+    assert fake.calls[0][2] is None

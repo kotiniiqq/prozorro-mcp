@@ -123,14 +123,19 @@ def build_server(store: Store, syncer=None) -> MCPServer:
             annotations=SYNC,
             description="Download Prozorro tenders and plans for regions (any spelling) into the local "
                         "data, in the background. days: how far back (default 7, or the current period); "
-                        "cpv: keep only these categories. Without regions it fetches what changed since the "
-                        "last sync. Regions are added to what is already synced. Returns at once; check "
-                        "coverage for progress.")
+                        "cpv: categories to download, added to those already synced (nothing changes when "
+                        "all categories are synced). Without arguments it fetches what changed since the last "
+                        "sync. Regions are added to what is already synced; a new region, category or period "
+                        "walks the whole period again. Returns at once; check coverage for progress.")
         @_errors
         def sync_data(regions: list[str] | None = None, days: int | None = None,
                       cpv: str | None = None) -> dict:
             resolved = [resolve_region(r) for r in regions] if regions else None
             prefixes, _ = _cpv(cpv)
+            current = get_coverage(store)
+            if prefixes and current is not None:
+                # add categories to what is synced; a sync of all categories is never narrowed
+                prefixes = sorted(set(prefixes) | set(current.cpv)) if current.cpv else None
             if days is not None and not 1 <= days <= 92:
                 raise ValueError("days must be between 1 and 92.")
             return syncer.start(resolved, days, prefixes)
