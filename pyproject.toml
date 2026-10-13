@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "prozorro-mcp"
-version = "0.1.0"
+version = "0.1.1"
 description = "MCP server and CLI over Prozorro, Ukraine's public procurement data: tender search, upcoming plans, market and competitor analysis, red flags. Local sync, no keys."
 readme = "README.md"
 requires-python = ">=3.11"

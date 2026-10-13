@@ -1,5 +1,7 @@
 # prozorro-mcp
 
+<!-- mcp-name: io.github.kotiniiqq/prozorro-mcp -->
+
 An MCP server and a command-line tool for **Prozorro**, Ukraine's public procurement system. It keeps a
 local copy of the official open data for the regions you choose. Then you can ask an AI assistant
 (Claude, Cursor, VS Code Copilot and others), or the CLI on its own, things like:
@@ -94,7 +96,8 @@ uvx prozorro-mcp sync --region Львівська --days 7
 - **Regions** work in any spelling: `Львів`, `львовская`, `Lviv`, `Kyiv city`, `Київська`. Repeat
   `--region` for several. Military units hide their address by law, so their tenders have no region.
   Add them with `--region "без регіону"`.
-- **First sync** walks the change feed back over the period and downloads every matching tender. A busy
+- **First sync** walks the change feed backwards, newest change first, so tenders that are open right now
+  arrive in the first minutes, and stops at the start of the period. A busy
   oblast takes about 20 minutes per week of data (Lviv: about 5,500 tenders and as many plans, roughly
   350 MB on disk), mostly waiting on the public API, which is used
   politely with 5 requests at a time and retries. `--cpv 33` (or `--cpv реактиви`) keeps only your
@@ -127,9 +130,10 @@ daily list of new tenders without opening any website.
 ## Tools
 
 Eleven tools only read the local database. Each one declares `readOnlyHint: true`,
-`destructiveHint: false`, `idempotentHint: true` and `openWorldHint: false`. The twelfth, `sync_data`,
-downloads data, so it is marked `readOnlyHint: false` and `openWorldHint: true`. It exists only in the
-local stdio server, not in HTTP mode.
+`destructiveHint: false`, `idempotentHint: true` and `openWorldHint: false`. Three more exist only in the
+local stdio server, not in HTTP mode, and are marked for what they do: `sync_data` downloads data
+(`readOnlyHint: false`, `openWorldHint: true`), `watch_add` saves a search and `watch_remove` deletes one
+(`destructiveHint: true`). The server asks the assistant to start a download only after the user agrees.
 
 | tool | what it returns |
 |---|---|
@@ -145,6 +149,7 @@ local stdio server, not in HTTP mode.
 | `red_flags` | the four flags below, each with evidence and a link |
 | `watch_digest` | new tenders for your saved searches |
 | `sync_data` | starts a background download of regions or a longer period; `coverage` shows the progress |
+| `watch_add`, `watch_remove` | save or delete a search for `watch_digest`, right from the chat |
 
 When a question needs data that is not synced, for example another oblast or an older period, the
 result says so and gives the exact `sync` command. It does not return an empty list that looks like
@@ -210,7 +215,7 @@ read-only. Add rate limits at the proxy before exposing it.
 
 ```bash
 python -m venv .venv && .venv/bin/pip install -e ".[dev]"    # Windows: .venv\Scripts\pip
-pytest -q          # 197 tests, no network: recorded API responses and built tenders
+pytest -q          # 228 tests, no network: recorded API responses and built tenders
 ruff check .
 python scripts/capture_fixtures.py    # refresh the recorded API responses
 python scripts/build_demo.py          # rebuild the demo snapshot (live sync, about 20 minutes)
