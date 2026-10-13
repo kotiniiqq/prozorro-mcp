@@ -59,21 +59,22 @@ def _short(row: dict) -> dict:
 TENDER_COLS = ["tender_id", "deadline", "amount_text", "buyer", "title", "url"]
 
 
-def _hint(store, region=None, since=None, empty=False) -> None:
+def _hint(store, region=None, since=None, empty=False, cpv=None) -> None:
     """Same rule as the MCP tools: say which sync command is missing instead of a bare empty result."""
-    hint = coverage_hint(store, region=region, since=since) or (coverage_hint(store) if empty else None)
+    hint = coverage_hint(store, region=region, since=since, cpv=cpv) or (
+        (coverage_hint(store, empty_without_cpv=True) or coverage_hint(store)) if empty else None)
     if hint:
         print(hint, file=sys.stderr)
 
 
 def cmd_search(args, store):
-    region, since = _region(args.region), parse_since(args.since)
-    res = search.search_tenders(store, query=args.query, cpv=_cpv(args.cpv), region=region,
+    region, since, cpv = _region(args.region), parse_since(args.since), _cpv(args.cpv)
+    res = search.search_tenders(store, query=args.query, cpv=cpv, region=region,
                                 status=args.status, amount_min=args.amount_min, amount_max=args.amount_max,
                                 deadline_after=parse_since(args.deadline_after),
                                 published_since=since, limit=args.limit)
     _emit(args, [_short(r) for r in res["tenders"]], TENDER_COLS)
-    _hint(store, region, since, empty=res["total"] == 0)
+    _hint(store, region, since, empty=res["total"] == 0, cpv=cpv)
     if res.get("note") and args.format == "table" and not args.out:
         print(res["note"], file=sys.stderr)
 
@@ -87,24 +88,24 @@ def cmd_digest(args, store):
 
 
 def cmd_flags(args, store):
-    region, since = _region(args.region), parse_since(args.since)
-    res = flags_mod.red_flags(store, buyer=args.buyer, cpv=_cpv(args.cpv), region=region,
+    region, since, cpv = _region(args.region), parse_since(args.since), _cpv(args.cpv)
+    res = flags_mod.red_flags(store, buyer=args.buyer, cpv=cpv, region=region,
                               since=since, kinds=args.kind or None, limit=args.limit)
     _emit(args, res["flags"], ["kind", "tender_id", "buyer", "amount_text", "evidence", "url"])
-    _hint(store, region, since)
+    _hint(store, region, since, cpv=cpv)
     if args.format == "table" and not args.out:
         counts = ", ".join(f"{k}: {v}" for k, v in res["counts"].items())
         print(f"{counts}\n{res['note']}", file=sys.stderr)
 
 
 def cmd_plans(args, store):
-    region = _region(args.region)
-    res = search.upcoming_plans(store, query=args.query, cpv=_cpv(args.cpv), region=region,
+    region, cpv = _region(args.region), _cpv(args.cpv)
+    res = search.upcoming_plans(store, query=args.query, cpv=cpv, region=region,
                                 budget_min=args.budget_min, budget_max=args.budget_max,
                                 start_from=parse_since(args.start_from), limit=args.limit)
     _emit(args, [_short(r) for r in res["plans"]],
           ["planned_tender_start", "budget_text", "buyer", "description", "cpv", "url"])
-    _hint(store, region, empty=res["total"] == 0)
+    _hint(store, region, empty=res["total"] == 0, cpv=cpv)
 
 
 def cmd_status(args, store):

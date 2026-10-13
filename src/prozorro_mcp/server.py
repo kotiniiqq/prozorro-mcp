@@ -65,13 +65,20 @@ def _cpv(text: str | None) -> tuple[list[str] | None, list[dict]]:
 
 
 def _with_hint(store: Store, result: dict, region: str | None = None, since: str | None = None,
-               empty: bool = False) -> dict:
-    hint = coverage_hint(store, region=region, since=since)
+               empty: bool = False, cpv: list[str] | None = None) -> dict:
+    hint = coverage_hint(store, region=region, since=since, cpv=cpv)
     if hint is None and empty:
-        hint = coverage_hint(store)
+        hint = coverage_hint(store, empty_without_cpv=True) or coverage_hint(store)
     if hint:
         result["coverage_hint"] = hint
     return result
+
+
+def _sync_note(status: dict) -> str:
+    kind = "plans" if status.get("kind") == "plans" else "tenders (plans come after them)"
+    eta = f", about {status['eta_minutes']:.0f} min left" if status.get("eta_minutes") else ""
+    return (f"A download is still running: {status.get('fraction', 0):.0%} of the period done for {kind}{eta}. "
+            "These numbers are incomplete and will grow; tell the user so.")
 
 
 def build_server(store: Store, syncer=None) -> MCPServer:
@@ -94,6 +101,7 @@ def build_server(store: Store, syncer=None) -> MCPServer:
             result = fn(*args, **kwargs)
             if running and isinstance(result, dict):
                 result["sync_in_progress"] = status
+                result["sync_note"] = _sync_note(status)
             return result
         return wrapper
 
@@ -106,6 +114,8 @@ def build_server(store: Store, syncer=None) -> MCPServer:
         info = coverage_info(store)
         if syncer is not None:
             info["sync"] = syncer.status()
+            if info["sync"].get("state") == "running":
+                info["sync_note"] = _sync_note(info["sync"])
         return info
 
     if syncer is not None:
@@ -154,7 +164,7 @@ def build_server(store: Store, syncer=None) -> MCPServer:
                                     deadline_after=parse_since(deadline_after), published_since=since,
                                     limit=limit)
         res["filters"] = {"query": query, "region": r, "cpv": cpv_used, "status": status}
-        return _with_hint(store, res, r, since, empty=res["total"] == 0)
+        return _with_hint(store, res, r, since, empty=res["total"] == 0, cpv=prefixes)
 
     @server.tool(
         annotations=READ_ONLY,
@@ -179,7 +189,7 @@ def build_server(store: Store, syncer=None) -> MCPServer:
         s = parse_since(since)
         res = market.market_overview(store, cpv=prefixes, region=r, since=s, top=top)
         res["filters"] = {"region": r, "cpv": cpv_used, "since": s}
-        return _with_hint(store, res, r, s, empty=res["count"] == 0)
+        return _with_hint(store, res, r, s, empty=res["count"] == 0, cpv=prefixes)
 
     @server.tool(
         annotations=READ_ONLY,
@@ -223,7 +233,7 @@ def build_server(store: Store, syncer=None) -> MCPServer:
         res = search.upcoming_plans(store, query=query, cpv=prefixes, region=r, budget_min=budget_min,
                                     budget_max=budget_max, start_from=parse_since(start_from), limit=limit)
         res["filters"] = {"query": query, "region": r, "cpv": cpv_used}
-        return _with_hint(store, res, r, empty=res["total"] == 0)
+        return _with_hint(store, res, r, empty=res["total"] == 0, cpv=prefixes)
 
     @server.tool(
         annotations=READ_ONLY,
@@ -242,7 +252,7 @@ def build_server(store: Store, syncer=None) -> MCPServer:
         res = flags_mod.red_flags(store, buyer=buyer, cpv=prefixes, region=r, since=s, kinds=kinds,
                                   share=share, min_awards=min_awards, pct=pct, min_peers=min_peers, limit=limit)
         res["filters"] = {"buyer": buyer, "region": r, "cpv": cpv_used, "since": s}
-        return _with_hint(store, res, r, s)
+        return _with_hint(store, res, r, s, cpv=prefixes)
 
     @server.tool(
         annotations=READ_ONLY,

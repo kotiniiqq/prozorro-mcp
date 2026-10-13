@@ -1,4 +1,5 @@
 import asyncio
+import json
 
 import pytest
 from factories import make_plan, make_tender
@@ -189,3 +190,15 @@ def test_upcoming_plans_skip_long_past_planned_starts_by_default(store):
     got = {r["planned_tender_start"][:7] for r in upcoming_plans(store)["plans"]}
     assert got == {"2026-09", "2026-11"}
     assert upcoming_plans(store, start_from="2025-01-01")["total"] == 3
+
+
+def test_coverage_hint_for_a_category_outside_the_synced_cpv_filter(store):
+    from dataclasses import asdict
+
+    from prozorro_mcp.sync import Coverage
+    store.set_state("coverage", json.dumps(asdict(Coverage(["Харківська область"], 7, ["15"], "2026-10-06"))))
+    assert coverage_hint(store, cpv=["1561"]) is None                  # inside food: covered
+    hint = coverage_hint(store, cpv=["0913"])                           # fuel: not synced
+    assert "0913" in hint and "--cpv 0913 --cpv 15" in hint
+    assert "15" in coverage_hint(store, empty_without_cpv=True)          # words only, nothing found
+    assert coverage_hint(store) is None

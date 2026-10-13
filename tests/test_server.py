@@ -210,3 +210,20 @@ def test_during_a_sync_results_carry_its_progress(filled):
 def test_without_a_syncer_an_empty_store_keeps_the_cli_hint(store):
     data = payload(call(store, "search_tenders", {}))
     assert "no_data" not in data and "prozorro-mcp sync" in data["coverage_hint"]
+
+
+def test_during_a_sync_results_and_coverage_say_in_words_that_numbers_are_incomplete(filled):
+    data = payload(call_with(filled, RunningSyncer(), "search_tenders", {"status": "any"}))
+    assert "25%" in data["sync_note"] and "incomplete" in data["sync_note"]
+    cov = payload(call_with(filled, RunningSyncer(), "coverage"))
+    assert "incomplete" in cov["sync_note"]
+    assert "sync_note" not in payload(call_with(filled, IdleSyncer(), "coverage"))
+
+
+def test_search_in_a_category_that_was_not_synced_says_so(filled):
+    import json as _json
+    from dataclasses import asdict
+    filled.set_state("coverage", _json.dumps(asdict(Coverage(["Львівська область"], 7, ["15"],
+                                                             "2026-09-01T00:00:00+00:00")), ensure_ascii=False))
+    data = payload(call(filled, "search_tenders", {"cpv": "бензин", "status": "any"}))
+    assert data["total"] == 0 and "not synced" in data["coverage_hint"]

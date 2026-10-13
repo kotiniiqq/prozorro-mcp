@@ -49,7 +49,8 @@ def coverage_info(store: Store) -> dict:
     }
 
 
-def coverage_hint(store: Store, region: str | None = None, since: str | None = None) -> str | None:
+def coverage_hint(store: Store, region: str | None = None, since: str | None = None,
+                  cpv: list[str] | None = None, empty_without_cpv: bool = False) -> str | None:
     """The exact command to run when a question needs data the local store does not have."""
     cov = get_coverage(store)
     if cov is None:
@@ -58,6 +59,16 @@ def coverage_hint(store: Store, region: str | None = None, since: str | None = N
     if region and region not in cov.regions:
         return (f'{region} is not synced (synced: {", ".join(cov.regions)}). '
                 f'Run: prozorro-mcp sync --region "{region}"')
+    if cov.cpv:
+        # a sync with --cpv keeps only those categories; --cpv replaces the filter, so suggest the union
+        missing = [p for p in cpv or [] if not any(p.startswith(c) for c in cov.cpv)]
+        if missing:
+            flags = " ".join(f"--cpv {c}" for c in sorted(set(missing) | set(cov.cpv)))
+            return (f"Category {', '.join(missing)} is not synced: only CPV {', '.join(cov.cpv)} was downloaded. "
+                    f"Run: prozorro-mcp sync {flags}")
+        if empty_without_cpv and not cpv:
+            return (f"Only CPV {', '.join(cov.cpv)} was downloaded, so other categories are missing. To add one, "
+                    f"run: prozorro-mcp sync --cpv <code> " + " ".join(f"--cpv {c}" for c in cov.cpv))
     if since and cov.since:
         row = store.conn.execute("SELECT julianday(?) < julianday(?)", (since, cov.since)).fetchone()
         if row[0]:
