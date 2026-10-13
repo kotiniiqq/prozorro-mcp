@@ -11,6 +11,7 @@ from prozorro_mcp.sync import Coverage
 
 TOOLS = ["buyer_profile", "competitors", "coverage", "find_entity", "get_tender", "market_overview",
          "red_flags", "search_tenders", "supplier_profile", "upcoming_plans", "watch_digest"]
+LOCAL_TOOLS = ["sync_data", "watch_add", "watch_remove"]  # only in the local stdio server
 A = ("22222222", "ТОВ Альфа")
 B = ("33333333", "ТОВ Бета")
 
@@ -145,11 +146,14 @@ class FakeSyncer:
 
 def test_with_a_syncer_there_is_one_more_tool_and_only_it_writes(store):
     tools = {t.name: t.annotations for t in list_tools_with(store, FakeSyncer())}
-    assert sorted(tools) == sorted(TOOLS + ["sync_data"])
+    assert sorted(tools) == sorted(TOOLS + LOCAL_TOOLS)
     a = tools["sync_data"]
     assert (a.read_only_hint, a.destructive_hint, a.idempotent_hint, a.open_world_hint) == (
         False, False, True, True)
     assert all(tools[n].read_only_hint for n in TOOLS)
+    add, remove = tools["watch_add"], tools["watch_remove"]
+    assert (add.read_only_hint, add.destructive_hint, add.open_world_hint) == (False, False, False)
+    assert (remove.read_only_hint, remove.destructive_hint, remove.open_world_hint) == (False, True, False)
 
 
 def test_sync_data_resolves_words_and_starts_the_syncer(store):
@@ -295,3 +299,19 @@ def test_several_categories_separated_by_commas_are_accepted(store):
 def test_search_accepts_comma_separated_words_for_cpv(filled):
     data = payload(call(filled, "search_tenders", {"cpv": "борошно, бензин", "status": "any"}))
     assert {c["prefix"] for c in data["filters"]["cpv"]} >= {"1561", "09132"}
+
+
+def test_saved_searches_can_be_added_and_removed_from_the_chat(filled):
+    fake = IdleSyncer()
+    added = payload(call_with(filled, fake, "watch_add", {"name": "борошно Львів", "query": "борошно",
+                                                          "cpv": "борошно", "region": "львів"}))
+    assert added["region"] == "Львівська область" and "1561" in added["cpv"]
+    digest = payload(call_with(filled, fake, "watch_digest", {"since": "2020-01-01"}))
+    assert [w["name"] for w in digest["watches"]] == ["борошно Львів"]
+    assert payload(call_with(filled, fake, "watch_remove", {"name": "борошно Львів"}))["removed"] == "борошно Львів"
+    res = call_with(filled, fake, "watch_remove", {"name": "борошно Львів"})
+    assert res.is_error and "No saved search" in res.content[0].text
+
+
+def test_empty_digest_in_the_chat_offers_watch_add(filled):
+    assert "watch_add" in payload(call_with(filled, IdleSyncer(), "watch_digest"))["hint"]

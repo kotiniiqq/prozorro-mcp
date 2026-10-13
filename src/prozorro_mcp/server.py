@@ -43,6 +43,11 @@ READ_ONLY = ToolAnnotations(read_only_hint=True, destructive_hint=False, idempot
 # sync_data writes the local database and calls the public Prozorro API; running it twice adds nothing.
 SYNC = ToolAnnotations(read_only_hint=False, destructive_hint=False, idempotent_hint=True,
                        open_world_hint=True)
+# saved searches live in the local database: adding one changes nothing else, removing one deletes it
+WATCH_ADD = ToolAnnotations(read_only_hint=False, destructive_hint=False, idempotent_hint=True,
+                            open_world_hint=False)
+WATCH_REMOVE = ToolAnnotations(read_only_hint=False, destructive_hint=True, idempotent_hint=True,
+                               open_world_hint=False)
 
 
 def _errors(fn):
@@ -273,10 +278,33 @@ def build_server(store: Store, syncer=None) -> MCPServer:
     @server.tool(
         annotations=READ_ONLY,
         description="New tenders for the user's saved searches since a moment (default: last 24 hours). "
-                    "Saved searches are added with the CLI: prozorro-mcp watch add.")
+                    "Saved searches are added with watch_add or the CLI: prozorro-mcp watch add.")
     @guarded
     @_errors
     def watch_digest(since: str | None = None, limit: int = 20) -> dict:
-        return watch.watch_digest(store, since=parse_since(since), limit=limit)
+        res = watch.watch_digest(store, since=parse_since(since), limit=limit)
+        if "hint" in res and syncer is not None:
+            res["hint"] = ("No saved searches yet. Offer to save one with watch_add: a name plus words, CPV "
+                           "and/or region.")
+        return res
+
+    if syncer is not None:
+        @server.tool(
+            annotations=WATCH_ADD,
+            description="Save a search under a name (words, CPV code or words, region in any spelling) so "
+                        "watch_digest shows its new tenders. Call it when the user asks to follow something.")
+        @_errors
+        def watch_add(name: str, query: str | None = None, cpv: str | None = None,
+                      region: str | None = None) -> dict:
+            prefixes, _ = _cpv(cpv)
+            return watch.watch_add(store, name, query=query, cpv=prefixes, region=_region(region))
+
+        @server.tool(
+            annotations=WATCH_REMOVE,
+            description="Delete a saved search by its name. Only when the user asks to stop following it.")
+        @_errors
+        def watch_remove(name: str) -> dict:
+            watch.watch_remove(store, name.strip())
+            return {"removed": name.strip(), "left": [w["name"] for w in watch.watch_list(store)]}
 
     return server

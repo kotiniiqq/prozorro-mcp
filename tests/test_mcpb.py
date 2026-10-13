@@ -13,8 +13,8 @@ VERSION = tomllib.loads((ROOT / "pyproject.toml").read_text(encoding="utf-8"))["
 
 def test_manifest_lists_every_server_tool_and_the_package_version():
     m = build_mcpb.manifest(VERSION)
-    from test_server import TOOLS
-    assert sorted(t["name"] for t in m["tools"]) == sorted(TOOLS + ["sync_data"])
+    from test_server import LOCAL_TOOLS, TOOLS
+    assert sorted(t["name"] for t in m["tools"]) == sorted(TOOLS + LOCAL_TOOLS)
     assert m["version"] == VERSION and m["server"]["type"] == "uv"
 
 
