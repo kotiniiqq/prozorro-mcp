@@ -17,6 +17,8 @@ needed: the Prozorro API is public, and nothing here calls an LLM.
 
 > Ukrainian step-by-step guide for non-developers: [docs/guide.uk.md](https://github.com/kotiniiqq/prozorro-mcp/blob/main/docs/guide.uk.md).
 
+[![Prozorro MCP server](https://mcprush.com/badge/kotiniiqq-prozorro-mcp/card.svg)](https://mcprush.com/to/kotiniiqq-prozorro-mcp?ref=badge)
+
 ## Try it in one minute (bundled demo, no sync)
 
 You need [uv](https://docs.astral.sh/uv/getting-started/installation/) (or plain `pip install prozorro-mcp`):
