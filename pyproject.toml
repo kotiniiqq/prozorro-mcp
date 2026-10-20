@@ -9,7 +9,7 @@ description = "MCP server and CLI over Prozorro, Ukraine's public procurement da
 readme = "README.md"
 requires-python = ">=3.11"
 license = "MIT"
-authors = [{ name = "Kyrylo Kalashnyk" }]
+authors = [{ name = "Kyrylo Kalashnyk", email = "kotiniiqq@gmail.com" }]
 keywords = ["mcp", "prozorro", "ukraine", "public-procurement", "tenders", "open-data"]
 classifiers = [
     "Development Status :: 4 - Beta",

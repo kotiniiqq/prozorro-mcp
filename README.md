@@ -235,6 +235,11 @@ The code is split by job: `api` (feed client) → `sync` → `store` (SQLite) �
   companies from the EDR register.
 - **Not planned**: a "chance to win" or "recommended bid". It would be a guess dressed as a fact.
 
+## Contact
+
+Feedback, ideas, job offers or custom projects (n8n, MCP, AI automation): [kotiniiqq@gmail.com](mailto:kotiniiqq@gmail.com).
+Bug reports and feature requests are welcome in [Issues](https://github.com/kotiniiqq/prozorro-mcp/issues).
+
 ## Data and credits
 
 Tender and plan data come from the public [Prozorro API](https://public-api.prozorro.gov.ua). ДК 021
