@@ -15,6 +15,8 @@ local copy of the official open data for the regions you choose. Then you can as
 Every number is computed by code from the data, and the assistant only writes the text. No API keys are
 needed: the Prozorro API is public, and nothing here calls an LLM.
 
+<img src="https://raw.githubusercontent.com/kotiniiqq/prozorro-mcp/main/docs/assets/overview.svg" width="640" alt="prozorro-mcp flow">
+
 > Ukrainian step-by-step guide for non-developers: [docs/guide.uk.md](https://github.com/kotiniiqq/prozorro-mcp/blob/main/docs/guide.uk.md).
 
 [![Prozorro MCP server](https://mcprush.com/badge/kotiniiqq-prozorro-mcp/card.svg)](https://mcprush.com/to/kotiniiqq-prozorro-mcp?ref=badge)
